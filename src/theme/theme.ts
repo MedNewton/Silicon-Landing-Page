@@ -3,11 +3,14 @@ declare module "@mui/material/styles" {
     interface Palette {
       ctaGradient: string
       heroGradientBg: string
+      heroFakeBorderGradient: string
+      titleGradient: string
     }
   
     interface PaletteOptions {
       ctaGradient: string
       heroGradientBg: string
+      heroFakeBorderGradient: string
       titleGradient: string
     }
   }
@@ -17,10 +20,11 @@ const themeOptions: ThemeOptions = {
       mode: 'dark',
       ctaGradient: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.2) 100%), linear-gradient(273.13deg, #6547A5 -6.55%, #3F6DDD 106.12%)',
       heroGradientBg: 'linear-gradient(90deg, rgba(211, 219, 239, 0.5) 0%, rgba(215, 211, 239, 0.5) 100%)',
+      heroFakeBorderGradient: 'linear-gradient(90deg, rgba(93, 77, 169, 1) 0%, rgba(37, 31, 67, 0) 100%)',
       titleGradient: 'linear-gradient(273.13deg, #6547A5 -6.55%, #3F6DDD 106.12%)',
       primary: { main: 'rgba(30, 43, 66, 1)' },
       secondary: { main: 'rgba(61, 83, 123, 1)' },
-      background: { default: '#131313', paper: '#151515' },
+      background: { default: '#F9F9F9', paper: '#F9F9F9' },
       text: { primary: '#ffffff', secondary: '#9F9F9F', disabled: '#F5F5F5' },
       error: { main: 'rgba(211, 47, 47, 1)' },
       warning: { main: 'rgba(239, 108, 0, 1)' },
