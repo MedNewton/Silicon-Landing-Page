@@ -81,7 +81,7 @@ const Pricing = () => {
             component="section"
             sx={{
                 width: "100%",
-                py: { xs: 6, md: 10 },
+                py: { xs: 6, md: 4 },
                 px: { xs: 2, md: 24 },
                 backgroundColor: theme.palette.background.default,
             }}
