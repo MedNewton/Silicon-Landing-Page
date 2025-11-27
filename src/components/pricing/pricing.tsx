@@ -344,12 +344,12 @@ const Pricing = () => {
                       <Typography
                         variant="body2"
                         sx={{
-                          color: included ? "#4F5670" : "#C2C6D8",
+                          color: "#4F5670",
                         }}
                       >
                         {feature.label}
                       </Typography>
-                      {feature.tag && included && (
+                      {feature.tag && (
                         <Chip
                           label={feature.tag}
                           size="small"
@@ -510,7 +510,7 @@ const Pricing = () => {
                       <Typography
                         variant="body2"
                         sx={{
-                          color: included ? "#4F5670" : "#C2C6D8",
+                          color: "#4F5670",
                         }}
                       >
                         {feature.label}
