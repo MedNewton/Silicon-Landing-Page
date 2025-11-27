@@ -63,7 +63,6 @@ const FEATURES: Feature[] = [
   },
 ];
 
-// 👉 base prices
 const STANDARD_MONTHLY = 20;
 const STANDARD_ANNUAL = 15;
 const PREMIUM_MONTHLY = 40;
@@ -88,7 +87,6 @@ const Pricing = () => {
       }}
     >
       <Stack spacing={4} alignItems="center" maxWidth="1120px" mx="auto">
-        {/* Title */}
         <Typography
           sx={{
             fontSize: { xs: 26, md: 32 },
@@ -102,8 +100,6 @@ const Pricing = () => {
         >
           Start your plan by picking a package
         </Typography>
-
-        {/* Billing toggle */}
         <Box
           sx={{
             display: "flex",
@@ -197,15 +193,12 @@ const Pricing = () => {
             </Box>
           </Button>
         </Box>
-
-        {/* Cards */}
         <Stack
           direction={{ xs: "column", md: "row" }}
           spacing={{ xs: 3, md: 2 }}
           width="100%"
           maxWidth="1120px"
         >
-          {/* Standard card */}
           <Box
             sx={{
               flex: 1,
@@ -238,8 +231,6 @@ const Pricing = () => {
               >
                 For anyone who needs a professional business plan.
               </Typography>
-
-              {/* 💰 price with optional stroked monthly when annual */}
               <Stack direction="row" alignItems="center" gap={1.5}>
                 {billingPeriod === "annual" && (
                   <Typography
@@ -369,8 +360,6 @@ const Pricing = () => {
               </Stack>
             </Stack>
           </Box>
-
-          {/* Premium card */}
           <Box
             sx={{
               flex: 1,
@@ -404,8 +393,6 @@ const Pricing = () => {
                 For businesses that need financial tools to help them operate &
                 grow.
               </Typography>
-
-              {/* 💰 price with optional stroked monthly when annual */}
               <Stack direction="row" alignItems="center" gap={1.5}>
                 {billingPeriod === "annual" && (
                   <Typography
