@@ -1,5 +1,5 @@
 import theme from "@/theme/theme";
-import { Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 
 import Hero from "@/components/hero/hero";
 import CTA from "@/components/hero/cta";

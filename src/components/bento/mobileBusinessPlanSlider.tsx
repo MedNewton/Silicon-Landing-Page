@@ -46,13 +46,13 @@ const MobileBusinessPlanSlider = () => {
   }, []);
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    touchStartX.current = e.touches[0]?.clientX || 0;
+    touchStartX.current = e.touches[0]?.clientX ?? 0;
   };
 
   const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
     if (touchStartX.current == null) return;
 
-    const endX = e.changedTouches[0]?.clientX || 0;
+    const endX = e.changedTouches[0]?.clientX ?? 0;
     const diff = endX - touchStartX.current;
     const threshold = 40; // px
 
@@ -118,7 +118,7 @@ const MobileBusinessPlanSlider = () => {
           >
             <Image
               src={slide}
-              alt={activeSlide?.title || "Business plan creation"}
+              alt={activeSlide?.title ?? "Business plan creation"}
               style={{ width: "100%", height: "auto", display: "block" }}
               sizes="(max-width: 600px) 100vw, 480px"
             />
@@ -134,7 +134,7 @@ const MobileBusinessPlanSlider = () => {
             color: "#1D2340",
           }}
         >
-          {activeSlide?.title || "Business plan creation"}
+          {activeSlide?.title ?? "Business plan creation"}
         </Typography>
 
         {/* Pagination dots */}

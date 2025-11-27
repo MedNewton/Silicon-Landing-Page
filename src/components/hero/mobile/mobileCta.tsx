@@ -1,4 +1,4 @@
-import { Stack, Button, Typography } from "@mui/material";
+import { Stack, Button } from "@mui/material";
 import theme from "@/theme/theme";
 
 const MobileCTA = () => {
