@@ -26,13 +26,13 @@ const Header = () => {
             }}
         >
             <Stack sx={{
-                width: "20%",
+                width: "25%",
                 height: "fit-content",
                 textTransform: "none",
             }}>
                 <Image src={logo} alt="logo" width={40} height={40} />
             </Stack>
-            <Stack minWidth="40%" direction="row" alignItems="center" justifyContent="center" gap={2}>
+            <Stack minWidth="30%" direction="row" alignItems="center" justifyContent="center" gap={2}>
                 <Typography variant="body2" color="text.secondary">
                     Features
                 </Typography>
@@ -44,7 +44,7 @@ const Header = () => {
                 </Typography>
             </Stack>
             <Button sx={{
-                width: "20%",
+                width: "25%",
                 height: "fit-content",
                 paddingX: 1,
                 paddingY: 1,
