@@ -13,7 +13,7 @@ const MobileFooter = () => {
       component="footer"
       sx={{
         width: "100%",
-        mt: 6,
+        mt: 4,
       }}
     >
       <Box
