@@ -49,7 +49,7 @@ const Header = () => {
                 paddingX: 1,
                 paddingY: 1,
                 borderRadius: 20,
-                background: theme.palette.background.default,
+                background: 'rgba(255, 255, 255, 0.68)',
                 textTransform: "none",
             }}>
                 <Typography variant="body2" color="text.secondary">
