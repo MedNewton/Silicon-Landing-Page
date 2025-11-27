@@ -18,7 +18,7 @@ const SLIDES: Slide[] = [
   { title: "Investor-ready insights" },
 ];
 
-const AUTOPLAY_INTERVAL = 4000; // ms
+const AUTOPLAY_INTERVAL = 4000;
 
 const MobileBusinessPlanSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,7 +34,6 @@ const MobileBusinessPlanSlider = () => {
   const goNext = () => goToSlide(activeIndex + 1);
   const goPrev = () => goToSlide(activeIndex - 1);
 
-  // autoplay
   useEffect(() => {
     if (SLIDES.length <= 1) return;
 
@@ -54,13 +53,11 @@ const MobileBusinessPlanSlider = () => {
 
     const endX = e.changedTouches[0]?.clientX ?? 0;
     const diff = endX - touchStartX.current;
-    const threshold = 40; // px
+    const threshold = 40;
 
     if (diff > threshold) {
-      // swipe right -> previous
       goPrev();
     } else if (diff < -threshold) {
-      // swipe left -> next
       goNext();
     }
 
@@ -77,11 +74,10 @@ const MobileBusinessPlanSlider = () => {
         py: 6,
         px: 2,
         backgroundColor: theme.palette.background.default,
-        display: { xs: "block", md: "none" }, // mobile-only
+        display: { xs: "block", md: "none" },
       }}
     >
       <Stack spacing={3} alignItems="center" maxWidth="480px" mx="auto">
-        {/* Title */}
         <Typography
           sx={{
             fontSize: 20,
@@ -96,8 +92,6 @@ const MobileBusinessPlanSlider = () => {
           Everything You Need to Build
           <br />a Winning Business Plan
         </Typography>
-
-        {/* Slide card */}
         <Box
           sx={{
             width: "100%",
@@ -111,7 +105,7 @@ const MobileBusinessPlanSlider = () => {
             sx={{
               position: "relative",
               width: "100%",
-              touchAction: "pan-y", // allow vertical scroll while swiping horizontally
+              touchAction: "pan-y",
             }}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
@@ -124,8 +118,6 @@ const MobileBusinessPlanSlider = () => {
             />
           </Box>
         </Box>
-
-        {/* Slide title */}
         <Typography
           sx={{
             fontSize: 16,
@@ -136,8 +128,6 @@ const MobileBusinessPlanSlider = () => {
         >
           {activeSlide?.title ?? "Business plan creation"}
         </Typography>
-
-        {/* Pagination dots */}
         <Stack direction="row" spacing={1} justifyContent="center">
           {SLIDES.map((_, index) => {
             const isActive = index === activeIndex;

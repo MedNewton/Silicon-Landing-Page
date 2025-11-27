@@ -16,7 +16,6 @@ const MobileFooter = () => {
         mt: 10,
       }}
     >
-      {/* Rounded main panel */}
       <Box
         sx={{
           borderTopLeftRadius: 20,
@@ -27,7 +26,6 @@ const MobileFooter = () => {
           bgcolor: "#1E2B42",
         }}
       >
-        {/* Top content row */}
         <Box
           sx={{
             display: "flex",
@@ -38,7 +36,6 @@ const MobileFooter = () => {
             py: { xs: 4, md: 6 },
           }}
         >
-          {/* Logo + text */}
           <Stack spacing={2} maxWidth={{ xs: "100%", md: 420 }}>
             <Stack direction="row" alignItems="center" spacing={1.5}>
               <Box
@@ -82,8 +79,6 @@ const MobileFooter = () => {
               planning, financial forecasting, and investor-ready insights.
             </Typography>
           </Stack>
-
-          {/* Links columns */}
           <Stack
             direction="row"
             spacing={{ xs: 6, md: 10 }}
@@ -132,8 +127,6 @@ const MobileFooter = () => {
             </Stack>
           </Stack>
         </Box>
-
-        {/* Bottom bar */}
         <Box
           sx={{
             bgcolor: "#0A1324",
@@ -165,6 +158,7 @@ const MobileFooter = () => {
 
             <Stack direction="row" spacing={1}>
               <IconButton
+                name="instagram"
                 size="small"
                 sx={{ color: "#FFFFFF" }}
                 aria-label="Instagram"
@@ -172,6 +166,7 @@ const MobileFooter = () => {
                 <InstagramIcon fontSize="small" />
               </IconButton>
               <IconButton
+                name="linkedin"
                 size="small"
                 sx={{ color: "#FFFFFF" }}
                 aria-label="LinkedIn"
@@ -179,6 +174,7 @@ const MobileFooter = () => {
                 <LinkedInIcon fontSize="small" />
               </IconButton>
               <IconButton
+                name="facebook"
                 size="small"
                 sx={{ color: "#FFFFFF" }}
                 aria-label="Facebook"

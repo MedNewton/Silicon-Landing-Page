@@ -43,7 +43,7 @@ const Header = () => {
                     Subscribe
                 </Typography>
             </Stack>
-            <Button sx={{
+            <Button name="login-signup" sx={{
                 width: "25%",
                 height: "fit-content",
                 paddingX: 1,

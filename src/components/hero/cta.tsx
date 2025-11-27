@@ -9,6 +9,7 @@ const CTA = () => {
             transform: "translateY(-50%)",
         }}>
             <Button
+                name="create-my-first-plan"
                 disableRipple
                 sx={{
                     textTransform: "none",
@@ -21,9 +22,9 @@ const CTA = () => {
                     color: "#FFFFFF",
                     border: "none",
                     boxShadow: `
-                                    0 0 0 1px rgba(96, 126, 255, 0.95),        /* outer colored ring */
-                                    0 0 0 1px rgba(255, 255, 255, 0.95) inset, /* inner white ring   */
-                                    0 18px 32px rgba(88, 124, 255, 0.4)        /* drop shadow        */
+                                    0 0 0 1px rgba(96, 126, 255, 0.95),
+                                    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+                                    0 18px 32px rgba(88, 124, 255, 0.4)
                                     `,
                     "&:hover": {
                         background: theme.palette.titleGradient,

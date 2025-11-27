@@ -21,7 +21,6 @@ const BentoSection = () => {
             }}
         >
             <Stack spacing={5} alignItems="center" maxWidth="1180px" mx="auto">
-                {/* Title */}
                 <Typography
                     sx={{
                         fontSize: { xs: 26, md: 34 },
@@ -36,8 +35,6 @@ const BentoSection = () => {
                     Everything You Need to Build
                     <br />a Winning Business Plan
                 </Typography>
-
-                {/* BENTO GRID */}
                 <Box
                     sx={{
                         width: "100%",
@@ -57,7 +54,6 @@ const BentoSection = () => {
                         },
                     }}
                 >
-                    {/* TOP LEFT – big card (2 cols) */}
                     <Box
                         sx={{
                             gridArea: "top-left",
@@ -70,7 +66,7 @@ const BentoSection = () => {
                             boxShadow: "0px 24px 60px rgba(15, 27, 60, 0.12)",
                             display: "flex",
                             flexDirection: "column",
-                            height: { xs: "auto", md: "100%" }, // match row height
+                            height: { xs: "auto", md: "100%" },
                         }}
                     >
                         <Stack width="100%" spacing={0.5} alignItems="center">
@@ -90,7 +86,6 @@ const BentoSection = () => {
                                 document creation
                             </Typography>
 
-                            {/* Pills */}
                             <Stack
                                 direction="row"
                                 flexWrap="wrap"
@@ -122,8 +117,6 @@ const BentoSection = () => {
                                 ))}
                             </Stack>
                         </Stack>
-
-                        {/* Image fills remaining space */}
                         <Box
                             sx={{
                                 mt: 4,
@@ -142,8 +135,6 @@ const BentoSection = () => {
                             />
                         </Box>
                     </Box>
-
-                    {/* TOP RIGHT – small SQUARE card */}
                     <Box
                         sx={{
                             gridArea: "top-right",
@@ -157,7 +148,7 @@ const BentoSection = () => {
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "space-between",
-                            aspectRatio: { xs: "auto", md: "1 / 1" }, // square card on desktop
+                            aspectRatio: { xs: "auto", md: "1 / 1" },
                         }}
                     >
                         <Stack width="100%" spacing={0.5} alignItems="center">
@@ -198,8 +189,6 @@ const BentoSection = () => {
                             />
                         </Box>
                     </Box>
-
-                    {/* BOTTOM LEFT – small SQUARE card */}
                     <Box
                         sx={{
                             gridArea: "bottom-left",
@@ -212,7 +201,7 @@ const BentoSection = () => {
                             display: "flex",
                             flexDirection: "column",
                             justifyContent: "space-between",
-                            aspectRatio: { xs: "auto", md: "1 / 1" }, // square card on desktop
+                            aspectRatio: { xs: "auto", md: "1 / 1" },
                         }}
                     >
                         <Stack width="100%" spacing={0.5} alignItems="center">
@@ -253,8 +242,6 @@ const BentoSection = () => {
                             />
                         </Box>
                     </Box>
-
-                    {/* BOTTOM RIGHT – big card (2 cols) */}
                     <Box
                         sx={{
                             gridArea: "bottom-right",
@@ -267,7 +254,7 @@ const BentoSection = () => {
                             boxShadow: "0px 24px 60px rgba(15, 27, 60, 0.12)",
                             display: "flex",
                             flexDirection: "column",
-                            height: { xs: "auto", md: "100%" }, // match row height
+                            height: { xs: "auto", md: "100%" },
                         }}
                     >
                         <Stack width="100%" spacing={2} direction="row" alignItems="center" justifyContent="space-between">
@@ -289,8 +276,6 @@ const BentoSection = () => {
                                     predictions of profits and expenses.
                                 </Typography>
                             </Stack>
-
-                            {/* Toggle chips */}
                             <Stack
                                 direction="row"
                                 spacing={1}
@@ -322,8 +307,6 @@ const BentoSection = () => {
                                 ))}
                             </Stack>
                         </Stack>
-
-                        {/* Image fills remaining space */}
                         <Box
                             sx={{
                                 position: "relative",
@@ -342,32 +325,31 @@ const BentoSection = () => {
                         </Box>
                     </Box>
                 </Box>
-
-                {/* CTA button */}
                 <Button
-                disableRipple
-                sx={{
-                    textTransform: "none",
-                    borderRadius: "16px",
-                    py: 2.25,
-                    px: 6.5,
-                    fontWeight: 400,
-                    fontSize: 15,
-                    background: theme.palette.titleGradient,
-                    color: "#FFFFFF",
-                    border: "none",
-                    boxShadow: `
-                                    0 0 0 1px rgba(96, 126, 255, 0.95),        /* outer colored ring */
-                                    0 0 0 1px rgba(255, 255, 255, 0.95) inset, /* inner white ring   */
-                                    0 18px 32px rgba(88, 124, 255, 0.4)        /* drop shadow        */
-                                    `,
-                    "&:hover": {
+                    name="create-my-first-plan"
+                    disableRipple
+                    sx={{
+                        textTransform: "none",
+                        borderRadius: "16px",
+                        py: 2.25,
+                        px: 6.5,
+                        fontWeight: 400,
+                        fontSize: 15,
                         background: theme.palette.titleGradient,
-                    },
-                }}
-            >
-                Create My First Plan
-            </Button>
+                        color: "#FFFFFF",
+                        border: "none",
+                        boxShadow: `
+                                    0 0 0 1px rgba(96, 126, 255, 0.95),
+                                    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+                                    0 18px 32px rgba(88, 124, 255, 0.4)
+                                    `,
+                        "&:hover": {
+                            background: theme.palette.titleGradient,
+                        },
+                    }}
+                >
+                    Create My First Plan
+                </Button>
             </Stack>
         </Box>
     );

@@ -23,7 +23,6 @@ const MobileHeader = () => {
 
   return (
     <>
-      {/* HEADER */}
       <Stack
         component="header"
         direction="row"
@@ -38,7 +37,7 @@ const MobileHeader = () => {
         sx={{
           background: theme.palette.headerGradient,
           backdropFilter: "blur(10px)",
-          display: { xs: "flex", md: "none" }, // mobile-only
+          display: { xs: "flex", md: "none" },
         }}
       >
         <Image src={logo} alt="logo" width={60} height={60} />
@@ -46,6 +45,7 @@ const MobileHeader = () => {
           Silicon Plan
         </Typography>
         <Button
+          name="open-menu"
           size="small"
           onClick={handleOpen}
           sx={{
@@ -64,8 +64,6 @@ const MobileHeader = () => {
           <MenuIcon fontSize="medium" sx={{ color: "#1E2B42" }} />
         </Button>
       </Stack>
-
-      {/* MOBILE MENU DRAWER */}
       <Drawer
         anchor="right"
         open={open}
@@ -92,7 +90,6 @@ const MobileHeader = () => {
           },
         }}
       >
-        {/* Top row: logo + close */}
         <Stack
           direction="row"
           alignItems="center"
@@ -100,6 +97,7 @@ const MobileHeader = () => {
         >
           <Image src={logo} alt="logo" width={60} height={60} />
           <IconButton
+            name="close-menu"
             onClick={handleClose}
             sx={{
               backgroundColor: "rgba(255,255,255,0.9)",
@@ -113,8 +111,6 @@ const MobileHeader = () => {
             <CloseIcon fontSize="medium" sx={{ color: "#1E2B42" }} />
           </IconButton>
         </Stack>
-
-        {/* Menu items */}
         <Stack
           spacing={4}
           alignItems="center"

@@ -104,8 +104,6 @@ const MobilePricing = () => {
         >
           Start your plan by picking a package
         </Typography>
-
-        {/* Billing toggle */}
         <Box
           sx={{
             display: "flex",
@@ -120,6 +118,7 @@ const MobilePricing = () => {
           }}
         >
           <Button
+            name="monthly"
             onClick={() => setBillingPeriod("monthly")}
             disableRipple
             sx={{
@@ -152,6 +151,7 @@ const MobilePricing = () => {
             Monthly
           </Button>
           <Button
+            name="annual"
             onClick={() => setBillingPeriod("annual")}
             disableRipple
             sx={{
@@ -206,7 +206,6 @@ const MobilePricing = () => {
           width="100%"
           maxWidth="1120px"
         >
-          {/* STANDARD CARD */}
           <Box
             sx={{
               flex: 1,
@@ -295,6 +294,7 @@ const MobilePricing = () => {
               </Stack>
 
               <Button
+                name="get-started"
                 fullWidth
                 disableRipple
                 sx={{
@@ -319,8 +319,6 @@ const MobilePricing = () => {
               >
                 Get Started
               </Button>
-
-              {/* INCLUDED FEATURES TOGGLE */}
               <Box pt={2}>
                 <Stack
                   direction="row"
@@ -408,8 +406,6 @@ const MobilePricing = () => {
               </Box>
             </Stack>
           </Box>
-
-          {/* PREMIUM CARD */}
           <Box
             sx={{
               flex: 1,
@@ -499,6 +495,7 @@ const MobilePricing = () => {
               </Stack>
 
               <Button
+                name="get-started"
                 fullWidth
                 disableRipple
                 sx={{
@@ -523,8 +520,6 @@ const MobilePricing = () => {
               >
                 Get Started
               </Button>
-
-              {/* INCLUDED FEATURES TOGGLE */}
               <Box pt={2}>
                 <Stack
                   direction="row"
