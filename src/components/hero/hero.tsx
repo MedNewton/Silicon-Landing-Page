@@ -29,9 +29,27 @@ const Hero = () => {
                     pb: 8,
                     gap: 4,
                 }}>
-                <Stack direction="row" alignItems="center" justifyContent="center" py={1} px={2} borderRadius={20} sx={{
+                <Stack direction="row" alignItems="center" justifyContent="center" py={1} px={2} borderRadius={20} gap={1.25} sx={{
                     background: theme.palette.background.default,
                 }}>
+                    <Stack width={8} height={8} borderRadius={"50%"} sx={{
+                        background: theme.palette.success.main,
+                        boxShadow: `0 0 8px 2px ${theme.palette.success.main}`,
+                        animation: "pulse 2s infinite",
+                        "@keyframes pulse": {
+                            "0%": {
+                                boxShadow: `0 0 8px 2px ${theme.palette.success.main}`,
+                            },
+                            "50%": {
+                                boxShadow: `0 0 20px 1px ${theme.palette.success.main}`,
+                            },
+                            "100%": {
+                                boxShadow: `0 0 8px 2px ${theme.palette.success.main}`,
+                            },
+                        },
+                    }}>
+
+                    </Stack>
                     <Typography variant="body2" sx={{
                         background: theme.palette.titleGradient,
                         backgroundClip: "text",
