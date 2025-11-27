@@ -12,7 +12,7 @@ const CTA = () => {
                 disableRipple
                 sx={{
                     textTransform: "none",
-                    borderRadius: 3,
+                    borderRadius: "16px",
                     py: 2.25,
                     px: 4.5,
                     fontWeight: 400,

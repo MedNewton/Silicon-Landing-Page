@@ -13,7 +13,7 @@ const Footer = () => {
       component="footer"
       sx={{
         width: "100%",
-        mt: 10,
+        mt: 6,
       }}
     >
       {/* Rounded main panel */}
