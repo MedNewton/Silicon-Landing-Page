@@ -146,20 +146,13 @@ const MobileFooter = () => {
             gap: { xs: 2, md: 0 },
           }}
         >
-          <Typography
-            sx={{
-              fontSize: 13,
-              color: "#B6BED8",
-            }}
-          >
-            © 2025 SiliconPlan. All rights reserved.
-          </Typography>
-
           <Stack
             direction="row"
             alignItems="center"
+            justifyContent="space-between"
             spacing={3}
             sx={{ color: "#FFFFFF" }}
+            width="100%"
           >
             <Typography
               sx={{
@@ -194,6 +187,16 @@ const MobileFooter = () => {
               </IconButton>
             </Stack>
           </Stack>
+          <Typography
+            sx={{
+              fontSize: 13,
+              color: "#B6BED8",
+              textAlign: "center",
+              width: "100%",
+            }}
+          >
+            © 2025 SiliconPlan. All rights reserved.
+          </Typography>
         </Box>
       </Box>
     </Box>
