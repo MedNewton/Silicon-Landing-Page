@@ -1,4 +1,4 @@
-import { Stack, Button } from "@mui/material";
+import { Stack, Button, Link } from "@mui/material";
 import theme from "@/theme/theme";
 
 const CTA = () => {
@@ -8,6 +8,7 @@ const CTA = () => {
             zIndex: 5,
             transform: "translateY(-50%)",
         }}>
+            <Link href="https://www.silicon-plan.live" target="_blank">
             <Button
                 name="create-my-first-plan"
                 disableRipple
@@ -33,6 +34,7 @@ const CTA = () => {
             >
                 Create My First Plan
             </Button>
+            </Link>
         </Stack>
     );
 };

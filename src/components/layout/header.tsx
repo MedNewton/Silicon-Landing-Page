@@ -1,4 +1,4 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography, Link } from "@mui/material";
 import theme from "@/theme/theme";
 import Image from "next/image";
 
@@ -43,19 +43,23 @@ const Header = () => {
                     Subscribe
                 </Typography>
             </Stack>
-            <Button name="login-signup" sx={{
-                width: "25%",
-                height: "fit-content",
-                paddingX: 1,
-                paddingY: 1,
-                borderRadius: 20,
-                background: 'rgba(255, 255, 255, 0.68)',
-                textTransform: "none",
-            }}>
-                <Typography variant="body2" color="text.secondary">
-                    Login / Signup
-                </Typography>
-            </Button>
+            <Link href="https://www.silicon-plan.live" target="_blank" sx={{
+                width: "25%"
+            }}> 
+                <Button name="login-signup" sx={{
+                    width: "100%",
+                    height: "fit-content",
+                    paddingX: 1,
+                    paddingY: 1,
+                    borderRadius: 20,
+                    background: 'rgba(255, 255, 255, 0.68)',
+                    textTransform: "none",
+                }}>
+                    <Typography variant="body2" color="text.secondary">
+                        Login / Signup
+                    </Typography>
+                </Button>
+            </Link>
         </Stack>
     );
 };

@@ -7,6 +7,7 @@ import {
     Chip,
     Stack,
     Typography,
+    Link
 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
@@ -286,32 +287,34 @@ const Pricing = () => {
                                     </Typography>
                                 </Stack>
                             </Stack>
-                            <Button
-                                name="get-started"
-                                fullWidth
-                                disableRipple
-                                sx={{
-                                    mt: 2,
-                                    textTransform: "none",
-                                    borderRadius: 3,
-                                    py: 1.4,
-                                    fontWeight: 400,
-                                    fontSize: 15,
-                                    background: theme.palette.titleGradient,
-                                    color: "#FFFFFF",
-                                    border: "none",
-                                    boxShadow: `
+                            <Link href="https://www.silicon-plan.live" target="_blank">
+                                <Button
+                                    name="get-started"
+                                    fullWidth
+                                    disableRipple
+                                    sx={{
+                                        mt: 2,
+                                        textTransform: "none",
+                                        borderRadius: 3,
+                                        py: 1.4,
+                                        fontWeight: 400,
+                                        fontSize: 15,
+                                        background: theme.palette.titleGradient,
+                                        color: "#FFFFFF",
+                                        border: "none",
+                                        boxShadow: `
                                     0 0 0 1px rgba(96, 126, 255, 0.95),
                                     0 0 0 1px rgba(255, 255, 255, 0.95) inset,
                                     0 18px 32px rgba(88, 124, 255, 0.4)
                                     `,
-                                    "&:hover": {
-                                        background: theme.palette.titleGradient,
-                                    },
-                                }}
-                            >
-                                Get Started
-                            </Button>
+                                        "&:hover": {
+                                            background: theme.palette.titleGradient,
+                                        },
+                                    }}
+                                >
+                                    Get Started
+                                </Button>
+                            </Link>
                             <Stack gap={2} pt={3}>
                                 {FEATURES.map((feature) => {
                                     const included = feature.standard;
@@ -451,32 +454,34 @@ const Pricing = () => {
                                     </Typography>
                                 </Stack>
                             </Stack>
-                            <Button
-                                name="get-started"
-                                fullWidth
-                                disableRipple
-                                sx={{
-                                    mt: 2,
-                                    textTransform: "none",
-                                    borderRadius: 3,
-                                    py: 1.4,
-                                    fontWeight: 400,
-                                    fontSize: 15,
-                                    background: theme.palette.titleGradient,
-                                    color: "#FFFFFF",
-                                    border: "none",
-                                    boxShadow: `
+                            <Link href="https://www.silicon-plan.live" target="_blank">
+                                <Button
+                                    name="get-started"
+                                    fullWidth
+                                    disableRipple
+                                    sx={{
+                                        mt: 2,
+                                        textTransform: "none",
+                                        borderRadius: 3,
+                                        py: 1.4,
+                                        fontWeight: 400,
+                                        fontSize: 15,
+                                        background: theme.palette.titleGradient,
+                                        color: "#FFFFFF",
+                                        border: "none",
+                                        boxShadow: `
                                     0 0 0 1px rgba(96, 126, 255, 0.95),
                                     0 0 0 1px rgba(255, 255, 255, 0.95) inset,
                                     0 18px 32px rgba(88, 124, 255, 0.4)
                                     `,
-                                    "&:hover": {
-                                        background: theme.palette.titleGradient,
-                                    },
-                                }}
-                            >
-                                Get Started
-                            </Button>
+                                        "&:hover": {
+                                            background: theme.palette.titleGradient,
+                                        },
+                                    }}
+                                >
+                                    Get Started
+                                </Button>
+                            </Link>
                             <Stack gap={2} pt={3}>
                                 {FEATURES.map((feature) => {
                                     const included = feature.premium;
