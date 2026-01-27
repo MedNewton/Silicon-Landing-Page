@@ -43,7 +43,7 @@ const Header = () => {
                     Subscribe
                 </Typography>
             </Stack>
-            <Link href="https://www.silicon-plan.live" target="_blank" sx={{
+            <Link href="https://www.silicon-plan.live" target="_blank" sx={{ 
                 width: "25%"
             }}> 
                 <Button name="login-signup" sx={{
