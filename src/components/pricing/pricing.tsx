@@ -266,7 +266,7 @@ const Pricing = () => {
                                     </Typography>
                                 </Stack>
                             </Stack>
-                            <Link href="https://www.silicon-plan.live" target="_blank">
+                            <Link href="https://app.silicon-plan.live" target="_blank">
                                 <Button
                                     name="get-started"
                                     fullWidth
@@ -434,7 +434,7 @@ const Pricing = () => {
                                     </Typography>
                                 </Stack>
                             </Stack>
-                            <Link href="https://www.silicon-plan.live" target="_blank">
+                            <Link href="https://app.silicon-plan.live" target="_blank">
                                 <Button
                                     name="get-started"
                                     fullWidth
@@ -603,7 +603,7 @@ const Pricing = () => {
                                     </Typography>
                                 </Stack>
                             </Stack>
-                            <Link href="https://www.silicon-plan.live" target="_blank">
+                            <Link href="https://app.silicon-plan.live" target="_blank">
                                 <Button
                                     name="get-started"
                                     fullWidth

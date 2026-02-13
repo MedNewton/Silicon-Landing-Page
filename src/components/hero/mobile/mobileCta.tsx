@@ -8,7 +8,7 @@ const MobileCTA = () => {
             zIndex: 5,
             transform: "translateY(-50%)",
         }}>
-            <Link href="https://www.silicon-plan.live" target="_blank">
+            <Link href="https://app.silicon-plan.live" target="_blank">
             <Button
                 name="create-my-first-plan"
                 disableRipple

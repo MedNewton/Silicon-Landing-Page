@@ -325,7 +325,7 @@ const BentoSection = () => {
                         </Box>
                     </Box>
                 </Box>
-                <Link href="https://www.silicon-plan.live" target="_blank">
+                <Link href="https://app.silicon-plan.live" target="_blank">
                     <Button
                         name="create-my-first-plan"
                         disableRipple

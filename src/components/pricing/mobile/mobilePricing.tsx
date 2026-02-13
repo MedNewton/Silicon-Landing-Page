@@ -273,7 +273,7 @@ const MobilePricing = () => {
                 </Stack>
               </Stack>
 
-              <Link href="https://www.silicon-plan.live" target="_blank">
+              <Link href="https://app.silicon-plan.live" target="_blank">
                 <Button
                   name="get-started"
                   fullWidth
@@ -477,7 +477,7 @@ const MobilePricing = () => {
                 </Stack>
               </Stack>
 
-              <Link href="https://www.silicon-plan.live" target="_blank">
+              <Link href="https://app.silicon-plan.live" target="_blank">
                 <Button
                   name="get-started"
                   fullWidth
@@ -682,7 +682,7 @@ const MobilePricing = () => {
                 </Stack>
               </Stack>
 
-              <Link href="https://www.silicon-plan.live" target="_blank">
+              <Link href="https://app.silicon-plan.live" target="_blank">
                 <Button
                   name="get-started"
                   fullWidth
