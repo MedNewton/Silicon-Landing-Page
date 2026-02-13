@@ -289,7 +289,7 @@ const BentoSection = () => {
                                     py: 0.3,
                                 }}
                             >
-                                {["Monthly", "Quaterly", "Yearly"].map((label, idx) => (
+                                {["Monthly", "Quarterly", "Yearly"].map((label, idx) => (
                                     <Box
                                         key={label}
                                         sx={{
@@ -349,7 +349,7 @@ const BentoSection = () => {
                             },
                         }}
                     >
-                        Create My First Plan
+                        Create My Plan
                     </Button>
                 </Link>
             </Stack>

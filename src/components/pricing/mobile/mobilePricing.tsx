@@ -12,7 +12,8 @@ import {
 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import theme from "@/theme/theme";
@@ -22,64 +23,61 @@ type BillingPeriod = "monthly" | "annual";
 type Feature = {
   label: string;
   tag?: string;
-  standard: boolean;
-  premium: boolean;
+  free: boolean;
+  startup: boolean;
+  unicorn: boolean;
 };
 
 const FEATURES: Feature[] = [
-  { label: "Step-by-step instructions", standard: true, premium: true },
-  { label: "Lender-ready statements", standard: true, premium: true },
-  { label: "Full financial forecast", standard: true, premium: true },
-  { label: "One-page pitch builder", standard: true, premium: true },
-  { label: "550+ sample plans", standard: true, premium: true },
-  { label: "Live onboarding session", standard: true, premium: true },
-  {
-    label: "Human chat & email support",
-    standard: true,
-    premium: true,
-  },
+  { label: "Business Model Canvas generation", free: true, startup: true, unicorn: true },
+  { label: "Consultant marketplace", free: true, startup: true, unicorn: true },
+  { label: "Technical guides", free: true, startup: true, unicorn: true },
+  { label: "Step-by-step instructions", free: true, startup: true, unicorn: true },
+  { label: "Business Plan generation", free: false, startup: true, unicorn: true },
+  { label: "Access for 3 team members", free: false, startup: true, unicorn: true },
+  { label: "1 project creation", free: false, startup: true, unicorn: true },
   {
     label: "Writing assistance",
     tag: "AI Powered",
-    standard: true,
-    premium: true,
+    free: false,
+    startup: true,
+    unicorn: true,
   },
+  { label: "Pre-money valuation (6 methods)", free: false, startup: false, unicorn: true },
+  { label: "Access for 5 team members", free: false, startup: false, unicorn: true },
+  { label: "7 project creations", free: false, startup: false, unicorn: true },
   {
     label: "Financial analysis",
     tag: "AI Powered",
-    standard: false,
-    premium: true,
+    free: false,
+    startup: false,
+    unicorn: true,
   },
-  { label: "Industry research", standard: false, premium: true },
-  { label: `"What if" scenarios`, standard: false, premium: true },
-  { label: "Performance dashboards", standard: false, premium: true },
-  {
-    label: "Real-time profit & cash forecasting",
-    standard: false,
-    premium: true,
-  },
-  { label: "Export to Excel", standard: false, premium: true },
-  {
-    label: "Connect to QuickBooks Online & Xero",
-    standard: false,
-    premium: true,
-  },
+  { label: "Industry research", free: false, startup: false, unicorn: true },
+  { label: "Performance dashboards", free: false, startup: false, unicorn: true },
+  { label: "Export to Excel", free: false, startup: false, unicorn: true },
 ];
 
-const STANDARD_MONTHLY = 20;
-const STANDARD_ANNUAL = 15;
-const PREMIUM_MONTHLY = 40;
-const PREMIUM_ANNUAL = 30;
+const STARTUP_MONTHLY = 27.90;
+const STARTUP_ANNUAL = 20.93;
+const UNICORN_MONTHLY = 49.90;
+const UNICORN_ANNUAL = 37.43;
 
 const MobilePricing = () => {
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("monthly");
-  const [showStandardFeatures, setShowStandardFeatures] = useState(false);
-  const [showPremiumFeatures, setShowPremiumFeatures] = useState(false);
+  const [showFreeFeatures, setShowFreeFeatures] = useState(false);
+  const [showStartupFeatures, setShowStartupFeatures] = useState(false);
+  const [showUnicornFeatures, setShowUnicornFeatures] = useState(false);
 
-  const standardPrice =
-    billingPeriod === "monthly" ? STANDARD_MONTHLY : STANDARD_ANNUAL;
-  const premiumPrice =
-    billingPeriod === "monthly" ? PREMIUM_MONTHLY : PREMIUM_ANNUAL;
+  const startupPrice =
+    billingPeriod === "monthly" ? STARTUP_MONTHLY : STARTUP_ANNUAL;
+  const unicornPrice =
+    billingPeriod === "monthly" ? UNICORN_MONTHLY : UNICORN_ANNUAL;
+
+  const formatPrice = (price: number) => {
+    if (price === 0) return "0";
+    return price % 1 === 0 ? price.toString() : price.toFixed(2).replace(".", ",");
+  };
 
   return (
     <Box
@@ -207,6 +205,7 @@ const MobilePricing = () => {
           width="100%"
           maxWidth="1120px"
         >
+          {/* FREE PLAN */}
           <Box
             sx={{
               flex: 1,
@@ -219,7 +218,7 @@ const MobilePricing = () => {
           >
             <Stack spacing={2}>
               <Stack direction="row" alignItems="center" spacing={1}>
-                <LockOutlinedIcon
+                <LockOpenOutlinedIcon
                   sx={{ fontSize: 22, color: "#9AA4C5" }}
                 />
                 <Typography
@@ -229,7 +228,7 @@ const MobilePricing = () => {
                     color: theme.palette.text.secondary,
                   }}
                 >
-                  Standart
+                  Free
                 </Typography>
               </Stack>
 
@@ -241,25 +240,6 @@ const MobilePricing = () => {
               </Typography>
 
               <Stack direction="row" alignItems="center" gap={1.5}>
-                {billingPeriod === "annual" && (
-                  <Typography
-                    sx={{
-                      fontSize: 34,
-                      fontWeight: 700,
-                      color: "#C8CBD8",
-                      textDecoration: "line-through",
-                    }}
-                  >
-                    {STANDARD_MONTHLY}
-                    <Box
-                      component="span"
-                      sx={{ fontSize: 22, fontWeight: 700, ml: 0.2 }}
-                    >
-                      $
-                    </Box>
-                  </Typography>
-                )}
-
                 <Typography
                   sx={{
                     fontSize: 34,
@@ -271,12 +251,12 @@ const MobilePricing = () => {
                     textFillColor: "transparent",
                   }}
                 >
-                  {standardPrice}
+                  0
                   <Box
                     component="span"
                     sx={{ fontSize: 22, fontWeight: 700, ml: 0.2 }}
                   >
-                    $
+                    €
                   </Box>
                 </Typography>
 
@@ -288,8 +268,7 @@ const MobilePricing = () => {
                     per month
                   </Typography>
                   <Typography variant="caption" sx={{ color: "#A3A8C0" }}>
-                    paid{" "}
-                    {billingPeriod === "monthly" ? "monthly" : "annually"}
+                    paid monthly
                   </Typography>
                 </Stack>
               </Stack>
@@ -329,7 +308,7 @@ const MobilePricing = () => {
                   justifyContent="space-between"
                   sx={{ cursor: "pointer" }}
                   onClick={() =>
-                    setShowStandardFeatures((prev) => !prev)
+                    setShowFreeFeatures((prev) => !prev)
                   }
                 >
                   <Typography
@@ -345,7 +324,7 @@ const MobilePricing = () => {
                     sx={{
                       fontSize: 24,
                       color: "#9AA4C5",
-                      transform: showStandardFeatures
+                      transform: showFreeFeatures
                         ? "rotate(180deg)"
                         : "rotate(0deg)",
                       transition: "transform 0.2s ease",
@@ -353,10 +332,10 @@ const MobilePricing = () => {
                   />
                 </Stack>
 
-                <Collapse in={showStandardFeatures}>
+                <Collapse in={showFreeFeatures}>
                   <Stack gap={2} pt={2}>
                     {FEATURES.map((feature) => {
-                      const included = feature.standard;
+                      const included = feature.free;
                       return (
                         <Stack
                           key={feature.label}
@@ -387,7 +366,7 @@ const MobilePricing = () => {
                           >
                             {feature.label}
                           </Typography>
-                          {feature.tag && (
+                          {feature.tag && included && (
                             <Chip
                               label={feature.tag}
                               size="small"
@@ -409,29 +388,31 @@ const MobilePricing = () => {
               </Box>
             </Stack>
           </Box>
+
+          {/* START-UP PLAN */}
           <Box
             sx={{
               flex: 1,
               borderRadius: 4,
-              border: "1.5px solid #6F5FEF",
+              border: "1px solid #E2E5F0",
               backgroundColor: "#FFFFFF",
-              boxShadow: "0px 16px 48px rgba(103, 120, 255, 0.3)",
+              boxShadow: "0px 14px 40px rgba(146, 153, 184, 0.14)",
               p: 4,
             }}
           >
             <Stack spacing={2}>
               <Stack direction="row" alignItems="center" spacing={1}>
-                <WorkspacePremiumIcon
-                  sx={{ fontSize: 22, color: "#5C63FF" }}
+                <RocketLaunchIcon
+                  sx={{ fontSize: 22, color: "#9AA4C5" }}
                 />
                 <Typography
                   sx={{
-                    fontWeight: 700,
+                    fontWeight: 600,
                     fontSize: 18,
-                    color: "#5C63FF",
+                    color: theme.palette.text.secondary,
                   }}
                 >
-                  Premium
+                  Start-up
                 </Typography>
               </Stack>
 
@@ -439,8 +420,7 @@ const MobilePricing = () => {
                 variant="body2"
                 sx={{ color: "#7A8098", maxWidth: 320 }}
               >
-                For businesses that need financial tools to help them
-                operate & grow.
+                For anyone who needs a professional business plan.
               </Typography>
 
               <Stack direction="row" alignItems="center" gap={1.5}>
@@ -453,12 +433,12 @@ const MobilePricing = () => {
                       textDecoration: "line-through",
                     }}
                   >
-                    {PREMIUM_MONTHLY}
+                    {formatPrice(STARTUP_MONTHLY)}
                     <Box
                       component="span"
                       sx={{ fontSize: 22, fontWeight: 700, ml: 0.2 }}
                     >
-                      $
+                      €
                     </Box>
                   </Typography>
                 )}
@@ -474,12 +454,12 @@ const MobilePricing = () => {
                     textFillColor: "transparent",
                   }}
                 >
-                  {premiumPrice}
+                  {formatPrice(startupPrice)}
                   <Box
                     component="span"
                     sx={{ fontSize: 22, fontWeight: 700, ml: 0.2 }}
                   >
-                    $
+                    €
                   </Box>
                 </Typography>
 
@@ -532,7 +512,7 @@ const MobilePricing = () => {
                   justifyContent="space-between"
                   sx={{ cursor: "pointer" }}
                   onClick={() =>
-                    setShowPremiumFeatures((prev) => !prev)
+                    setShowStartupFeatures((prev) => !prev)
                   }
                 >
                   <Typography
@@ -548,7 +528,7 @@ const MobilePricing = () => {
                     sx={{
                       fontSize: 24,
                       color: "#9AA4C5",
-                      transform: showPremiumFeatures
+                      transform: showStartupFeatures
                         ? "rotate(180deg)"
                         : "rotate(0deg)",
                       transition: "transform 0.2s ease",
@@ -556,10 +536,215 @@ const MobilePricing = () => {
                   />
                 </Stack>
 
-                <Collapse in={showPremiumFeatures}>
+                <Collapse in={showStartupFeatures}>
                   <Stack gap={2} pt={2}>
                     {FEATURES.map((feature) => {
-                      const included = feature.premium;
+                      const included = feature.startup;
+                      return (
+                        <Stack
+                          key={feature.label}
+                          direction="row"
+                          alignItems="center"
+                          spacing={1.2}
+                        >
+                          {included ? (
+                            <CheckCircleIcon
+                              sx={{
+                                fontSize: 18,
+                                color: theme.palette.success.main,
+                              }}
+                            />
+                          ) : (
+                            <CancelIcon
+                              sx={{
+                                fontSize: 18,
+                                color: "#F16B6B",
+                              }}
+                            />
+                          )}
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: "#4F5670",
+                            }}
+                          >
+                            {feature.label}
+                          </Typography>
+                          {feature.tag && included && (
+                            <Chip
+                              label={feature.tag}
+                              size="small"
+                              sx={{
+                                ml: 0.5,
+                                fontSize: 10,
+                                height: 20,
+                                borderRadius: 999,
+                                backgroundColor: "#EFF2FF",
+                                color: "#4D5AE5",
+                              }}
+                            />
+                          )}
+                        </Stack>
+                      );
+                    })}
+                  </Stack>
+                </Collapse>
+              </Box>
+            </Stack>
+          </Box>
+
+          {/* UNICORN PLAN */}
+          <Box
+            sx={{
+              flex: 1,
+              borderRadius: 4,
+              border: "1.5px solid #6F5FEF",
+              backgroundColor: "#FFFFFF",
+              boxShadow: "0px 16px 48px rgba(103, 120, 255, 0.3)",
+              p: 4,
+            }}
+          >
+            <Stack spacing={2}>
+              <Stack direction="row" alignItems="center" spacing={1}>
+                <WorkspacePremiumIcon
+                  sx={{ fontSize: 22, color: "#5C63FF" }}
+                />
+                <Typography
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: 18,
+                    color: "#5C63FF",
+                  }}
+                >
+                  Unicorn
+                </Typography>
+              </Stack>
+
+              <Typography
+                variant="body2"
+                sx={{ color: "#7A8098", maxWidth: 320 }}
+              >
+                For businesses that need financial tools to help them
+                operate & grow.
+              </Typography>
+
+              <Stack direction="row" alignItems="center" gap={1.5}>
+                {billingPeriod === "annual" && (
+                  <Typography
+                    sx={{
+                      fontSize: 34,
+                      fontWeight: 700,
+                      color: "#C8CBD8",
+                      textDecoration: "line-through",
+                    }}
+                  >
+                    {formatPrice(UNICORN_MONTHLY)}
+                    <Box
+                      component="span"
+                      sx={{ fontSize: 22, fontWeight: 700, ml: 0.2 }}
+                    >
+                      €
+                    </Box>
+                  </Typography>
+                )}
+
+                <Typography
+                  sx={{
+                    fontSize: 34,
+                    fontWeight: 700,
+                    background: theme.palette.titleGradient,
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    textFillColor: "transparent",
+                  }}
+                >
+                  {formatPrice(unicornPrice)}
+                  <Box
+                    component="span"
+                    sx={{ fontSize: 22, fontWeight: 700, ml: 0.2 }}
+                  >
+                    €
+                  </Box>
+                </Typography>
+
+                <Stack>
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "#7A8098", fontWeight: 500 }}
+                  >
+                    per month
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: "#A3A8C0" }}>
+                    paid{" "}
+                    {billingPeriod === "monthly" ? "monthly" : "annually"}
+                  </Typography>
+                </Stack>
+              </Stack>
+
+              <Link href="https://www.silicon-plan.live" target="_blank">
+                <Button
+                  name="get-started"
+                  fullWidth
+                  disableRipple
+                  sx={{
+                    mt: 2,
+                    textTransform: "none",
+                    borderRadius: 3,
+                    py: 1.4,
+                    fontWeight: 400,
+                    fontSize: 15,
+                    background: theme.palette.titleGradient,
+                    color: "#FFFFFF",
+                    border: "none",
+                    boxShadow: `
+                    0 0 0 1px rgba(96, 126, 255, 0.95),
+                    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+                    0 18px 32px rgba(88, 124, 255, 0.4)
+                  `,
+                    "&:hover": {
+                      background: theme.palette.titleGradient,
+                    },
+                  }}
+                >
+                  Get Started
+                </Button>
+              </Link>
+              <Box pt={2}>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="space-between"
+                  sx={{ cursor: "pointer" }}
+                  onClick={() =>
+                    setShowUnicornFeatures((prev) => !prev)
+                  }
+                >
+                  <Typography
+                    sx={{
+                      fontWeight: 500,
+                      fontSize: 18,
+                      color: theme.palette.grey[600],
+                    }}
+                  >
+                    Included features
+                  </Typography>
+                  <ExpandMoreIcon
+                    sx={{
+                      fontSize: 24,
+                      color: "#9AA4C5",
+                      transform: showUnicornFeatures
+                        ? "rotate(180deg)"
+                        : "rotate(0deg)",
+                      transition: "transform 0.2s ease",
+                    }}
+                  />
+                </Stack>
+
+                <Collapse in={showUnicornFeatures}>
+                  <Stack gap={2} pt={2}>
+                    {FEATURES.map((feature) => {
+                      const included = feature.unicorn;
                       return (
                         <Stack
                           key={feature.label}

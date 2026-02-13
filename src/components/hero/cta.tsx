@@ -32,7 +32,7 @@ const CTA = () => {
                     },
                 }}
             >
-                Create My First Plan
+                Create My Plan
             </Button>
             </Link>
         </Stack>

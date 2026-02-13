@@ -37,9 +37,6 @@ const Header = () => {
                     Features
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Testimonials
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
                     Subscribe
                 </Typography>
             </Stack>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Stack, Typography, IconButton } from "@mui/material";
+import { Box, Stack, Typography, IconButton, Link } from "@mui/material";
 import Image from "next/image";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -75,8 +75,11 @@ const MobileFooter = () => {
                 lineHeight: 1.6,
               }}
             >
-              Empowering businesses worldwide with AI-driven tools for business
-              planning, financial forecasting, and investor-ready insights.
+              Silicon Plan is a Smartool Srl product - Innovative Start-up
+              <br />
+              Via Eleuterio Ruggiero 123, Caserta (CE)
+              <br />
+              P.IVA 04738960618
             </Typography>
           </Stack>
           <Stack
@@ -115,9 +118,11 @@ const MobileFooter = () => {
               >
                 Company
               </Typography>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                Contact us
-              </Typography>
+              <Link href="mailto:info@siliconplan.com" underline="none">
+                <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
+                  Contact us
+                </Typography>
+              </Link>
               <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
                 Privacy &amp; Terms of Service
               </Typography>
@@ -153,7 +158,7 @@ const MobileFooter = () => {
                 color: "#C3CCE5",
               }}
             >
-              +00 000 000 000
+              +39 0823 21 04 74
             </Typography>
 
             <Stack direction="row" spacing={1}>
@@ -162,6 +167,9 @@ const MobileFooter = () => {
                 size="small"
                 sx={{ color: "#FFFFFF" }}
                 aria-label="Instagram"
+                href="https://www.instagram.com/siliconplan/"
+                target="_blank"
+                component="a"
               >
                 <InstagramIcon fontSize="small" />
               </IconButton>
@@ -170,6 +178,9 @@ const MobileFooter = () => {
                 size="small"
                 sx={{ color: "#FFFFFF" }}
                 aria-label="LinkedIn"
+                href="https://www.linkedin.com/company/silicon-plan/"
+                target="_blank"
+                component="a"
               >
                 <LinkedInIcon fontSize="small" />
               </IconButton>
@@ -178,6 +189,9 @@ const MobileFooter = () => {
                 size="small"
                 sx={{ color: "#FFFFFF" }}
                 aria-label="Facebook"
+                href="https://www.facebook.com/siliconplan"
+                target="_blank"
+                component="a"
               >
                 <FacebookIcon fontSize="small" />
               </IconButton>
@@ -191,7 +205,7 @@ const MobileFooter = () => {
               width: "100%",
             }}
           >
-            © 2025 SiliconPlan. All rights reserved.
+            © {new Date().getFullYear()} SiliconPlan. All rights reserved.
           </Typography>
         </Box>
       </Box>

@@ -135,15 +135,6 @@ const MobileHeader = () => {
               color: "#1E2B42",
             }}
           >
-            Testimonials
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: 20,
-              fontWeight: 400,
-              color: "#1E2B42",
-            }}
-          >
             Subscribe
           </Typography>
         </Stack>
