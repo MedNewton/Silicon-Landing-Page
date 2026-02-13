@@ -163,7 +163,6 @@ const MobileFooter = () => {
 
             <Stack direction="row" spacing={1}>
               <IconButton
-                name="instagram"
                 size="small"
                 sx={{ color: "#FFFFFF" }}
                 aria-label="Instagram"
@@ -174,7 +173,6 @@ const MobileFooter = () => {
                 <InstagramIcon fontSize="small" />
               </IconButton>
               <IconButton
-                name="linkedin"
                 size="small"
                 sx={{ color: "#FFFFFF" }}
                 aria-label="LinkedIn"
@@ -185,7 +183,6 @@ const MobileFooter = () => {
                 <LinkedInIcon fontSize="small" />
               </IconButton>
               <IconButton
-                name="facebook"
                 size="small"
                 sx={{ color: "#FFFFFF" }}
                 aria-label="Facebook"
