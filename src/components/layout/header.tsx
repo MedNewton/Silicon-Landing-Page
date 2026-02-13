@@ -32,13 +32,41 @@ const Header = () => {
             }}>
                 <Image src={logo} alt="logo" width={40} height={40} />
             </Stack>
-            <Stack minWidth="30%" direction="row" alignItems="center" justifyContent="center" gap={2}>
-                <Typography variant="body2" color="text.secondary">
+            <Stack
+                minWidth="30%"
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                gap={5}
+            >
+                <Link
+                    href="#features"
+                    underline="none"
+                    color="text.secondary"
+                    variant="body2"
+                    sx={{
+                        transition: "color 0.2s ease",
+                        "&:hover": {
+                            color: "text.primary",
+                        },
+                    }}
+                >
                     Features
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
+                </Link>
+                <Link
+                    href="#pricing"
+                    underline="none"
+                    color="text.secondary"
+                    variant="body2"
+                    sx={{
+                        transition: "color 0.2s ease",
+                        "&:hover": {
+                            color: "text.primary",
+                        },
+                    }}
+                >
                     Subscribe
-                </Typography>
+                </Link>
             </Stack>
             <Link href="https://app.silicon-plan.live" target="_blank" sx={{ 
                 width: "25%"

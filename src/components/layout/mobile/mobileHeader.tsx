@@ -5,8 +5,9 @@ import {
   Button,
   Drawer,
   IconButton,
+  Link,
   Stack,
-  Typography,
+  Typography
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -112,31 +113,43 @@ const MobileHeader = () => {
           </IconButton>
         </Stack>
         <Stack
-          spacing={4}
+          spacing={4.5}
           alignItems="center"
           justifyContent="center"
           sx={{
             mt: 8,
           }}
         >
-          <Typography
+          <Link
+            href="#features"
+            underline="none"
+            onClick={handleClose}
             sx={{
               fontSize: 20,
               fontWeight: 400,
               color: "#1E2B42",
+              "&:hover": {
+                color: "#1E2B42",
+              },
             }}
           >
             Features
-          </Typography>
-          <Typography
+          </Link>
+          <Link
+            href="#pricing"
+            underline="none"
+            onClick={handleClose}
             sx={{
               fontSize: 20,
               fontWeight: 400,
               color: "#1E2B42",
+              "&:hover": {
+                color: "#1E2B42",
+              },
             }}
           >
             Subscribe
-          </Typography>
+          </Link>
         </Stack>
       </Drawer>
     </>

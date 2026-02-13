@@ -68,12 +68,14 @@ const MobileBusinessPlanSlider = () => {
 
   return (
     <Box
+      id="features"
       component="section"
       sx={{
         width: "100%",
         py: 6,
         px: 2,
         backgroundColor: theme.palette.background.default,
+        scrollMarginTop: 80,
         display: { xs: "block", md: "none" },
       }}
     >

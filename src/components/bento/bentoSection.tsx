@@ -12,12 +12,14 @@ import asset4 from "@/assets/bento/asset4.png";
 const BentoSection = () => {
     return (
         <Box
+            id="features"
             component="section"
             sx={{
                 width: "100%",
                 py: { xs: 6, md: 10 },
                 px: { xs: 2, md: 10 },
                 backgroundColor: theme.palette.background.default,
+                scrollMarginTop: 80,
             }}
         >
             <Stack spacing={5} alignItems="center" maxWidth="1180px" mx="auto">

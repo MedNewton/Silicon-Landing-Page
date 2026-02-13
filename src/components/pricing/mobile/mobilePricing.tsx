@@ -81,12 +81,14 @@ const MobilePricing = () => {
 
   return (
     <Box
+      id="pricing"
       component="section"
       sx={{
         width: "100%",
         py: { xs: 6, md: 4 },
         px: { xs: 2, md: 24 },
         backgroundColor: theme.palette.background.default,
+        scrollMarginTop: 80,
       }}
     >
       <Stack spacing={2} alignItems="center" maxWidth="1120px" mx="auto">

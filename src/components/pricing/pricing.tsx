@@ -76,12 +76,14 @@ const Pricing = () => {
 
     return (
         <Box
+            id="pricing"
             component="section"
             sx={{
                 width: "100%",
                 py: { xs: 6, md: 4 },
                 px: { xs: 2, md: 10 },
                 backgroundColor: theme.palette.background.default,
+                scrollMarginTop: 80,
             }}
         >
             <Stack spacing={4} alignItems="center" maxWidth="1280px" mx="auto">
