@@ -7,7 +7,7 @@ import logo from "@/assets/logo/logo.png";
 const gradientButtonSx = {
     width: "100%",
     height: "fit-content",
-    paddingX: 3,
+    paddingX: 5,
     paddingY: 1,
     borderRadius: 20,
     background: "linear-gradient(273deg, #5B3A9E 0%, #3B7AF0 50%, #5B3A9E 100%)",
