@@ -150,6 +150,22 @@ const MobileHeader = () => {
           >
             Subscribe
           </Link>
+          <Link
+            href="https://app.silicon-plan.live/?nav=consultants"
+            target="_blank"
+            underline="none"
+            onClick={handleClose}
+            sx={{
+              fontSize: 20,
+              fontWeight: 400,
+              color: "#1E2B42",
+              "&:hover": {
+                color: "#1E2B42",
+              },
+            }}
+          >
+            Consultants
+          </Link>
         </Stack>
       </Drawer>
     </>

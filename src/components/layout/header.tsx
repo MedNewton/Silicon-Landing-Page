@@ -68,23 +68,38 @@ const Header = () => {
                     Subscribe
                 </Link>
             </Stack>
-            <Link href="https://app.silicon-plan.live" target="_blank" sx={{ 
-                width: "25%"
-            }}> 
-                <Button name="login-signup" sx={{
-                    width: "100%",
-                    height: "fit-content",
-                    paddingX: 1,
-                    paddingY: 1,
-                    borderRadius: 20,
-                    background: 'rgba(255, 255, 255, 0.68)',
-                    textTransform: "none",
-                }}>
-                    <Typography variant="body2" color="text.secondary">
-                        Login / Signup
-                    </Typography>
-                </Button>
-            </Link>
+            <Stack direction="row" alignItems="center" gap={1} sx={{ width: "25%" }}>
+                <Link href="https://app.silicon-plan.live/?nav=consultants" target="_blank" sx={{ width: "50%" }}>
+                    <Button name="visit-marketplace" sx={{
+                        width: "100%",
+                        height: "fit-content",
+                        paddingX: 1,
+                        paddingY: 1,
+                        borderRadius: 20,
+                        background: 'rgba(255, 255, 255, 0.68)',
+                        textTransform: "none",
+                    }}>
+                        <Typography variant="body2" color="text.secondary">
+                            Consultants
+                        </Typography>
+                    </Button>
+                </Link>
+                <Link href="https://app.silicon-plan.live" target="_blank" sx={{ width: "50%" }}>
+                    <Button name="login-signup" sx={{
+                        width: "100%",
+                        height: "fit-content",
+                        paddingX: 1,
+                        paddingY: 1,
+                        borderRadius: 20,
+                        background: 'rgba(255, 255, 255, 0.68)',
+                        textTransform: "none",
+                    }}>
+                        <Typography variant="body2" color="text.secondary">
+                            Login
+                        </Typography>
+                    </Button>
+                </Link>
+            </Stack>
         </Stack>
     );
 };
