@@ -4,6 +4,34 @@ import Image from "next/image";
 
 import logo from "@/assets/logo/logo.png";
 
+const gradientButtonSx = {
+    width: "100%",
+    height: "fit-content",
+    paddingX: 1.5,
+    paddingY: 1,
+    borderRadius: 20,
+    background: "linear-gradient(273deg, #5B3A9E 0%, #3B7AF0 50%, #5B3A9E 100%)",
+    backgroundSize: "200% 200%",
+    animation: "bgShimmer 3s ease infinite",
+    textTransform: "none",
+    transition: "transform 0.25s ease, filter 0.25s ease",
+    "&:hover": {
+        transform: "scale(1.05)",
+        filter: "brightness(1.2)",
+    },
+    "@keyframes bgShimmer": {
+        "0%": { backgroundPosition: "0% 50%" },
+        "50%": { backgroundPosition: "100% 50%" },
+        "100%": { backgroundPosition: "0% 50%" },
+    },
+};
+
+const buttonTextSx = {
+    fontSize: "0.95rem",
+    fontWeight: 500,
+    color: "#fff",
+};
+
 const Header = () => {
     return (
         <Stack
@@ -70,31 +98,15 @@ const Header = () => {
             </Stack>
             <Stack direction="row" alignItems="center" gap={1} sx={{ width: "25%" }}>
                 <Link href="https://app.silicon-plan.live/?nav=consultants" target="_blank" sx={{ width: "50%" }}>
-                    <Button name="visit-marketplace" sx={{
-                        width: "100%",
-                        height: "fit-content",
-                        paddingX: 1,
-                        paddingY: 1,
-                        borderRadius: 20,
-                        background: 'rgba(255, 255, 255, 0.68)',
-                        textTransform: "none",
-                    }}>
-                        <Typography variant="body2" color="text.secondary">
+                    <Button name="visit-marketplace" sx={gradientButtonSx}>
+                        <Typography sx={buttonTextSx}>
                             Consultants
                         </Typography>
                     </Button>
                 </Link>
                 <Link href="https://app.silicon-plan.live" target="_blank" sx={{ width: "50%" }}>
-                    <Button name="login-signup" sx={{
-                        width: "100%",
-                        height: "fit-content",
-                        paddingX: 1,
-                        paddingY: 1,
-                        borderRadius: 20,
-                        background: 'rgba(255, 255, 255, 0.68)',
-                        textTransform: "none",
-                    }}>
-                        <Typography variant="body2" color="text.secondary">
+                    <Button name="login-signup" sx={gradientButtonSx}>
+                        <Typography sx={buttonTextSx}>
                             Login
                         </Typography>
                     </Button>
