@@ -7,7 +7,7 @@ import logo from "@/assets/logo/logo.png";
 const gradientButtonSx = {
     width: "100%",
     height: "fit-content",
-    paddingX: 1.5,
+    paddingX: 3,
     paddingY: 1,
     borderRadius: 20,
     background: "linear-gradient(273deg, #5B3A9E 0%, #3B7AF0 50%, #5B3A9E 100%)",
@@ -99,8 +99,8 @@ const Header = () => {
             <Stack direction="row" alignItems="center" gap={1} sx={{ width: "25%" }}>
                 <Link href="https://app.silicon-plan.live/?nav=consultants" target="_blank" sx={{ width: "50%" }}>
                     <Button name="visit-marketplace" sx={gradientButtonSx}>
-                        <Typography sx={buttonTextSx}>
-                            Consultants
+                        <Typography sx={{ ...buttonTextSx, whiteSpace: "nowrap" }}>
+                            Our Experts
                         </Typography>
                     </Button>
                 </Link>

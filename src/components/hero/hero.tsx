@@ -61,15 +61,24 @@ const Hero = () => {
                     </Typography>
                 </Stack>
                 <Typography variant="h3" sx={{
-                    background: theme.palette.titleGradient,
+                    background: "linear-gradient(273deg, #5B3A9E 0%, #3B7AF0 50%, #5B3A9E 100%)",
+                    backgroundSize: "200% 200%",
+                    animation: "bgShimmer 3s ease infinite",
                     backgroundClip: "text",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     width: "45%",
                     textAlign: "center",
                     fontWeight: 600,
+                    "@keyframes bgShimmer": {
+                        "0%": { backgroundPosition: "0% 50%" },
+                        "50%": { backgroundPosition: "100% 50%" },
+                        "100%": { backgroundPosition: "0% 50%" },
+                    },
                 }}>
-                    Empower Your Business from Idea to Investment with AI & Expert Guidance.
+                    Turn Ideas into Investments.
+                    <br />
+                    AI-powered plans, pitches, and forecasts.
                 </Typography>
                 <Typography variant="subtitle1" sx={{
                     color: theme.palette.secondary.main,
