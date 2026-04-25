@@ -151,19 +151,19 @@ const Marquee = ({
                 width: "fit-content",
                 animation:
                     direction === "left"
-                        ? "marqueeLeft 60s linear infinite"
-                        : "marqueeRight 60s linear infinite",
+                        ? "marqueeLeft 90s linear infinite"
+                        : "marqueeRight 90s linear infinite",
                 "@keyframes marqueeLeft": {
                     "0%": { transform: "translateX(0)" },
-                    "100%": { transform: "translateX(-50%)" },
+                    "100%": { transform: "translateX(-33.3333%)" },
                 },
                 "@keyframes marqueeRight": {
-                    "0%": { transform: "translateX(-50%)" },
+                    "0%": { transform: "translateX(-33.3333%)" },
                     "100%": { transform: "translateX(0)" },
                 },
             }}
         >
-            {[...items, ...items].map((t, i) => (
+            {[...items, ...items, ...items].map((t, i) => (
                 <TestimonialCard key={`${t.name}-${i}`} t={t} />
             ))}
         </Box>
