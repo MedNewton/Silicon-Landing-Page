@@ -62,7 +62,7 @@ const HowItWorksSection = () => {
             >
                 <Typography
                     sx={{
-                        fontSize: { xs: 28, md: 40 },
+                        fontSize: { xs: 24, md: 32 },
                         fontWeight: 700,
                         textAlign: "center",
                         lineHeight: 1.2,
@@ -124,7 +124,7 @@ const HowItWorksSection = () => {
                             <Stack spacing={1}>
                                 <Typography
                                     sx={{
-                                        fontSize: { xs: 17, md: 19 },
+                                        fontSize: { xs: 15, md: 16 },
                                         fontWeight: 700,
                                         color: "#1E2B42",
                                     }}
@@ -133,7 +133,7 @@ const HowItWorksSection = () => {
                                 </Typography>
                                 <Typography
                                     sx={{
-                                        fontSize: { xs: 13, md: 14 },
+                                        fontSize: { xs: 12, md: 13 },
                                         color: "#7A8098",
                                         lineHeight: 1.55,
                                     }}

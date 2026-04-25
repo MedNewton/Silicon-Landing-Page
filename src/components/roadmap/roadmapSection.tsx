@@ -67,7 +67,7 @@ const RoadmapSection = () => {
             >
                 <Typography
                     sx={{
-                        fontSize: { xs: 28, md: 40 },
+                        fontSize: { xs: 24, md: 32 },
                         fontWeight: 700,
                         textAlign: "center",
                         lineHeight: 1.2,
@@ -125,7 +125,7 @@ const RoadmapSection = () => {
                                 />
                                 <Typography
                                     sx={{
-                                        fontSize: 20,
+                                        fontSize: 17,
                                         fontWeight: 700,
                                         color: "#1E2B42",
                                         textAlign: "center",
@@ -135,7 +135,7 @@ const RoadmapSection = () => {
                                 </Typography>
                                 <Typography
                                     sx={{
-                                        fontSize: 14,
+                                        fontSize: 13,
                                         color: "#1E2B42",
                                         textAlign: "center",
                                     }}
@@ -208,7 +208,7 @@ const RoadmapSection = () => {
                             <Stack spacing={0.25}>
                                 <Typography
                                     sx={{
-                                        fontSize: 16,
+                                        fontSize: 15,
                                         fontWeight: 700,
                                         color: "#1E2B42",
                                     }}
@@ -217,7 +217,7 @@ const RoadmapSection = () => {
                                 </Typography>
                                 <Typography
                                     sx={{
-                                        fontSize: 13,
+                                        fontSize: 12,
                                         color: "#7A8098",
                                     }}
                                 >

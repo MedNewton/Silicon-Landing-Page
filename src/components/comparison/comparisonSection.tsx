@@ -63,7 +63,7 @@ const ComparisonSection = () => {
             >
                 <Typography
                     sx={{
-                        fontSize: { xs: 28, md: 40 },
+                        fontSize: { xs: 24, md: 32 },
                         fontWeight: 700,
                         textAlign: "center",
                         lineHeight: 1.2,
@@ -124,7 +124,7 @@ const ComparisonSection = () => {
                     >
                         <Typography
                             sx={{
-                                fontSize: { xs: 20, md: 24 },
+                                fontSize: { xs: 18, md: 20 },
                                 fontWeight: 600,
                                 color: "#1E2B42",
                                 mb: { xs: 3, md: 4 },
@@ -161,7 +161,7 @@ const ComparisonSection = () => {
                                     <Stack spacing={0.5}>
                                         <Typography
                                             sx={{
-                                                fontSize: { xs: 16, md: 18 },
+                                                fontSize: { xs: 15, md: 16 },
                                                 fontWeight: 700,
                                                 color: "#1E2B42",
                                             }}
@@ -194,7 +194,7 @@ const ComparisonSection = () => {
                     >
                         <Typography
                             sx={{
-                                fontSize: { xs: 20, md: 24 },
+                                fontSize: { xs: 18, md: 20 },
                                 fontWeight: 600,
                                 color: "#FFFFFF",
                                 mb: { xs: 3, md: 4 },
@@ -231,7 +231,7 @@ const ComparisonSection = () => {
                                     <Stack spacing={0.5}>
                                         <Typography
                                             sx={{
-                                                fontSize: { xs: 16, md: 18 },
+                                                fontSize: { xs: 15, md: 16 },
                                                 fontWeight: 700,
                                                 color: "#FFFFFF",
                                             }}
