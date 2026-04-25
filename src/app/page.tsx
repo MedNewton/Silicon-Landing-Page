@@ -4,6 +4,7 @@ import { Stack } from "@mui/material";
 import Hero from "@/components/hero/hero";
 import CTA from "@/components/hero/cta";
 import BentoSection from "@/components/bento/bentoSection";
+import ComparisonSection from "@/components/comparison/comparisonSection";
 import Pricing from "@/components/pricing/pricing";
 import Footer from "@/components/layout/footer";
 
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <CTA />
         <BentoSection />
+        <ComparisonSection />
         <Pricing />
       </Stack>
       <Footer />
