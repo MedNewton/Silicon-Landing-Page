@@ -106,12 +106,11 @@ const HowItWorksSection = () => {
                             sx={{
                                 bgcolor: "#FFFFFF",
                                 borderRadius: 4,
-                                p: { xs: 3, md: 3.5 },
+                                p: { xs: 2.25, md: 2.5 },
                                 boxShadow: "0px 14px 40px rgba(146, 153, 184, 0.10)",
                                 display: "flex",
                                 flexDirection: "column",
-                                gap: 2.5,
-                                minHeight: { xs: "auto", md: 220 },
+                                gap: 1.75,
                             }}
                         >
                             <Image
