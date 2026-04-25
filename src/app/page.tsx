@@ -8,6 +8,7 @@ import ComparisonSection from "@/components/comparison/comparisonSection";
 import RoadmapSection from "@/components/roadmap/roadmapSection";
 import HowItWorksSection from "@/components/howItWorks/howItWorksSection";
 import ConsultantsSection from "@/components/consultants/consultantsSection";
+import TestimonialsSection from "@/components/testimonials/testimonialsSection";
 import Pricing from "@/components/pricing/pricing";
 import Footer from "@/components/layout/footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
         <RoadmapSection />
         <HowItWorksSection />
         <ConsultantsSection />
+        <TestimonialsSection />
         <Pricing />
       </Stack>
       <Footer />
