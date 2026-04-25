@@ -1,43 +1,46 @@
 import { Box, Stack, Typography } from "@mui/material";
+import Image, { type StaticImageData } from "next/image";
 import theme from "@/theme/theme";
+
+import createIcon from "@/assets/howitworks/create.png";
+import infoIcon from "@/assets/howitworks/info.png";
+import generateIcon from "@/assets/howitworks/generate.png";
+import improveIcon from "@/assets/howitworks/improve.png";
 
 type Step = {
     title: string;
     description: string;
+    icon: StaticImageData;
 };
 
 const STEPS: Step[] = [
     {
         title: "Create your project",
         description: "Start by giving your idea a name and defining the basic scope.",
+        icon: createIcon,
     },
     {
         title: "Enter information",
         description:
             "Answer guided questions about your market, product, and goals.",
+        icon: infoIcon,
     },
     {
         title: "Generate documents",
         description:
             "AI instantly creates structured documents based on your inputs.",
+        icon: generateIcon,
     },
     {
         title: "Improve your project",
         description:
             "Refine, edit, and get professional support to perfect your plan.",
+        icon: improveIcon,
     },
 ];
 
 const SECTION_BG =
     "linear-gradient(90deg, rgba(211, 219, 239, 0.5) 0%, rgba(215, 211, 239, 0.5) 100%)";
-
-const ICON_PLACEHOLDER_SX = {
-    width: 36,
-    height: 36,
-    borderRadius: 2,
-    bgcolor: "#E5E7EB",
-    border: "1px solid rgba(63, 77, 204, 0.25)",
-};
 
 const HowItWorksSection = () => {
     return (
@@ -111,7 +114,13 @@ const HowItWorksSection = () => {
                                 minHeight: { xs: "auto", md: 220 },
                             }}
                         >
-                            <Box sx={ICON_PLACEHOLDER_SX} />
+                            <Image
+                                src={step.icon}
+                                alt={step.title}
+                                width={48}
+                                height={48}
+                                style={{ objectFit: "contain" }}
+                            />
                             <Stack spacing={1}>
                                 <Typography
                                     sx={{

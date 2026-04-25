@@ -1,27 +1,42 @@
 import { Box, Stack, Typography } from "@mui/material";
+import Image, { type StaticImageData } from "next/image";
 import theme from "@/theme/theme";
+
+import ideaIcon from "@/assets/roadmap/idea.png";
+import canvasIcon from "@/assets/roadmap/canvas.png";
+import businessPlanIcon from "@/assets/roadmap/businessplan.png";
+import pitchIcon from "@/assets/roadmap/pitch.png";
 
 type Step = {
     title: string;
     description: string;
+    icon: StaticImageData;
 };
 
 const STEPS: Step[] = [
-    { title: "Idea", description: "Capture your vision" },
-    { title: "Canvas", description: "Structure the model" },
-    { title: "Business Plan", description: "Detail the strategy" },
-    { title: "Pitch", description: "Present to investors" },
+    { title: "Idea", description: "Capture your vision", icon: ideaIcon },
+    { title: "Canvas", description: "Structure the model", icon: canvasIcon },
+    {
+        title: "Business Plan",
+        description: "Detail the strategy",
+        icon: businessPlanIcon,
+    },
+    { title: "Pitch", description: "Present to investors", icon: pitchIcon },
 ];
 
 const LINE_GRADIENT =
     "linear-gradient(90deg, rgba(91, 58, 158, 0) 0%, #5B3A9E 12%, #3B7AF0 50%, #5B3A9E 88%, rgba(91, 58, 158, 0) 100%)";
 
-const ICON_PLACEHOLDER_SX = {
+const ICON_BOX_SX = {
     width: 80,
     height: 80,
     borderRadius: 3,
-    bgcolor: "#E5E7EB",
     border: "1px solid rgba(63, 77, 204, 0.35)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    p: 1.25,
+    flexShrink: 0,
 };
 
 const NumberCircle = ({ n }: { n: number }) => (
@@ -113,7 +128,15 @@ const RoadmapSection = () => {
                                 spacing={1.5}
                                 px={2}
                             >
-                                <Box sx={ICON_PLACEHOLDER_SX} />
+                                <Box sx={ICON_BOX_SX}>
+                                    <Image
+                                        src={step.icon}
+                                        alt={step.title}
+                                        width={56}
+                                        height={56}
+                                        style={{ objectFit: "contain" }}
+                                    />
+                                </Box>
                                 <Typography
                                     sx={{
                                         fontSize: 20,
@@ -191,11 +214,20 @@ const RoadmapSection = () => {
                             <NumberCircle n={idx + 1} />
                             <Box
                                 sx={{
-                                    ...ICON_PLACEHOLDER_SX,
+                                    ...ICON_BOX_SX,
                                     width: 56,
                                     height: 56,
+                                    p: 0.75,
                                 }}
-                            />
+                            >
+                                <Image
+                                    src={step.icon}
+                                    alt={step.title}
+                                    width={40}
+                                    height={40}
+                                    style={{ objectFit: "contain" }}
+                                />
+                            </Box>
                             <Stack spacing={0.25}>
                                 <Typography
                                     sx={{
