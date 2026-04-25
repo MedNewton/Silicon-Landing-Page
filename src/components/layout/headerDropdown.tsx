@@ -88,7 +88,8 @@ const HeaderDropdown = ({ label, items }: HeaderDropdownProps) => {
                     <Box
                         sx={{
                             minWidth: 240,
-                            bgcolor: "#FFFFFF",
+                            background: "rgba(255, 255, 255, 0.9)",
+                            backdropFilter: "blur(6px)",
                             borderRadius: 4,
                             boxShadow: "0px 24px 60px rgba(15, 27, 60, 0.12)",
                             p: 1.5,
