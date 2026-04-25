@@ -106,7 +106,7 @@ const HeaderDropdown = ({ label, items }: HeaderDropdownProps) => {
                                         alignItems: "center",
                                         gap: 1.5,
                                         py: 1.25,
-                                        px: 2,
+                                        px: 1.25,
                                         borderRadius: 3,
                                         color: "#1E2B42",
                                         transition: "background 0.15s ease",
