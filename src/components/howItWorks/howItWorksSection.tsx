@@ -117,8 +117,8 @@ const HowItWorksSection = () => {
                             <Image
                                 src={step.icon}
                                 alt={step.title}
-                                width={48}
-                                height={48}
+                                width={36}
+                                height={36}
                                 style={{ objectFit: "contain" }}
                             />
                             <Stack spacing={1}>

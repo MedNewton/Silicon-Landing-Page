@@ -27,18 +27,6 @@ const STEPS: Step[] = [
 const LINE_GRADIENT =
     "linear-gradient(90deg, rgba(91, 58, 158, 0) 0%, #5B3A9E 12%, #3B7AF0 50%, #5B3A9E 88%, rgba(91, 58, 158, 0) 100%)";
 
-const ICON_BOX_SX = {
-    width: 80,
-    height: 80,
-    borderRadius: 3,
-    border: "1px solid rgba(63, 77, 204, 0.35)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    p: 1.25,
-    flexShrink: 0,
-};
-
 const NumberCircle = ({ n }: { n: number }) => (
     <Box
         sx={{
@@ -128,15 +116,13 @@ const RoadmapSection = () => {
                                 spacing={1.5}
                                 px={2}
                             >
-                                <Box sx={ICON_BOX_SX}>
-                                    <Image
-                                        src={step.icon}
-                                        alt={step.title}
-                                        width={56}
-                                        height={56}
-                                        style={{ objectFit: "contain" }}
-                                    />
-                                </Box>
+                                <Image
+                                    src={step.icon}
+                                    alt={step.title}
+                                    width={80}
+                                    height={80}
+                                    style={{ objectFit: "contain" }}
+                                />
                                 <Typography
                                     sx={{
                                         fontSize: 20,
@@ -212,22 +198,13 @@ const RoadmapSection = () => {
                             spacing={2}
                         >
                             <NumberCircle n={idx + 1} />
-                            <Box
-                                sx={{
-                                    ...ICON_BOX_SX,
-                                    width: 56,
-                                    height: 56,
-                                    p: 0.75,
-                                }}
-                            >
-                                <Image
-                                    src={step.icon}
-                                    alt={step.title}
-                                    width={40}
-                                    height={40}
-                                    style={{ objectFit: "contain" }}
-                                />
-                            </Box>
+                            <Image
+                                src={step.icon}
+                                alt={step.title}
+                                width={56}
+                                height={56}
+                                style={{ objectFit: "contain", flexShrink: 0 }}
+                            />
                             <Stack spacing={0.25}>
                                 <Typography
                                     sx={{
