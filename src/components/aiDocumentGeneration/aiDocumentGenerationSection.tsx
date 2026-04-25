@@ -54,12 +54,15 @@ const AiDocumentGenerationSection = () => {
                 >
                     <Typography
                         sx={{
-                            fontSize: { xs: 28, md: 42 },
-                            fontWeight: 800,
-                            lineHeight: 1.05,
-                            color: "#0E1A2D",
+                            fontSize: { xs: 24, md: 32 },
+                            fontWeight: 700,
+                            lineHeight: 1.2,
                             textTransform: "uppercase",
-                            letterSpacing: "-0.5px",
+                            background: theme.palette.titleGradient,
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                            color: "transparent",
                         }}
                     >
                         AI Document
