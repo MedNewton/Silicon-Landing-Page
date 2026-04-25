@@ -51,7 +51,7 @@ const RoadmapSection = () => {
             component="section"
             sx={{
                 width: "100%",
-                py: { xs: 6, md: 10 },
+                py: { xs: 12, md: 20 },
                 px: { xs: 2, md: 10 },
                 backgroundColor: theme.palette.background.default,
             }}
