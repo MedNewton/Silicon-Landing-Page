@@ -10,6 +10,7 @@ import HowItWorksSection from "@/components/howItWorks/howItWorksSection";
 import ConsultantsSection from "@/components/consultants/consultantsSection";
 import TestimonialsSection from "@/components/testimonials/testimonialsSection";
 import Pricing from "@/components/pricing/pricing";
+import AiDocumentGenerationSection from "@/components/aiDocumentGeneration/aiDocumentGenerationSection";
 import Footer from "@/components/layout/footer";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         <ConsultantsSection />
         <TestimonialsSection />
         <Pricing />
+        <AiDocumentGenerationSection />
       </Stack>
       <Footer />
     </Stack>
