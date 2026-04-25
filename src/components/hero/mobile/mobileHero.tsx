@@ -1,8 +1,10 @@
 import theme from "@/theme/theme";
 import { Box, Stack, Typography } from "@mui/material";
-import MobileHeader from "@/components/layout/mobile/mobileHeader";
+import { getTranslations } from "next-intl/server";
 
-const MobileHero = () => {
+const MobileHero = async () => {
+    const t = await getTranslations("Hero");
+
     return (
         <Stack
             component="section"
@@ -18,9 +20,6 @@ const MobileHero = () => {
                 py: "1px",
             }}
         >
-            <Stack position="absolute" top={0} left={0} right={0}>
-                <MobileHeader />
-            </Stack>
             <Stack component="div" width="100%" height="100%" alignItems="center" justifyContent="center"
                 sx={{
                     background: "linear-gradient(180deg, rgba(249, 249, 249, 0) 66.96%, #F9F9F9 100%), linear-gradient(90deg, rgba(211, 219, 239, 0.5) 0%, rgba(215, 211, 239, 0.5) 100%)",
@@ -57,7 +56,7 @@ const MobileHero = () => {
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                     }}>
-                        <span style={{ fontWeight: 700 }}>800</span> SMEs creates documents daily
+                        <span style={{ fontWeight: 700 }}>{t("badgeBold")}</span> {t("badgeText")}
                     </Typography>
                 </Stack>
                 <Typography variant="h5" sx={{
@@ -76,16 +75,14 @@ const MobileHero = () => {
                         "100%": { backgroundPosition: "0% 50%" },
                     },
                 }}>
-                    Turn Ideas into Investments.
-                    <br />
-                    AI-powered plans, pitches, and forecasts.
+                    {t("title")}
                 </Typography>
                 <Typography variant="subtitle1" sx={{
                     color: theme.palette.secondary.main,
                     width: "85%",
                     textAlign: "center",
                 }}>
-                    Your AI-Powered Platform for Business Plans, Pitches & Financial Forecasts.
+                    {t("subtitle")}
                 </Typography>
 
                 {/* AI Preview Video */}
@@ -160,7 +157,7 @@ const MobileHero = () => {
                                     letterSpacing: 0.2,
                                 }}
                             >
-                                app.silicon-plan.live
+                                {t("browserUrl")}
                             </Typography>
                         </Box>
                     </Stack>

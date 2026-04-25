@@ -1,8 +1,10 @@
 import theme from "@/theme/theme";
 import { Box, Stack, Typography } from "@mui/material";
-import Header from "@/components/layout/header";
+import { getTranslations } from "next-intl/server";
 
-const Hero = () => {
+const Hero = async () => {
+    const t = await getTranslations("Hero");
+
     return (
         <Stack
             component="section"
@@ -18,9 +20,6 @@ const Hero = () => {
                 py: "1px",
             }}
         >
-            <Stack position="absolute" top={0} left={0} right={0}>
-                <Header />
-            </Stack>
             <Stack component="div" width="100%" height="100%" alignItems="center" justifyContent="center"
                 sx={{
                     background: theme.palette.heroGradientBg,
@@ -57,7 +56,7 @@ const Hero = () => {
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                     }}>
-                        <span style={{ fontWeight: 700 }}>800</span> SMEs creates documents daily
+                        <span style={{ fontWeight: 700 }}>{t("badgeBold")}</span> {t("badgeText")}
                     </Typography>
                 </Stack>
                 <Typography variant="h3" sx={{
@@ -67,7 +66,7 @@ const Hero = () => {
                     backgroundClip: "text",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
-                    width: "45%",
+                    width: "55%",
                     textAlign: "center",
                     fontWeight: 600,
                     "@keyframes bgShimmer": {
@@ -76,16 +75,14 @@ const Hero = () => {
                         "100%": { backgroundPosition: "0% 50%" },
                     },
                 }}>
-                    Turn Ideas into Investments.
-                    <br />
-                    AI-powered plans, pitches, and forecasts.
+                    {t("title")}
                 </Typography>
                 <Typography variant="subtitle1" sx={{
                     color: theme.palette.secondary.main,
-                    width: "25%",
+                    width: "42%",
                     textAlign: "center",
                 }}>
-                    Your AI-Powered Platform for Business Plans, Pitches & Financial Forecasts.
+                    {t("subtitle")}
                 </Typography>
 
                 {/* AI Preview Video */}
@@ -162,7 +159,7 @@ const Hero = () => {
                                     letterSpacing: 0.3,
                                 }}
                             >
-                                app.silicon-plan.live
+                                {t("browserUrl")}
                             </Typography>
                         </Box>
                     </Stack>

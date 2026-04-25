@@ -1,27 +1,7 @@
-import "@/styles/globals.css";
-import type { Metadata } from "next";
-import { Sora } from "next/font/google";
-import ThemeRegistry from "@/components/layout/ThemeRegistry";
-
-
-export const metadata: Metadata = {
-  title: "SiliconPlan",
-  description:
-    "Empowering businesses worldwide with AI-driven tools for business planning, financial forecasting, and investor-ready insights.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
-};
-
-const sora = Sora({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-  variable: "--font-sora",
-  display: "swap",
-});
-
+// Root layout is a passthrough — <html>, <body>, fonts, and providers
+// live in `src/app/[locale]/layout.tsx` so they can react to the active locale.
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en" className={sora.variable}><ThemeRegistry><body>{children}</body></ThemeRegistry></html>
-  );
+  return children;
 }

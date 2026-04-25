@@ -16,46 +16,47 @@ import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useTranslations } from "next-intl";
 import theme from "@/theme/theme";
 
 type BillingPeriod = "monthly" | "annual";
 
 type Feature = {
-  label: string;
-  tag?: string;
+  labelKey: string;
+  tagKey?: "aiPoweredTag";
   free: boolean;
   startup: boolean;
   unicorn: boolean;
 };
 
 const FEATURES: Feature[] = [
-  { label: "Business Model Canvas generation", free: true, startup: true, unicorn: true },
-  { label: "Consultant marketplace", free: true, startup: true, unicorn: true },
-  { label: "Technical guides", free: true, startup: true, unicorn: true },
-  { label: "Step-by-step instructions", free: true, startup: true, unicorn: true },
-  { label: "Business Plan generation", free: false, startup: true, unicorn: true },
-  { label: "Access for 3 team members", free: false, startup: true, unicorn: true },
-  { label: "1 project creation", free: false, startup: true, unicorn: true },
+  { labelKey: "featureBusinessModelCanvas", free: true, startup: true, unicorn: true },
+  { labelKey: "featureConsultantMarketplace", free: true, startup: true, unicorn: true },
+  { labelKey: "featureTechnicalGuides", free: true, startup: true, unicorn: true },
+  { labelKey: "featureStepByStep", free: true, startup: true, unicorn: true },
+  { labelKey: "featureBusinessPlanGeneration", free: false, startup: true, unicorn: true },
+  { labelKey: "featureAccess3Members", free: false, startup: true, unicorn: true },
+  { labelKey: "featureOneProject", free: false, startup: true, unicorn: true },
   {
-    label: "Writing assistance",
-    tag: "AI Powered",
+    labelKey: "featureWritingAssistance",
+    tagKey: "aiPoweredTag",
     free: false,
     startup: true,
     unicorn: true,
   },
-  { label: "Pre-money valuation (6 methods)", free: false, startup: false, unicorn: true },
-  { label: "Access for 5 team members", free: false, startup: false, unicorn: true },
-  { label: "7 project creations", free: false, startup: false, unicorn: true },
+  { labelKey: "featurePreMoneyValuation", free: false, startup: false, unicorn: true },
+  { labelKey: "featureAccess5Members", free: false, startup: false, unicorn: true },
+  { labelKey: "featureSevenProjects", free: false, startup: false, unicorn: true },
   {
-    label: "Financial analysis",
-    tag: "AI Powered",
+    labelKey: "featureFinancialAnalysis",
+    tagKey: "aiPoweredTag",
     free: false,
     startup: false,
     unicorn: true,
   },
-  { label: "Industry research", free: false, startup: false, unicorn: true },
-  { label: "Performance dashboards", free: false, startup: false, unicorn: true },
-  { label: "Export to Excel", free: false, startup: false, unicorn: true },
+  { labelKey: "featureIndustryResearch", free: false, startup: false, unicorn: true },
+  { labelKey: "featurePerformanceDashboards", free: false, startup: false, unicorn: true },
+  { labelKey: "featureExportExcel", free: false, startup: false, unicorn: true },
 ];
 
 const STARTUP_MONTHLY = 27.90;
@@ -64,6 +65,7 @@ const UNICORN_MONTHLY = 49.90;
 const UNICORN_ANNUAL = 37.43;
 
 const MobilePricing = () => {
+  const t = useTranslations("Pricing");
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("monthly");
   const [showFreeFeatures, setShowFreeFeatures] = useState(false);
   const [showStartupFeatures, setShowStartupFeatures] = useState(false);
@@ -103,7 +105,7 @@ const MobilePricing = () => {
             color: "transparent",
           }}
         >
-          Start your plan by picking a package
+          {t("title")}
         </Typography>
         <Box
           sx={{
@@ -149,7 +151,7 @@ const MobilePricing = () => {
               },
             }}
           >
-            Monthly
+            {t("monthly")}
           </Button>
           <Button
             name="annual"
@@ -183,7 +185,7 @@ const MobilePricing = () => {
             }}
           >
             <Box component="span" mr={1}>
-              Annually
+              {t("annually")}
             </Box>
             <Box
               component="span"
@@ -196,7 +198,7 @@ const MobilePricing = () => {
                     : "#4D5AE5",
               }}
             >
-              Save 25%
+              {t("save25")}
             </Box>
           </Button>
         </Box>
@@ -230,7 +232,7 @@ const MobilePricing = () => {
                     color: theme.palette.text.secondary,
                   }}
                 >
-                  Free
+                  {t("planFree")}
                 </Typography>
               </Stack>
 
@@ -238,7 +240,7 @@ const MobilePricing = () => {
                 variant="body2"
                 sx={{ color: "#7A8098", maxWidth: 320 }}
               >
-                For anyone who needs a professional business plan.
+                {t("descFree")}
               </Typography>
 
               <Stack direction="row" alignItems="center" gap={1.5}>
@@ -267,10 +269,10 @@ const MobilePricing = () => {
                     variant="body2"
                     sx={{ color: "#7A8098", fontWeight: 500 }}
                   >
-                    per month
+                    {t("perMonth")}
                   </Typography>
                   <Typography variant="caption" sx={{ color: "#A3A8C0" }}>
-                    paid monthly
+                    {t("paidMonthly")}
                   </Typography>
                 </Stack>
               </Stack>
@@ -300,7 +302,7 @@ const MobilePricing = () => {
                     },
                   }}
                 >
-                  Get Started
+                  {t("getStarted")}
                 </Button>
               </Link>
               <Box pt={2}>
@@ -320,7 +322,7 @@ const MobilePricing = () => {
                       color: theme.palette.grey[600],
                     }}
                   >
-                    Included features
+                    {t("includedFeatures")}
                   </Typography>
                   <ExpandMoreIcon
                     sx={{
@@ -340,7 +342,7 @@ const MobilePricing = () => {
                       const included = feature.free;
                       return (
                         <Stack
-                          key={feature.label}
+                          key={feature.labelKey}
                           direction="row"
                           alignItems="center"
                           spacing={1.2}
@@ -366,11 +368,11 @@ const MobilePricing = () => {
                               color: "#4F5670",
                             }}
                           >
-                            {feature.label}
+                            {t(feature.labelKey)}
                           </Typography>
-                          {feature.tag && included && (
+                          {feature.tagKey && included && (
                             <Chip
-                              label={feature.tag}
+                              label={t(feature.tagKey)}
                               size="small"
                               sx={{
                                 ml: 0.5,
@@ -414,7 +416,7 @@ const MobilePricing = () => {
                     color: theme.palette.text.secondary,
                   }}
                 >
-                  Start-up
+                  {t("planStartup")}
                 </Typography>
               </Stack>
 
@@ -422,7 +424,7 @@ const MobilePricing = () => {
                 variant="body2"
                 sx={{ color: "#7A8098", maxWidth: 320 }}
               >
-                For anyone who needs a professional business plan.
+                {t("descStartup")}
               </Typography>
 
               <Stack direction="row" alignItems="center" gap={1.5}>
@@ -470,11 +472,10 @@ const MobilePricing = () => {
                     variant="body2"
                     sx={{ color: "#7A8098", fontWeight: 500 }}
                   >
-                    per month
+                    {t("perMonth")}
                   </Typography>
                   <Typography variant="caption" sx={{ color: "#A3A8C0" }}>
-                    paid{" "}
-                    {billingPeriod === "monthly" ? "monthly" : "annually"}
+                    {billingPeriod === "monthly" ? t("paidMonthly") : t("paidAnnually")}
                   </Typography>
                 </Stack>
               </Stack>
@@ -504,7 +505,7 @@ const MobilePricing = () => {
                     },
                   }}
                 >
-                  Get Started
+                  {t("getStarted")}
                 </Button>
               </Link>
               <Box pt={2}>
@@ -524,7 +525,7 @@ const MobilePricing = () => {
                       color: theme.palette.grey[600],
                     }}
                   >
-                    Included features
+                    {t("includedFeatures")}
                   </Typography>
                   <ExpandMoreIcon
                     sx={{
@@ -544,7 +545,7 @@ const MobilePricing = () => {
                       const included = feature.startup;
                       return (
                         <Stack
-                          key={feature.label}
+                          key={feature.labelKey}
                           direction="row"
                           alignItems="center"
                           spacing={1.2}
@@ -570,11 +571,11 @@ const MobilePricing = () => {
                               color: "#4F5670",
                             }}
                           >
-                            {feature.label}
+                            {t(feature.labelKey)}
                           </Typography>
-                          {feature.tag && included && (
+                          {feature.tagKey && included && (
                             <Chip
-                              label={feature.tag}
+                              label={t(feature.tagKey)}
                               size="small"
                               sx={{
                                 ml: 0.5,
@@ -618,7 +619,7 @@ const MobilePricing = () => {
                     color: "#5C63FF",
                   }}
                 >
-                  Unicorn
+                  {t("planUnicorn")}
                 </Typography>
               </Stack>
 
@@ -626,8 +627,7 @@ const MobilePricing = () => {
                 variant="body2"
                 sx={{ color: "#7A8098", maxWidth: 320 }}
               >
-                For businesses that need financial tools to help them
-                operate & grow.
+                {t("descUnicorn")}
               </Typography>
 
               <Stack direction="row" alignItems="center" gap={1.5}>
@@ -675,11 +675,10 @@ const MobilePricing = () => {
                     variant="body2"
                     sx={{ color: "#7A8098", fontWeight: 500 }}
                   >
-                    per month
+                    {t("perMonth")}
                   </Typography>
                   <Typography variant="caption" sx={{ color: "#A3A8C0" }}>
-                    paid{" "}
-                    {billingPeriod === "monthly" ? "monthly" : "annually"}
+                    {billingPeriod === "monthly" ? t("paidMonthly") : t("paidAnnually")}
                   </Typography>
                 </Stack>
               </Stack>
@@ -709,7 +708,7 @@ const MobilePricing = () => {
                     },
                   }}
                 >
-                  Get Started
+                  {t("getStarted")}
                 </Button>
               </Link>
               <Box pt={2}>
@@ -729,7 +728,7 @@ const MobilePricing = () => {
                       color: theme.palette.grey[600],
                     }}
                   >
-                    Included features
+                    {t("includedFeatures")}
                   </Typography>
                   <ExpandMoreIcon
                     sx={{
@@ -749,7 +748,7 @@ const MobilePricing = () => {
                       const included = feature.unicorn;
                       return (
                         <Stack
-                          key={feature.label}
+                          key={feature.labelKey}
                           direction="row"
                           alignItems="center"
                           spacing={1.2}
@@ -775,11 +774,11 @@ const MobilePricing = () => {
                               color: "#4F5670",
                             }}
                           >
-                            {feature.label}
+                            {t(feature.labelKey)}
                           </Typography>
-                          {feature.tag && included && (
+                          {feature.tagKey && included && (
                             <Chip
-                              label={feature.tag}
+                              label={t(feature.tagKey)}
                               size="small"
                               sx={{
                                 ml: 0.5,

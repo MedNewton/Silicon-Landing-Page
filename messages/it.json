@@ -1,0 +1,446 @@
+{
+  "Metadata": {
+    "title": "Silicon Plan — Trasforma la tua idea in un piano strategico",
+    "description": "Silicon Plan è la piattaforma AI che ti guida nella creazione di business plan, pitch deck e modelli di business. Accedi a consulenti esperti e porta il tuo progetto al livello successivo."
+  },
+  "HeaderNav": {
+    "prodotto": "Prodotto",
+    "consulenti": "Consulenti",
+    "prezzi": "Prezzi",
+    "risorse": "Risorse",
+    "about": "About us",
+    "accedi": "Accedi",
+    "iniziaGratis": "Inizia gratis",
+    "brand": "Silicon Plan",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu",
+    "expand": "Espandi",
+    "collapse": "Comprimi",
+    "prodottoItems": {
+      "panoramica": "Panoramica",
+      "comeFunziona": "Come funziona",
+      "businessPlan": "Business Plan",
+      "pitchDeck": "Pitch Deck",
+      "bmc": "Business Model Canvas",
+      "valutazione": "Valutazione pre-money"
+    },
+    "consulentiItems": {
+      "marketplace": "Marketplace"
+    },
+    "risorseItems": {
+      "contattaci": "Contattaci",
+      "blog": "Blog",
+      "faq": "FAQ"
+    },
+    "aboutItems": {
+      "chiSiamo": "Chi siamo",
+      "target": "Target",
+      "mission": "Mission e Vision",
+      "values": "Values"
+    }
+  },
+  "Hero": {
+    "badgeBold": "800",
+    "badgeText": "PMI creano documenti ogni giorno",
+    "title": "Trasforma la tua idea in un piano strategico",
+    "subtitle": "Silicon Plan ti guida nella creazione di business plan, pitch e modelli di business con strumenti AI e supporto professionale.",
+    "browserUrl": "app.silicon-plan.live"
+  },
+  "CTA": {
+    "createPlan": "Crea il mio piano",
+    "primary": "Crea il tuo progetto",
+    "secondary": "Guarda demo"
+  },
+  "Problem": {
+    "eyebrow": "IL PROBLEMA",
+    "title": "Creare un progetto oggi è complesso",
+    "points": {
+      "scattered": "Strumenti sparsi",
+      "documents": "Documenti difficili da creare",
+      "processes": "Processi poco chiari"
+    },
+    "closing": "Questo rende difficile trasformare un'idea in un progetto concreto."
+  },
+  "Solution": {
+    "eyebrow": "LA SOLUZIONE",
+    "intro": "Silicon Plan semplifica tutto in un unico percorso",
+    "benefits": {
+      "onboarding": "Onboarding guidato",
+      "documents": "Documenti generati con AI",
+      "structure": "Struttura chiara"
+    },
+    "closing": "Tutto in un'unica piattaforma.",
+    "comparison": {
+      "title": "Il confronto",
+      "without": "Senza Silicon Plan",
+      "with": "Con Silicon Plan",
+      "rows": [
+        { "without": "Strumenti sparsi", "with": "Percorso guidato" },
+        { "without": "Lavoro manuale", "with": "Documenti pronti" },
+        { "without": "Processi confusi", "with": "Struttura chiara" }
+      ]
+    }
+  },
+  "GuidedPath": {
+    "eyebrow": "PERCORSO GUIDATO",
+    "title": "Un percorso chiaro per costruire il tuo progetto",
+    "steps": ["Idea", "Canvas", "Business Plan", "Pitch"],
+    "closingLine1": "Non devi sapere da dove iniziare.",
+    "closingLine2": "La piattaforma ti guida in ogni fase."
+  },
+  "HowItWorks": {
+    "eyebrow": "COME FUNZIONA",
+    "title": "Come funziona",
+    "steps": [
+      "Crea il tuo progetto",
+      "Inserisci le informazioni",
+      "Genera i documenti",
+      "Migliora il tuo progetto"
+    ],
+    "closing": "In pochi step hai una struttura completa del tuo progetto."
+  },
+  "AiDocuments": {
+    "eyebrow": "DOCUMENTI AI",
+    "title": "Crea documenti professionali in pochi minuti",
+    "docs": [
+      {
+        "name": "Business Plan",
+        "description": "Piano formale pronto per gli investitori."
+      },
+      {
+        "name": "Pitch Deck",
+        "description": "Presentazione in slide per convincere e raccontare."
+      },
+      {
+        "name": "Business Model Canvas",
+        "description": "Canvas strategico su una sola pagina."
+      }
+    ],
+    "supportLine1": "Basati sui dati del tuo progetto.",
+    "supportLine2": "Esportabili in formato PDF, Word e PowerPoint.",
+    "supportLine3": "Pronti per essere presentati a investitori, incubatori o partner.",
+    "exportFormats": ["PDF", "Word", "PowerPoint"]
+  },
+  "Consultants": {
+    "eyebrow": "MARKETPLACE",
+    "title": "Hai bisogno di supporto?",
+    "subtitle": "Accedi a consulenti esperti per migliorare il tuo progetto quando ne hai bisogno.",
+    "filterHint": "Filtra per competenze, settore e disponibilità.",
+    "ctaFind": "Trova un consulente",
+    "ctaBecome": "Diventa consulente",
+    "demoLabel": "Guarda come funziona il marketplace",
+    "cards": [
+      {
+        "name": "Marco Rossi",
+        "role": "Senior Business Strategist",
+        "specialty": "Strategia e go-to-market per startup early stage",
+        "badge": "5+ anni"
+      },
+      {
+        "name": "Giulia Bianchi",
+        "role": "Financial Advisor",
+        "specialty": "Modelli finanziari e valutazioni pre-money",
+        "badge": "Finanza"
+      },
+      {
+        "name": "Davide Neri",
+        "role": "Pitch Deck Coach",
+        "specialty": "Storytelling per investitori e demo day",
+        "badge": "Pitch"
+      },
+      {
+        "name": "Sara Conti",
+        "role": "Marketing Consultant",
+        "specialty": "Brand, posizionamento e growth",
+        "badge": "Marketing"
+      },
+      {
+        "name": "Luca Ferrari",
+        "role": "Legal & Compliance",
+        "specialty": "Contrattualistica e finanziamenti",
+        "badge": "Legal"
+      },
+      {
+        "name": "Elena Greco",
+        "role": "Tech Advisor",
+        "specialty": "Architetture software e MVP",
+        "badge": "Tech"
+      }
+    ]
+  },
+  "SocialProof": {
+    "eyebrow": "DICONO DI NOI",
+    "title": "Cosa dicono di noi",
+    "testimonials": [
+      {
+        "quote": "Semplice e intuitivo, mi ha aiutato a strutturare il mio progetto in pochi semplici passi.",
+        "author": "Founder startup early stage"
+      },
+      {
+        "quote": "Uno strumento utile per velocizzare moltissimo la creazione di business plan.",
+        "author": "Consulente"
+      }
+    ]
+  },
+  "About": {
+    "whoWeAre": {
+      "eyebrow": "CHI SIAMO",
+      "title": "Chi siamo",
+      "paragraphs": [
+        "SiliconPlan è una piattaforma digitale che aiuta aspiranti imprenditori, professionisti e organizzazioni a trasformare un'idea in un progetto strutturato, presentabile e finanziabile.",
+        "Oggi, fare impresa richiede competenze multidisciplinari, strumenti diversi e spesso costi elevati. SiliconPlan unisce tutto questo in un'unica piattaforma, accessibile e guidata.",
+        "Attraverso un approccio basato su intelligenza artificiale, metodologia strutturata e supporto umano, permettiamo agli utenti di sviluppare:"
+      ],
+      "deliverables": [
+        "Business Model",
+        "Business Plan",
+        "Pitch Deck",
+        "Analisi finanziarie",
+        "Valutazioni pre-money"
+      ]
+    },
+    "target": {
+      "eyebrow": "TARGET",
+      "title": "A chi ci rivolgiamo",
+      "intro": "SiliconPlan è progettata per:",
+      "audiences": [
+        { "emoji": "🚀", "label": "Imprese, Startup e aspiranti imprenditori" },
+        { "emoji": "💼", "label": "Consulenti e professionisti" },
+        { "emoji": "🏫", "label": "Università e studenti" },
+        { "emoji": "🏢", "label": "Incubatori e acceleratori" },
+        { "emoji": "🏛", "label": "Enti e organizzazioni" }
+      ],
+      "closing": "La piattaforma si adatta in base al tuo profilo"
+    },
+    "mission": {
+      "title": "Mission",
+      "body": "La nostra missione è rendere la creazione e lo sviluppo di impresa più accessibile, veloce ed efficace. Vogliamo abbattere le barriere che oggi impediscono a molte idee di diventare aziende solide:",
+      "barriers": [
+        "mancanza di competenze",
+        "costi elevati della consulenza",
+        "assenza di strumenti guidati",
+        "difficoltà di accesso a finanziamenti"
+      ],
+      "callout": "Con SiliconPlan, chiunque può costruire un progetto imprenditoriale solido, anche partendo da zero."
+    },
+    "vision": {
+      "title": "Vision",
+      "body": "Immaginiamo un ecosistema in cui ogni idea imprenditoriale valida possa essere sviluppata, validata e finanziata, indipendentemente dalle risorse iniziali. Siamo la piattaforma di riferimento per la creazione e lo sviluppo di Progetti, integrando:",
+      "pillars": ["tecnologia", "competenze", "formazione", "accesso ai capitali"]
+    },
+    "values": {
+      "eyebrow": "VALORI",
+      "title": "I nostri valori",
+      "intro": "Crediamo che chiunque debba avere la possibilità di trasformare un'idea in un progetto imprenditoriale. Riduciamo barriere, complessità e costi, rendendo gli strumenti per fare impresa accessibili a tutti.",
+      "items": [
+        {
+          "title": "Struttura e metodo",
+          "body": "Fare impresa non è solo creatività: è metodo. Offriamo un percorso chiaro e guidato che aiuta gli utenti a sviluppare progetti solidi, passo dopo passo."
+        },
+        {
+          "title": "Innovazione utile",
+          "body": "Utilizziamo l'intelligenza artificiale per semplificare processi complessi. Non per sostituire il pensiero umano, ma per potenziarlo."
+        },
+        {
+          "title": "Collaborazione",
+          "body": "Crediamo nel valore delle competenze. Per questo integriamo tecnologia e consulenza, creando un ecosistema che connette imprese e professionisti."
+        },
+        {
+          "title": "Crescita continua",
+          "body": "Siamo in costante evoluzione. Miglioriamo la piattaforma grazie ai feedback degli utenti e all'evoluzione del mercato. Vogliamo contribuire a un ecosistema imprenditoriale più forte, dove più idee possano diventare realtà concrete."
+        }
+      ]
+    }
+  },
+  "Pricing": {
+    "title": "Scegli il piano adatto al tuo progetto",
+    "monthly": "Mensile",
+    "annually": "Annuale",
+    "save25": "Risparmia il 25%",
+    "perMonth": "/mese",
+    "paidMonthly": "pagamento mensile",
+    "paidAnnually": "pagamento annuale",
+    "getStarted": "Inizia ora",
+    "includedFeatures": "Funzionalità incluse",
+    "aiPoweredTag": "Basato su AI",
+    "planFree": "Free",
+    "planStartup": "Startup",
+    "planUnicorn": "Unicorn",
+    "descFree": "Per chi vuole iniziare a strutturare la propria idea imprenditoriale.",
+    "descStartup": "Per chi ha bisogno di un business plan professionale e completo.",
+    "descUnicorn": "Per le aziende che necessitano di strumenti finanziari avanzati per crescere.",
+    "featureBusinessModelCanvas": "Generazione Business Model Canvas",
+    "featureConsultantMarketplace": "Marketplace consulenti",
+    "featureTechnicalGuides": "Guide tecniche",
+    "featureStepByStep": "Istruzioni passo passo",
+    "featureBusinessPlanGeneration": "Generazione Business Plan",
+    "featureAccess3Members": "Accesso per 3 membri del team",
+    "featureOneProject": "Creazione di 1 progetto",
+    "featureWritingAssistance": "Assistenza alla scrittura",
+    "featurePreMoneyValuation": "Valutazione pre-money (6 metodi)",
+    "featureAccess5Members": "Accesso per 5 membri del team",
+    "featureSevenProjects": "Creazione di 7 progetti",
+    "featureFinancialAnalysis": "Analisi finanziaria",
+    "featureIndustryResearch": "Ricerca di settore",
+    "featurePerformanceDashboards": "Dashboard di performance",
+    "featureExportExcel": "Esportazione in Excel"
+  },
+  "Footer": {
+    "brand": "SiliconPlan",
+    "logoAlt": "Logo SiliconPlan",
+    "description": "SiliconPlan è un prodotto di Smartool Srl — Startup Innovativa",
+    "address": "Via Eleuterio Ruggiero 123, Caserta (CE)",
+    "vat": "P.IVA 04738960618",
+    "columns": {
+      "prodotto": {
+        "title": "Prodotto",
+        "links": {
+          "panoramica": "Panoramica",
+          "comeFunziona": "Come funziona",
+          "aiDocuments": "Documenti AI",
+          "percorsoGuidato": "Percorso guidato"
+        }
+      },
+      "consulenti": {
+        "title": "Consulenti",
+        "links": {
+          "marketplace": "Marketplace",
+          "diventaConsulente": "Diventa consulente"
+        }
+      },
+      "risorse": {
+        "title": "Risorse",
+        "links": {
+          "contattaci": "Contattaci",
+          "blog": "Blog",
+          "faq": "FAQ"
+        }
+      },
+      "azienda": {
+        "title": "Azienda",
+        "links": {
+          "chiSiamo": "Chi siamo",
+          "mission": "Mission & Vision",
+          "valori": "Valori",
+          "prezzi": "Prezzi"
+        }
+      }
+    },
+    "copyright": "© {year} SiliconPlan. Tutti i diritti riservati.",
+    "privacyTerms": "Privacy & Termini di servizio",
+    "phone": "+39 0823 21 04 74"
+  },
+  "LanguageSwitcher": {
+    "label": "Lingua",
+    "italian": "IT",
+    "english": "EN"
+  },
+  "Faq": {
+    "eyebrow": "FAQ",
+    "title": "Domande frequenti",
+    "subtitle": "Trovi qui le risposte alle domande più comuni. Se non trovi quello che cerchi, contattaci.",
+    "items": [
+      {
+        "question": "Cos'è Silicon Plan?",
+        "answer": "Silicon Plan è una piattaforma digitale che ti aiuta a trasformare la tua idea imprenditoriale in un progetto strutturato, con strumenti AI e supporto di consulenti esperti."
+      },
+      {
+        "question": "A chi è rivolta la piattaforma?",
+        "answer": "A imprese, startup, aspiranti imprenditori, consulenti, università, incubatori ed enti. La piattaforma si adatta al tuo profilo."
+      },
+      {
+        "question": "Quali documenti posso generare?",
+        "answer": "Puoi creare Business Plan, Pitch Deck, Business Model Canvas, analisi finanziarie e valutazioni pre-money, tutti esportabili in PDF, Word e PowerPoint."
+      },
+      {
+        "question": "Come funziona il marketplace consulenti?",
+        "answer": "Puoi filtrare per competenze, settore e disponibilità, e contattare direttamente il consulente più adatto alle tue esigenze."
+      },
+      {
+        "question": "Posso provare Silicon Plan gratuitamente?",
+        "answer": "Sì, il piano Free ti permette di iniziare subito senza costi. Puoi passare ai piani Startup o Unicorn quando ne avrai bisogno."
+      },
+      {
+        "question": "I miei dati sono al sicuro?",
+        "answer": "Sì, rispettiamo il GDPR e utilizziamo standard di sicurezza avanzati per proteggere i tuoi dati."
+      }
+    ]
+  },
+  "Contact": {
+    "eyebrow": "CONTATTI",
+    "title": "Parliamone",
+    "subtitle": "Hai domande, vuoi una demo o desideri collaborare con noi? Scrivici e ti risponderemo entro 24 ore.",
+    "info": {
+      "emailLabel": "Email",
+      "phoneLabel": "Telefono",
+      "addressLabel": "Indirizzo",
+      "hoursLabel": "Orari",
+      "hoursValue": "Lunedì – Venerdì, 9:00 – 18:00"
+    },
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "subject": "Oggetto",
+      "message": "Messaggio",
+      "submit": "Invia messaggio",
+      "successMessage": "Messaggio inviato! Ti risponderemo al più presto.",
+      "errorMessage": "Controlla i campi e riprova."
+    }
+  },
+  "Blog": {
+    "eyebrow": "BLOG",
+    "title": "Idee, guide e storie per imprenditori",
+    "subtitle": "Articoli, approfondimenti e casi studio per aiutarti a costruire il tuo progetto.",
+    "readMore": "Leggi di più",
+    "categoryLabels": {
+      "businessPlan": "Business Plan",
+      "pitch": "Pitch",
+      "fundraising": "Fundraising",
+      "strategia": "Strategia",
+      "ai": "AI",
+      "casiStudio": "Casi studio"
+    },
+    "articles": [
+      {
+        "title": "Come scrivere un Business Plan convincente",
+        "description": "Una guida pratica per strutturare un business plan chiaro e credibile agli occhi di investitori e partner.",
+        "category": "businessPlan",
+        "date": "12 Apr 2026"
+      },
+      {
+        "title": "I 5 errori più comuni in un Pitch Deck",
+        "description": "Analizziamo gli errori che frenano la tua narrazione e come evitarli per conquistare la platea.",
+        "category": "pitch",
+        "date": "04 Apr 2026"
+      },
+      {
+        "title": "Fundraising: preparare la tua prima round",
+        "description": "Tutto quello che devi sapere per avvicinarti al primo round di finanziamento con la giusta preparazione.",
+        "category": "fundraising",
+        "date": "28 Mar 2026"
+      },
+      {
+        "title": "Strategia go-to-market per startup early stage",
+        "description": "Come definire un piano di ingresso sul mercato efficace quando le risorse sono limitate.",
+        "category": "strategia",
+        "date": "19 Mar 2026"
+      },
+      {
+        "title": "L'AI generativa al servizio dell'impresa",
+        "description": "Casi d'uso reali dell'intelligenza artificiale per automatizzare documenti, analisi e decisioni.",
+        "category": "ai",
+        "date": "11 Mar 2026"
+      },
+      {
+        "title": "Caso studio: da idea a MVP in 90 giorni",
+        "description": "La storia di un founder che ha strutturato la sua idea e lanciato un MVP grazie a Silicon Plan.",
+        "category": "casiStudio",
+        "date": "02 Mar 2026"
+      }
+    ],
+    "metadata": {
+      "title": "Blog · Silicon Plan",
+      "description": "Articoli, guide e casi studio per imprenditori: business plan, pitch, fundraising, strategia e AI."
+    }
+  }
+}

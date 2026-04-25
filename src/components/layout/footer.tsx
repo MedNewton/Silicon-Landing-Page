@@ -1,13 +1,141 @@
 "use client";
 
-import { Box, Stack, Typography, IconButton, Link } from "@mui/material";
+import { Box, Stack, Typography, IconButton } from "@mui/material";
 import Image from "next/image";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import { useTranslations } from "next-intl";
 import logo from "@/assets/logo/logo.png";
+import { Link as LocaleLink } from "@/i18n/navigation";
+
+// TODO: confirm onboarding URL
+const BECOME_CONSULTANT_URL =
+  "https://app.silicon-plan.live/?nav=consultants";
+
+type ColumnLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+  localeAware?: boolean;
+};
+
+const columnLinkSx = {
+  fontSize: 14,
+  color: "#C3CCE5",
+  textDecoration: "none",
+  cursor: "pointer",
+  transition: "color 0.2s ease",
+  "&:hover": {
+    color: "#FFFFFF",
+  },
+};
+
+const FooterColumnLink = ({ link }: { link: ColumnLink }) => {
+  if (link.localeAware) {
+    return (
+      <LocaleLink
+        href={link.href}
+        style={{ textDecoration: "none" }}
+      >
+        <Typography sx={columnLinkSx}>{link.label}</Typography>
+      </LocaleLink>
+    );
+  }
+  return (
+    <Typography
+      component="a"
+      href={link.href}
+      {...(link.external
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : {})}
+      sx={columnLinkSx}
+    >
+      {link.label}
+    </Typography>
+  );
+};
 
 const Footer = () => {
+  const t = useTranslations("Footer");
+
+  const columns: { title: string; links: ColumnLink[] }[] = [
+    {
+      title: t("columns.prodotto.title"),
+      links: [
+        {
+          label: t("columns.prodotto.links.panoramica"),
+          href: "#prodotto",
+        },
+        {
+          label: t("columns.prodotto.links.comeFunziona"),
+          href: "#come-funziona",
+        },
+        {
+          label: t("columns.prodotto.links.aiDocuments"),
+          href: "#ai-documents",
+        },
+        {
+          label: t("columns.prodotto.links.percorsoGuidato"),
+          href: "#percorso-guidato",
+        },
+      ],
+    },
+    {
+      title: t("columns.consulenti.title"),
+      links: [
+        {
+          label: t("columns.consulenti.links.marketplace"),
+          href: "#consulenti",
+        },
+        {
+          label: t("columns.consulenti.links.diventaConsulente"),
+          href: BECOME_CONSULTANT_URL,
+          external: true,
+        },
+      ],
+    },
+    {
+      title: t("columns.risorse.title"),
+      links: [
+        {
+          label: t("columns.risorse.links.contattaci"),
+          href: "#contatti",
+        },
+        {
+          label: t("columns.risorse.links.blog"),
+          href: "/blog",
+          localeAware: true,
+        },
+        {
+          label: t("columns.risorse.links.faq"),
+          href: "#faq",
+        },
+      ],
+    },
+    {
+      title: t("columns.azienda.title"),
+      links: [
+        {
+          label: t("columns.azienda.links.chiSiamo"),
+          href: "#about",
+        },
+        {
+          label: t("columns.azienda.links.mission"),
+          href: "#about-mission",
+        },
+        {
+          label: t("columns.azienda.links.valori"),
+          href: "#about-values",
+        },
+        {
+          label: t("columns.azienda.links.prezzi"),
+          href: "#prezzi",
+        },
+      ],
+    },
+  ];
+
   return (
     <Box
       component="footer"
@@ -29,14 +157,14 @@ const Footer = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
+            flexDirection: { xs: "column", lg: "row" },
             justifyContent: "space-between",
-            gap: { xs: 4, md: 10 },
+            gap: { xs: 4, md: 8 },
             px: { xs: 3, md: 6 },
             py: { xs: 4, md: 6 },
           }}
         >
-          <Stack spacing={2} maxWidth={{ xs: "100%", md: 420 }}>
+          <Stack spacing={2} maxWidth={{ xs: "100%", lg: 360 }}>
             <Stack direction="row" alignItems="center" spacing={1.5}>
               <Box
                 sx={{
@@ -51,7 +179,7 @@ const Footer = () => {
               >
                 <Image
                   src={logo}
-                  alt="SiliconPlan logo"
+                  alt={t("logoAlt")}
                   width={40}
                   height={40}
                   style={{ objectFit: "cover" }}
@@ -64,7 +192,7 @@ const Footer = () => {
                   color: "#FFFFFF",
                 }}
               >
-                SiliconPlan
+                {t("brand")}
               </Typography>
             </Stack>
 
@@ -75,63 +203,44 @@ const Footer = () => {
                 lineHeight: 1.6,
               }}
             >
-              Silicon Plan is a Smartool Srl product - Innovative Start-up
+              {t("description")}
               <br />
-              Via Eleuterio Ruggiero 123, Caserta (CE)
+              {t("address")}
               <br />
-              P.IVA 04738960618
+              {t("vat")}
             </Typography>
           </Stack>
-          <Stack
-            direction="row"
-            spacing={{ xs: 6, md: 10 }}
-            justifyContent="flex-end"
-          >
-            <Stack spacing={1.5} minWidth={140}>
-              <Typography
-                sx={{
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: "#FFFFFF",
-                }}
-              >
-                Products
-              </Typography>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                Product Demo Tour
-              </Typography>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                For consultant
-              </Typography>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                Help center
-              </Typography>
-            </Stack>
 
-            <Stack spacing={1.5} minWidth={160}>
-              <Typography
-                sx={{
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: "#FFFFFF",
-                }}
-              >
-                Company
-              </Typography>
-              <Link href="mailto:info@siliconplan.com" underline="none">
-                <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                  Contact us
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "repeat(2, minmax(0, 1fr))",
+                md: "repeat(4, minmax(0, 1fr))",
+              },
+              gap: { xs: 4, md: 6 },
+              flex: 1,
+            }}
+          >
+            {columns.map((col) => (
+              <Stack key={col.title} spacing={1.5} minWidth={0}>
+                <Typography
+                  sx={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: "#FFFFFF",
+                  }}
+                >
+                  {col.title}
                 </Typography>
-              </Link>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                Privacy &amp; Terms of Service
-              </Typography>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                Help center
-              </Typography>
-            </Stack>
-          </Stack>
+                {col.links.map((link) => (
+                  <FooterColumnLink key={link.label} link={link} />
+                ))}
+              </Stack>
+            ))}
+          </Box>
         </Box>
+
         <Box
           sx={{
             bgcolor: "#0A1324",
@@ -141,7 +250,7 @@ const Footer = () => {
             flexDirection: { xs: "column", md: "row" },
             alignItems: { xs: "flex-start", md: "center" },
             justifyContent: "space-between",
-            gap: { xs: 2, md: 0 },
+            gap: { xs: 2, md: 2 },
           }}
         >
           <Typography
@@ -150,7 +259,7 @@ const Footer = () => {
               color: "#B6BED8",
             }}
           >
-            © {new Date().getFullYear()} SiliconPlan. All rights reserved.
+            {t("copyright", { year: new Date().getFullYear() })}
           </Typography>
 
           <Stack
@@ -165,7 +274,20 @@ const Footer = () => {
                 color: "#C3CCE5",
               }}
             >
-              +39 0823 21 04 74
+              {t("phone")}
+            </Typography>
+            <Typography
+              component="a"
+              href="#"
+              sx={{
+                fontSize: 13,
+                color: "#B6BED8",
+                textDecoration: "none",
+                transition: "color 0.2s ease",
+                "&:hover": { color: "#FFFFFF" },
+              }}
+            >
+              {t("privacyTerms")}
             </Typography>
 
             <Stack direction="row" spacing={1}>

@@ -24,6 +24,8 @@ next-env.d.ts
 # misc
 .DS_Store
 *.pem
+*.pdf
+*.md
 
 # debug
 npm-debug.log*
