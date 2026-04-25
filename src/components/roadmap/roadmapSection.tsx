@@ -54,7 +54,7 @@ const RoadmapSection = () => {
             component="section"
             sx={{
                 width: "100%",
-                py: { xs: 12, md: 20 },
+                py: { xs: 8, md: 12 },
                 px: { xs: 2, md: 10 },
                 backgroundColor: theme.palette.background.default,
             }}
@@ -62,7 +62,7 @@ const RoadmapSection = () => {
             <Stack
                 spacing={{ xs: 4, md: 6 }}
                 alignItems="center"
-                maxWidth="1280px"
+                maxWidth="900px"
                 mx="auto"
             >
                 <Typography
@@ -114,7 +114,7 @@ const RoadmapSection = () => {
                                 key={step.title}
                                 alignItems="center"
                                 spacing={1.5}
-                                px={2}
+                                px={0.5}
                             >
                                 <Image
                                     src={step.icon}
