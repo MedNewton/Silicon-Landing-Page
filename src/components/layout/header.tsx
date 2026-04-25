@@ -82,8 +82,8 @@ const Header = () => {
             px={1}
             py={1}
             borderRadius={20}
-            width="fit-content"
-            maxWidth="95vw"
+            width="92vw"
+            maxWidth="1400px"
             marginX="auto"
             gap={3}
             marginTop={1.5}
