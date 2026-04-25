@@ -33,7 +33,7 @@ const MobileHero = () => {
                     borderRadius: 4,
                     overflow: "hidden",
                     pt: 16,
-                    pb: 5,
+                    pb: 8,
                     gap: 3,
                 }}
             >

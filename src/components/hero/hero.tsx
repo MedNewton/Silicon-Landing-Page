@@ -32,7 +32,7 @@ const Hero = () => {
                     borderRadius: 4,
                     overflow: "hidden",
                     pt: 18,
-                    pb: 8,
+                    pb: 12,
                     gap: 4,
                 }}
             >
