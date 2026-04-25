@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import logo from "@/assets/logo/logo.png";
 import HeaderDropdown from "@/components/layout/headerDropdown";
-import USFlag from "@/components/icons/USFlag";
+import LanguageSwitcher from "@/components/layout/languageSwitcher";
 import {
     PRODUCT_ITEMS,
     RESOURCES_ITEMS,
@@ -112,17 +112,7 @@ const Header = () => {
             </Stack>
 
             <Stack direction="row" alignItems="center" gap={1.5}>
-                <Stack
-                    direction="row"
-                    alignItems="center"
-                    gap={0.75}
-                    sx={{ cursor: "default", userSelect: "none" }}
-                >
-                    <USFlag size={22} />
-                    <Typography variant="body2" sx={{ color: "text.secondary", fontWeight: 500 }}>
-                        EN
-                    </Typography>
-                </Stack>
+                <LanguageSwitcher />
                 <Link href="https://app.silicon-plan.live/?nav=consultants" target="_blank">
                     <Button name="our-experts" sx={whitePillSx} disableRipple>
                         <Typography sx={buttonTextDarkSx}>Our Experts</Typography>
