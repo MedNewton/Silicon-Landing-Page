@@ -175,7 +175,8 @@ const TestimonialsSection = () => {
         <Box
             component="section"
             sx={{
-                width: "100%",
+                width: "auto",
+                mx: { xs: -1, md: -2 },
                 py: { xs: 6, md: 10 },
                 overflow: "hidden",
                 backgroundColor: theme.palette.background.default,
