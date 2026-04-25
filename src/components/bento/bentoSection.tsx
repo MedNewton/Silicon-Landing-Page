@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Stack, Typography, Button, Link } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
 
@@ -327,33 +327,6 @@ const BentoSection = () => {
                         </Box>
                     </Box>
                 </Box>
-                <Link href="https://app.silicon-plan.live" target="_blank">
-                    <Button
-                        name="create-my-first-plan"
-                        disableRipple
-                        sx={{
-                            textTransform: "none",
-                            borderRadius: "16px",
-                            py: 2.25,
-                            px: 6.5,
-                            fontWeight: 400,
-                            fontSize: 15,
-                            background: theme.palette.titleGradient,
-                            color: "#FFFFFF",
-                            border: "none",
-                            boxShadow: `
-                                    0 0 0 1px rgba(96, 126, 255, 0.95),
-                                    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
-                                    0 18px 32px rgba(88, 124, 255, 0.4)
-                                    `,
-                            "&:hover": {
-                                background: theme.palette.titleGradient,
-                            },
-                        }}
-                    >
-                        Create My Plan
-                    </Button>
-                </Link>
             </Stack>
         </Box>
     );
