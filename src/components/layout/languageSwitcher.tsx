@@ -78,7 +78,12 @@ const LanguageSwitcher = () => {
                 <CurrentFlag size={22} />
                 <Typography
                     variant="body2"
-                    sx={{ color: "text.secondary", fontWeight: 500 }}
+                    sx={{
+                        color: "text.secondary",
+                        fontWeight: 500,
+                        minWidth: 20,
+                        textAlign: "center",
+                    }}
                 >
                     {current.label}
                 </Typography>
