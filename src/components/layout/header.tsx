@@ -3,11 +3,17 @@ import theme from "@/theme/theme";
 import Image from "next/image";
 
 import logo from "@/assets/logo/logo.png";
+import HeaderDropdown from "@/components/layout/headerDropdown";
+import USFlag from "@/components/icons/USFlag";
+import {
+    PRODUCT_ITEMS,
+    RESOURCES_ITEMS,
+    ABOUT_ITEMS,
+} from "@/components/layout/navItems";
 
 const gradientButtonSx = {
-    width: "100%",
     height: "fit-content",
-    paddingX: 5,
+    paddingX: 2.5,
     paddingY: 1,
     borderRadius: 20,
     background: "linear-gradient(273deg, #5B3A9E 0%, #3B7AF0 50%, #5B3A9E 100%)",
@@ -26,10 +32,42 @@ const gradientButtonSx = {
     },
 };
 
-const buttonTextSx = {
-    fontSize: "0.95rem",
+const whitePillSx = {
+    height: "fit-content",
+    paddingX: 2.5,
+    paddingY: 1,
+    borderRadius: 20,
+    background: "#FFFFFF",
+    textTransform: "none",
+    transition: "transform 0.25s ease, filter 0.25s ease",
+    boxShadow: "0px 4px 12px rgba(15, 27, 60, 0.06)",
+    "&:hover": {
+        background: "#FFFFFF",
+        transform: "scale(1.04)",
+    },
+};
+
+const buttonTextWhiteSx = {
+    fontSize: "0.9rem",
     fontWeight: 500,
-    color: "#fff",
+    color: "#FFFFFF",
+    whiteSpace: "nowrap",
+};
+
+const buttonTextDarkSx = {
+    fontSize: "0.9rem",
+    fontWeight: 500,
+    color: "#1E2B42",
+    whiteSpace: "nowrap",
+};
+
+const plainLinkSx = {
+    color: "text.secondary",
+    transition: "color 0.2s ease",
+    whiteSpace: "nowrap",
+    "&:hover": {
+        color: "text.primary",
+    },
 };
 
 const Header = () => {
@@ -43,72 +81,54 @@ const Header = () => {
             py={1}
             borderRadius={20}
             width="fit-content"
-            minWidth="55vw"
-            maxWidth="70vw"
+            maxWidth="95vw"
             marginX="auto"
-            gap={16}
+            gap={3}
             marginTop={1.5}
             sx={{
                 background: theme.palette.headerGradient,
                 backdropFilter: "blur(10px)",
             }}
         >
-            <Stack sx={{
-                width: "25%",
-                height: "fit-content",
-                textTransform: "none",
-            }}>
+            <Stack sx={{ height: "fit-content" }}>
                 <Image src={logo} alt="logo" width={40} height={40} />
             </Stack>
-            <Stack
-                minWidth="30%"
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                gap={5}
-            >
-                <Link
-                    href="#features"
-                    underline="none"
-                    color="text.secondary"
-                    variant="body2"
-                    sx={{
-                        transition: "color 0.2s ease",
-                        "&:hover": {
-                            color: "text.primary",
-                        },
-                    }}
-                >
-                    Features
+
+            <Stack direction="row" alignItems="center" gap={3}>
+                <HeaderDropdown label="Product" items={PRODUCT_ITEMS} />
+                <Link href="#" underline="none" variant="body2" sx={plainLinkSx}>
+                    Consultants
                 </Link>
-                <Link
-                    href="#pricing"
-                    underline="none"
-                    color="text.secondary"
-                    variant="body2"
-                    sx={{
-                        transition: "color 0.2s ease",
-                        "&:hover": {
-                            color: "text.primary",
-                        },
-                    }}
-                >
-                    Subscribe
+                <Link href="#" underline="none" variant="body2" sx={plainLinkSx}>
+                    Pricing
+                </Link>
+                <HeaderDropdown label="Resources" items={RESOURCES_ITEMS} />
+                <HeaderDropdown label="About us" items={ABOUT_ITEMS} />
+                <Link href="#" underline="none" variant="body2" sx={plainLinkSx}>
+                    Become a consultant
                 </Link>
             </Stack>
-            <Stack direction="row" alignItems="center" gap={1} sx={{ width: "25%" }}>
-                <Link href="https://app.silicon-plan.live/?nav=consultants" target="_blank" sx={{ width: "50%" }}>
-                    <Button name="visit-marketplace" sx={gradientButtonSx}>
-                        <Typography sx={{ ...buttonTextSx, whiteSpace: "nowrap" }}>
-                            Our Experts
-                        </Typography>
+
+            <Stack direction="row" alignItems="center" gap={1.5}>
+                <Stack
+                    direction="row"
+                    alignItems="center"
+                    gap={0.75}
+                    sx={{ cursor: "default", userSelect: "none" }}
+                >
+                    <USFlag size={22} />
+                    <Typography variant="body2" sx={{ color: "text.secondary", fontWeight: 500 }}>
+                        EN
+                    </Typography>
+                </Stack>
+                <Link href="https://app.silicon-plan.live/?nav=consultants" target="_blank">
+                    <Button name="our-experts" sx={whitePillSx} disableRipple>
+                        <Typography sx={buttonTextDarkSx}>Our Experts</Typography>
                     </Button>
                 </Link>
-                <Link href="https://app.silicon-plan.live" target="_blank" sx={{ width: "50%" }}>
-                    <Button name="login-signup" sx={gradientButtonSx}>
-                        <Typography sx={buttonTextSx}>
-                            Login
-                        </Typography>
+                <Link href="https://app.silicon-plan.live" target="_blank">
+                    <Button name="login-signup" sx={gradientButtonSx} disableRipple>
+                        <Typography sx={buttonTextWhiteSx}>Log In / Sign Up</Typography>
                     </Button>
                 </Link>
             </Stack>
