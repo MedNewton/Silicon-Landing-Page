@@ -6,6 +6,7 @@ import CTA from "@/components/hero/cta";
 import BentoSection from "@/components/bento/bentoSection";
 import ComparisonSection from "@/components/comparison/comparisonSection";
 import RoadmapSection from "@/components/roadmap/roadmapSection";
+import HowItWorksSection from "@/components/howItWorks/howItWorksSection";
 import Pricing from "@/components/pricing/pricing";
 import Footer from "@/components/layout/footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
         <BentoSection />
         <ComparisonSection />
         <RoadmapSection />
+        <HowItWorksSection />
         <Pricing />
       </Stack>
       <Footer />

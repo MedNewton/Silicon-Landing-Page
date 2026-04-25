@@ -6,6 +6,7 @@ import MobileCTA from "@/components/hero/mobile/mobileCta";
 import MobileBusinessPlanSlider from "@/components/bento/mobileBusinessPlanSlider";
 import ComparisonSection from "@/components/comparison/comparisonSection";
 import RoadmapSection from "@/components/roadmap/roadmapSection";
+import HowItWorksSection from "@/components/howItWorks/howItWorksSection";
 import MobilePricing from "@/components/pricing/mobile/mobilePricing";
 import MobileFooter from "@/components/layout/mobile/mobileFooter";
 
@@ -18,6 +19,7 @@ export default function Home() {
         <MobileBusinessPlanSlider />
         <ComparisonSection />
         <RoadmapSection />
+        <HowItWorksSection />
         <MobilePricing />
       </Stack>
       <MobileFooter />
