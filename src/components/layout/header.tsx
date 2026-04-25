@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, Stack, Typography, Link } from "@mui/material";
 import theme from "@/theme/theme";
 import Image from "next/image";
