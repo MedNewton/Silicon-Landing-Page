@@ -96,7 +96,7 @@ const TestimonialCard = ({ t }: { t: Testimonial }) => (
             borderRadius: 4,
             p: { xs: 2.5, md: 3 },
             mx: 1.5,
-            boxShadow: "0px 14px 40px rgba(15, 27, 60, 0.25)",
+            boxShadow: "0px 14px 40px rgba(146, 153, 184, 0.14)",
         }}
     >
         <Stack
@@ -178,8 +178,7 @@ const TestimonialsSection = () => {
                 width: "100%",
                 py: { xs: 6, md: 10 },
                 overflow: "hidden",
-                background: "#0A1324",
-                borderRadius: 4,
+                backgroundColor: theme.palette.background.default,
             }}
         >
             <Stack spacing={{ xs: 4, md: 5 }} alignItems="center">
@@ -205,7 +204,7 @@ const TestimonialsSection = () => {
                     </Typography>
                     <Typography
                         sx={{
-                            color: "rgba(255, 255, 255, 0.65)",
+                            color: theme.palette.text.secondary,
                             fontSize: { xs: 14, md: 16 },
                             textAlign: "center",
                         }}
