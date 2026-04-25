@@ -14,12 +14,12 @@ const AiDocumentGenerationSection = () => {
             sx={{
                 width: "100%",
                 py: { xs: 6, md: 10 },
-                px: { xs: 2, md: 6 },
+                px: { xs: 2, md: 10 },
             }}
         >
             <Stack
                 direction={{ xs: "column", md: "row" }}
-                spacing={{ xs: 4, md: 6 }}
+                spacing={{ xs: 4, md: 10 }}
                 alignItems="center"
                 maxWidth="1280px"
                 mx="auto"
