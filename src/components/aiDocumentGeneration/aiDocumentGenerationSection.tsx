@@ -21,6 +21,7 @@ const AiDocumentGenerationSection = () => {
                 direction={{ xs: "column", md: "row" }}
                 spacing={{ xs: 4, md: 22 }}
                 alignItems="center"
+                width="100%"
                 maxWidth="1280px"
                 mx="auto"
             >
