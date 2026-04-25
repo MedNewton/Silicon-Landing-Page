@@ -34,8 +34,9 @@ const ConsultantsSection = () => {
                     sx={{
                         display: { xs: "none", md: "block" },
                         position: "absolute",
-                        right: 32,
+                        left: "75%",
                         bottom: 0,
+                        transform: "translateX(-50%)",
                         height: "100%",
                         width: "auto",
                         pointerEvents: "none",
