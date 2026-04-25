@@ -84,7 +84,7 @@ const ComparisonSection = () => {
                     <Box
                         component="span"
                         sx={{
-                            color: "#1E2B42",
+                            color: "#9AA4C5",
                             textDecoration: "line-through",
                             textDecorationThickness: "3px",
                         }}
