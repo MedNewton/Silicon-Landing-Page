@@ -1,0 +1,272 @@
+{
+  "header": {
+    "product": "Prodotto",
+    "consultants": "Consulenti",
+    "pricing": "Prezzi",
+    "resources": "Risorse",
+    "aboutUs": "Chi siamo",
+    "becomeConsultant": "Diventa consulente",
+    "ourExperts": "I nostri esperti",
+    "loginSignup": "Accedi / Registrati",
+    "productItems": [
+      { "label": "Panoramica" },
+      { "label": "Come funziona" },
+      { "label": "Business Plan" },
+      { "label": "Pitch Deck" },
+      { "label": "Business Model Canvas" },
+      { "label": "Valutazione Pre-Money" }
+    ],
+    "resourcesItems": [
+      { "label": "Contattaci" },
+      { "label": "Blog" },
+      { "label": "FAQ" }
+    ],
+    "aboutItems": [
+      { "label": "Chi siamo" },
+      { "label": "Missione" },
+      { "label": "Visione" },
+      { "label": "Valori" }
+    ]
+  },
+  "languageSwitcher": {
+    "ariaLabel": "Cambia lingua"
+  },
+  "hero": {
+    "badge": "<bold>800</bold> PMI creano documenti ogni giorno",
+    "title": "Trasforma la tua idea in un piano strategico",
+    "subtitle": "Silicon Plan ti guida nella creazione di business plan, pitch e modelli di business con strumenti AI e supporto professionale."
+  },
+  "cta": {
+    "createProject": "Crea il tuo progetto",
+    "watchDemo": "Guarda la demo"
+  },
+  "bento": {
+    "title": "Tutto ciò che ti serve per costruire un Business Plan vincente",
+    "instantAi": {
+      "title": "Creazione documenti istantanea con IA",
+      "description": "Genera documenti completi, pronti per gli investitori, in pochi secondi.",
+      "chips": ["Business Plan", "Pitch Deck", "Previsioni Finanziarie", "Canvas Models"]
+    },
+    "expertSupport": {
+      "title": "Supporto esperto",
+      "description": "Scegli i consulenti dal nostro marketplace."
+    },
+    "collaborate": {
+      "title": "Collabora",
+      "description": "in modo fluido sui documenti con il tuo team."
+    },
+    "financialForecasts": {
+      "title": "Previsioni Finanziarie",
+      "description": "Analizza le performance finanziarie con l'IA per previsioni più accurate su profitti e spese.",
+      "toggleMonthly": "Mensile",
+      "toggleQuarterly": "Trimestrale",
+      "toggleYearly": "Annuale"
+    },
+    "slider": {
+      "slides": [
+        { "title": "Creazione del business plan" },
+        { "title": "Previsioni finanziarie" },
+        { "title": "Collabora con il tuo team" },
+        { "title": "Insight pronti per gli investitori" }
+      ]
+    }
+  },
+  "comparison": {
+    "title": "Creare un progetto oggi è <strike>complesso</strike>",
+    "subtitle": "Strumenti dispersi, documenti difficili da creare e processi poco chiari rendono difficile trasformare un'idea in un progetto concreto. Silicon Plan semplifica tutto in un unico percorso.",
+    "withoutHeading": "Senza Silicon Plan",
+    "withHeading": "Con Silicon Plan",
+    "without": [
+      { "title": "Strumenti dispersi", "description": "Passare continuamente tra documenti, fogli di calcolo e strumenti di design." },
+      { "title": "Lavoro manuale", "description": "Ore spese a formattare e scrivere tutto da zero." },
+      { "title": "Processo confuso", "description": "Nessuna guida chiara su cosa fare al passo successivo." }
+    ],
+    "with": [
+      { "title": "Percorso guidato", "description": "Un cammino chiaro dall'idea alla presentazione." },
+      { "title": "Documenti pronti", "description": "Documenti professionali generati dall'IA in pochi minuti." },
+      { "title": "Struttura chiara", "description": "Tutto organizzato in un'unica piattaforma centralizzata." }
+    ]
+  },
+  "roadmap": {
+    "title": "Un percorso chiaro per costruire il tuo progetto",
+    "subtitle": "Non devi sapere da dove iniziare. La piattaforma ti guida in ogni passaggio.",
+    "steps": [
+      { "title": "Idea", "description": "Definisci la tua visione" },
+      { "title": "Canvas", "description": "Struttura il modello" },
+      { "title": "Business Plan", "description": "Approfondisci la strategia" },
+      { "title": "Pitch", "description": "Presenta agli investitori" }
+    ]
+  },
+  "howItWorks": {
+    "title": "Come funziona",
+    "subtitle": "In pochi passaggi hai una struttura completa del tuo progetto.",
+    "steps": [
+      { "title": "Crea il tuo progetto", "description": "Inizia dando un nome alla tua idea e definendo il perimetro di base." },
+      { "title": "Inserisci le informazioni", "description": "Rispondi a domande guidate sul tuo mercato, prodotto e obiettivi." },
+      { "title": "Genera i documenti", "description": "L'IA crea istantaneamente documenti strutturati in base ai tuoi input." },
+      { "title": "Migliora il tuo progetto", "description": "Affina, modifica e ottieni supporto professionale per perfezionare il piano." }
+    ]
+  },
+  "consultants": {
+    "badge": "Unisciti ai consulenti che supportano <bold>800+</bold> PMI ogni giorno",
+    "title": "Lavora con startup pronte a costruire",
+    "subtitle": "Unisciti a Silicon Plan come consulente e collabora con founder che stanno attivamente sviluppando le loro idee imprenditoriali",
+    "button": "Diventa Consulente"
+  },
+  "testimonials": {
+    "title": "La fiducia di founder e consulenti in tutto il mondo",
+    "subtitle": "Risultati reali da collaborazioni reali",
+    "topRow": [
+      { "name": "Sofia Martinez", "role": "Startup Founder", "quote": "Ho trovato esattamente l'esperto di cui avevo bisogno. La sessione era strutturata, pratica e direttamente applicabile alla nostra startup." },
+      { "name": "Liam Turner", "role": "Co-Founder", "quote": "Lavorare all'interno della piattaforma ha reso tutto più semplice — dalla pianificazione alla revisione del pitch deck. Lo consiglio vivamente." },
+      { "name": "Olivia Bennett", "role": "Startup Enthusiast", "quote": "Ottima esperienza. Feedback chiari, iterazione rapida e impatto concreto sul nostro processo di fundraising." },
+      { "name": "Marcus Reed", "role": "Tech Founder", "quote": "Dopo due sessioni avevamo una roadmap chiara e abbiamo potuto ripensare completamente i materiali go-to-market." },
+      { "name": "Aria Chen", "role": "SaaS Founder", "quote": "I consigli erano precisi e pratici. Ho consegnato un pitch deck molto più solido già la settimana stessa." }
+    ],
+    "bottomRow": [
+      { "name": "Daniel Turner", "role": "Strategy Consultant", "quote": "Silicon Plan rende facile lavorare con founder motivati. Le sessioni sono ben strutturate e avere i documenti integrati fa risparmiare molto tempo." },
+      { "name": "James Walker", "role": "Financial Consultant", "quote": "L'approccio strutturato alle sessioni e la collaborazione sui documenti migliorano davvero la qualità della consulenza." },
+      { "name": "Emma Collins", "role": "Product Consultant", "quote": "Apprezzo quanto siano strutturate le sessioni. Aiuta sia me che il founder a restare focalizzati e ottenere risultati più velocemente." },
+      { "name": "Ava Thompson", "role": "Venture Consultant", "quote": "Ottimo strumento per collaborare su documenti in evoluzione. Elimina molta attrito tra consulenti e founder." },
+      { "name": "Hugo Laurent", "role": "Growth Consultant", "quote": "Onboarding semplice, passaggi chiari e i founder arrivano preparati. Il miglior flusso di lavoro che abbia mai usato." }
+    ]
+  },
+  "aiDocumentGeneration": {
+    "title": "Generazione\nDocumenti con IA",
+    "subtitle": "Sulla base dei dati del tuo progetto, la nostra IA compila istantaneamente materiali completi pronti da presentare a investitori, incubatori o partner.",
+    "features": ["Business Plan", "Pitch Decks", "Business Model Canvas"],
+    "button": "Inizia a generare"
+  },
+  "pricing": {
+    "title": "Inizia scegliendo il piano più adatto a te",
+    "monthlyToggle": "Mensile",
+    "annualToggle": "Annuale",
+    "annualSave": "Risparmia il 25%",
+    "perMonth": "al mese",
+    "paidMonthly": "pagamento mensile",
+    "paidMonthlyShort": "mensile",
+    "paidAnnuallyShort": "annuale",
+    "includedFeatures": "Funzionalità incluse",
+    "getStarted": "Inizia ora",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthlyPrice": "0",
+        "annualPrice": "0",
+        "description": "Per chiunque abbia bisogno di un business plan professionale.",
+        "ctaLabel": "Inizia ora"
+      },
+      {
+        "name": "Start-up",
+        "monthlyPrice": "27,90",
+        "annualPrice": "20,93",
+        "description": "Per chiunque abbia bisogno di un business plan professionale.",
+        "ctaLabel": "Inizia ora"
+      },
+      {
+        "name": "Unicorn",
+        "monthlyPrice": "49,90",
+        "annualPrice": "37,43",
+        "description": "Per le aziende che hanno bisogno di strumenti finanziari per operare e crescere.",
+        "ctaLabel": "Inizia ora"
+      }
+    ],
+    "features": [
+      { "label": "Generazione Business Model Canvas", "tag": null, "free": true, "startup": true, "unicorn": true },
+      { "label": "Marketplace consulenti", "tag": null, "free": true, "startup": true, "unicorn": true },
+      { "label": "Guide tecniche", "tag": null, "free": true, "startup": true, "unicorn": true },
+      { "label": "Istruzioni passo dopo passo", "tag": null, "free": true, "startup": true, "unicorn": true },
+      { "label": "Generazione Business Plan", "tag": null, "free": false, "startup": true, "unicorn": true },
+      { "label": "Accesso per 3 membri del team", "tag": null, "free": false, "startup": true, "unicorn": true },
+      { "label": "1 creazione progetto", "tag": null, "free": false, "startup": true, "unicorn": true },
+      { "label": "Assistenza alla scrittura", "tag": "AI Powered", "free": false, "startup": true, "unicorn": true },
+      { "label": "Valutazione pre-money (6 metodi)", "tag": null, "free": false, "startup": false, "unicorn": true },
+      { "label": "Accesso per 5 membri del team", "tag": null, "free": false, "startup": false, "unicorn": true },
+      { "label": "7 creazioni progetto", "tag": null, "free": false, "startup": false, "unicorn": true },
+      { "label": "Analisi finanziaria", "tag": "AI Powered", "free": false, "startup": false, "unicorn": true },
+      { "label": "Ricerche di settore", "tag": null, "free": false, "startup": false, "unicorn": true },
+      { "label": "Dashboard di performance", "tag": null, "free": false, "startup": false, "unicorn": true },
+      { "label": "Esporta in Excel", "tag": null, "free": false, "startup": false, "unicorn": true }
+    ]
+  },
+  "footer": {
+    "productsHeading": "Prodotti",
+    "companyHeading": "Azienda",
+    "productLinks": [
+      { "label": "Tour dimostrativo del prodotto" },
+      { "label": "Per i consulenti" },
+      { "label": "Centro assistenza" }
+    ],
+    "companyLinks": [
+      { "label": "Contattaci" },
+      { "label": "Privacy e Termini di Servizio" },
+      { "label": "Centro assistenza" }
+    ],
+    "phone": "+39 0823 21 04 74",
+    "companyInfo": "Silicon Plan è un prodotto di Smartool Srl - Startup Innovativa",
+    "address": "Via Eleuterio Ruggiero 123, Caserta (CE)",
+    "vat": "P.IVA 04738960618",
+    "copyright": "© {year} SiliconPlan. Tutti i diritti riservati."
+  },
+  "whoAreWe": {
+    "title": "Chi siamo",
+    "description": "SiliconPlan è una piattaforma digitale che aiuta aspiranti imprenditori, professionisti e organizzazioni a trasformare un'idea in un progetto strutturato, presentabile e finanziabile.",
+    "bullets": [
+      "Oggi fare impresa richiede competenze multidisciplinari, strumenti diversi e spesso costi elevati.",
+      "SiliconPlan riunisce tutto questo in un'unica piattaforma accessibile e guidata."
+    ],
+    "capabilitiesHeading": "Attraverso un approccio basato sull'intelligenza artificiale, una metodologia strutturata e il supporto umano, permettiamo agli utenti di sviluppare",
+    "cardDescription": "Accedi a Business Plan, Canvas e Pitch Deck direttamente all'interno della piattaforma.",
+    "cards": [
+      { "title": "Business Model" },
+      { "title": "Business Plan" },
+      { "title": "Pitch Deck" },
+      { "title": "Analisi Finanziaria" },
+      { "title": "Valutazioni Pre-Money" }
+    ]
+  },
+  "vision": {
+    "title": "La nostra Visione",
+    "description": "Immaginiamo un ecosistema in cui ogni idea imprenditoriale valida possa essere sviluppata, validata e finanziata, indipendentemente dalle risorse iniziali.",
+    "bullets": [
+      "Costruisci e valida le idee con il supporto dell'IA",
+      "Connettiti con esperti per accelerare la crescita",
+      "Strumenti accessibili per ogni founder",
+      "Un'unica piattaforma per costruire e scalare"
+    ],
+    "capabilitiesHeading": "Siamo la piattaforma di riferimento per la creazione e lo sviluppo di progetti, integrando:",
+    "cards": [
+      { "title": "Tecnologia", "description": "Sfrutta strumenti basati sull'IA per costruire, strutturare e validare le tue idee imprenditoriali più velocemente." },
+      { "title": "Competenze", "description": "Accedi all'esperienza reale di consulenti qualificati in strategia, prodotto e crescita." },
+      { "title": "Formazione", "description": "Apprendi attraverso workflow guidati e insights pratici progettati per l'esecuzione nel mondo reale." },
+      { "title": "Accesso al capitale", "description": "Prepara la tua azienda per il finanziamento e connettiti con le giuste opportunità per crescere." }
+    ]
+  },
+  "mission": {
+    "title": "La nostra Missione",
+    "paragraphs": [
+      "La nostra missione è rendere la creazione e lo sviluppo d'impresa più accessibili, più rapidi e più efficaci.",
+      "Vogliamo abbattere le barriere che oggi impediscono a molte idee di diventare imprese solide."
+    ],
+    "capabilitiesHeading": "Con SiliconPlan, chiunque può costruire un business plan solido, anche partendo da zero.",
+    "cards": [
+      { "title": "Mancanza di competenze", "description": "Accedi a guida esperta e strumenti AI passo dopo passo per costruire con sicurezza." },
+      { "title": "Costi di consulenza elevati", "description": "Lavora con consulenti in un formato flessibile e accessibile." },
+      { "title": "Mancanza di strumenti guidati", "description": "Utilizza workflow strutturati progettati per lo sviluppo reale di startup." },
+      { "title": "Difficoltà di finanziamento", "description": "Prepara la tua azienda e connettiti con opportunità di finanziamento." }
+    ]
+  },
+  "values": {
+    "title": "I nostri Valori",
+    "paragraphs": [
+      "Crediamo che tutti debbano avere l'opportunità di trasformare un'idea in un'impresa.",
+      "Riduciamo le barriere, la complessità e i costi, rendendo gli strumenti imprenditoriali accessibili a tutti."
+    ],
+    "cards": [
+      { "title": "Struttura e metodo", "description": "Fare impresa non è solo creatività: è metodo. Offriamo un processo chiaro e guidato che aiuta gli utenti a sviluppare progetti solidi, passo dopo passo." },
+      { "title": "Innovazione utile", "description": "Usiamo l'intelligenza artificiale per semplificare processi complessi. Non per sostituire il pensiero umano, ma per potenziarlo." },
+      { "title": "Collaborazione", "description": "Crediamo nel valore dell'expertise. Per questo integriamo tecnologia e consulenza, creando un ecosistema che connette aziende e professionisti." },
+      { "title": "Crescita continua", "description": "Siamo in costante evoluzione. Migloriamo la piattaforma in base ai feedback degli utenti e agli sviluppi del mercato. Vogliamo contribuire a un ecosistema imprenditoriale più forte, dove più idee possano diventare realtà concreta." }
+    ]
+  }
+}
