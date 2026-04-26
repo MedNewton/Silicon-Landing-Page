@@ -44,7 +44,7 @@ export const RESOURCES_ITEMS: NavItem[] = [
 
 export const ABOUT_ITEMS: NavItem[] = [
     { Icon: Profile, label: "Who we are", href: "/about/who-are-we" },
-    { Icon: Sun1, label: "Mission", href: "#" },
-    { Icon: TickSquare, label: "Vision", href: "#" },
-    { Icon: Star1, label: "Values", href: "#" },
+    { Icon: Sun1, label: "Mission", href: "/about/mission" },
+    { Icon: TickSquare, label: "Vision", href: "/about/vision" },
+    { Icon: Star1, label: "Values", href: "/about/values" },
 ];
