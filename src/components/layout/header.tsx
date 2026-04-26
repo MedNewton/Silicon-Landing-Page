@@ -92,9 +92,17 @@ const Header = () => {
                 backdropFilter: "blur(10px)",
             }}
         >
-            <Stack sx={{ height: "fit-content" }}>
-                <Image src={logo} alt="logo" width={40} height={40} />
-            </Stack>
+            <Link
+                href="/"
+                aria-label="Go to homepage"
+                sx={{
+                    height: "fit-content",
+                    display: "flex",
+                    alignItems: "center",
+                }}
+            >
+                <Image src={logo} alt="Silicon Plan logo" width={40} height={40} />
+            </Link>
 
             <Stack direction="row" alignItems="center" gap={3}>
                 <HeaderDropdown label="Product" items={PRODUCT_ITEMS} />

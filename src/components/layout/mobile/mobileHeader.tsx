@@ -103,10 +103,21 @@ const MobileHeader = () => {
                     display: { xs: "flex", md: "none" },
                 }}
             >
-                <Image src={logo} alt="logo" width={60} height={60} />
-                <Typography variant="h6" fontWeight={400} color="#1E2B42">
-                    Silicon Plan
-                </Typography>
+                <Link
+                    href="/"
+                    aria-label="Go to homepage"
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        textDecoration: "none",
+                    }}
+                >
+                    <Image src={logo} alt="Silicon Plan logo" width={60} height={60} />
+                    <Typography variant="h6" fontWeight={400} color="#1E2B42">
+                        Silicon Plan
+                    </Typography>
+                </Link>
                 <Button
                     name="open-menu"
                     size="small"
