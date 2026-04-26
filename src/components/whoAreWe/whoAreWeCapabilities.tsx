@@ -64,9 +64,9 @@ const WhoAreWeCapabilities = () => {
                     component="h2"
                     sx={{
                         color: theme.palette.text.primary,
-                        fontSize: { xs: 22, md: 28 },
+                        fontSize: { xs: 16, md: 20 },
                         fontWeight: 500,
-                        lineHeight: 1.4,
+                        lineHeight: 1.5,
                         maxWidth: 880,
                     }}
                 >
