@@ -2,12 +2,13 @@ import { Box, Button, Link, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { TickCircle } from "iconsax-reactjs";
 import theme from "@/theme/theme";
+import { getTranslations } from "next-intl/server";
 
 import previewImg from "@/assets/aiDocumentGeneration/img.png";
 
-const FEATURES = ["Business Plan", "Pitch Decks", "Business Model Canvas"];
-
-const AiDocumentGenerationSection = () => {
+const AiDocumentGenerationSection = async () => {
+    const t = await getTranslations("aiDocumentGeneration");
+    const features = t.raw("features") as string[];
     return (
         <Box
             component="section"
@@ -64,11 +65,10 @@ const AiDocumentGenerationSection = () => {
                             WebkitTextFillColor: "transparent",
                             backgroundClip: "text",
                             color: "transparent",
+                            whiteSpace: "pre-line",
                         }}
                     >
-                        AI Document
-                        <br />
-                        Generation
+                        {t("title")}
                     </Typography>
 
                     <Typography
@@ -79,13 +79,11 @@ const AiDocumentGenerationSection = () => {
                             maxWidth: 520,
                         }}
                     >
-                        Based on your project data, our AI instantly compiles
-                        comprehensive materials ready to present to investors,
-                        incubators, or partners.
+                        {t("subtitle")}
                     </Typography>
 
                     <Stack spacing={{ xs: 1.5, md: 2 }} sx={{ pt: 1 }}>
-                        {FEATURES.map((label) => (
+                        {features.map((label) => (
                             <Stack
                                 key={label}
                                 direction="row"
@@ -138,7 +136,7 @@ const AiDocumentGenerationSection = () => {
                                 },
                             }}
                         >
-                            Start generating
+                            {t("button")}
                         </Button>
                     </Link>
                 </Stack>
