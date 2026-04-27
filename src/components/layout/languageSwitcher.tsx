@@ -1,8 +1,10 @@
 "use client";
 
-import { useRef, useState, type ComponentType } from "react";
+import { useRef, useState, useTransition, type ComponentType } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { ArrowDown2 } from "iconsax-reactjs";
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import theme from "@/theme/theme";
 import USFlag from "@/components/icons/USFlag";
 import ITFlag from "@/components/icons/ITFlag";
@@ -10,22 +12,26 @@ import ITFlag from "@/components/icons/ITFlag";
 const OPEN_DELAY_MS = 150;
 const CLOSE_DELAY_MS = 200;
 
-type LanguageCode = "EN" | "IT";
+type LocaleCode = "en" | "it";
 
 type Language = {
-    code: LanguageCode;
+    code: LocaleCode;
     label: string;
     Flag: ComponentType<{ size?: number }>;
 };
 
 const LANGUAGES: Language[] = [
-    { code: "EN", label: "EN", Flag: USFlag },
-    { code: "IT", label: "IT", Flag: ITFlag },
+    { code: "en", label: "EN", Flag: USFlag },
+    { code: "it", label: "IT", Flag: ITFlag },
 ];
 
 const LanguageSwitcher = () => {
+    const locale = useLocale() as LocaleCode;
+    const router = useRouter();
+    const pathname = usePathname();
+    const [isPending, startTransition] = useTransition();
+
     const [open, setOpen] = useState(false);
-    const [selected, setSelected] = useState<LanguageCode>("EN");
     const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
     const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -50,20 +56,23 @@ const LanguageSwitcher = () => {
         closeTimer.current = setTimeout(() => setOpen(false), CLOSE_DELAY_MS);
     };
 
-    const handleSelect = (code: LanguageCode) => {
-        setSelected(code);
+    const handleSelect = (code: LocaleCode) => {
         clearTimers();
         setOpen(false);
+        if (code === locale) return;
+        startTransition(() => {
+            router.replace(pathname, { locale: code });
+        });
     };
 
-    const current = LANGUAGES.find((l) => l.code === selected) ?? LANGUAGES[0]!;
+    const current = LANGUAGES.find((l) => l.code === locale) ?? LANGUAGES[0]!;
     const CurrentFlag = current.Flag;
 
     return (
         <Box
             onMouseEnter={handleEnter}
             onMouseLeave={handleLeave}
-            sx={{ position: "relative" }}
+            sx={{ position: "relative", opacity: isPending ? 0.6 : 1 }}
         >
             <Stack
                 direction="row"
@@ -131,7 +140,7 @@ const LanguageSwitcher = () => {
                                         px: 1,
                                         borderRadius: 3,
                                         backgroundColor:
-                                            code === selected
+                                            code === locale
                                                 ? "rgba(63, 109, 221, 0.1)"
                                                 : "transparent",
                                         transition: "background 0.15s ease",
