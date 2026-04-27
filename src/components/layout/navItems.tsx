@@ -1,12 +1,11 @@
 import {
     Book1,
-    Hierarchy,
+    FormatSquare,
     Note1,
     PresentionChart,
-    Element4,
-    Chart,
+    Element3,
+    Diagram,
     Magicpen,
-    Edit2,
     MessageQuestion,
     Profile,
     Sun1,
@@ -28,10 +27,10 @@ export type NavItem = {
     href: string;
 };
 
-const PRODUCT_ICONS: ComponentType<IconProps>[] = [Book1, Hierarchy, Note1, PresentionChart, Element4, Chart];
+const PRODUCT_ICONS: ComponentType<IconProps>[] = [Book1, FormatSquare, Note1, PresentionChart, Element3, Diagram];
 const PRODUCT_HREFS = ["#", "#", "#", "#", "#", "#"];
 
-const RESOURCES_ICONS: ComponentType<IconProps>[] = [Magicpen, Edit2, MessageQuestion];
+const RESOURCES_ICONS: ComponentType<IconProps>[] = [Magicpen, Book1, MessageQuestion];
 const RESOURCES_HREFS = ["#", "#", "#"];
 
 const ABOUT_ICONS: ComponentType<IconProps>[] = [Profile, Sun1, TickSquare, Star1];
