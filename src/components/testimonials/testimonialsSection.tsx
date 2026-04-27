@@ -3,6 +3,7 @@
 import { Avatar, Box, Stack, Typography } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import theme from "@/theme/theme";
+import { useTranslations } from "next-intl";
 
 type Testimonial = {
     name: string;
@@ -11,81 +12,8 @@ type Testimonial = {
     quote: string;
 };
 
-const TOP_ROW: Testimonial[] = [
-    {
-        name: "Sofia Martinez",
-        role: "Startup Founder",
-        avatarSeed: 5,
-        quote:
-            "I found exactly the expert I needed. The session was structured, practical, and directly applicable to our startup.",
-    },
-    {
-        name: "Liam Turner",
-        role: "Co-Founder",
-        avatarSeed: 12,
-        quote:
-            "Working inside the platform made everything easier — from planning to refining our pitch deck. Highly recommend.",
-    },
-    {
-        name: "Olivia Bennett",
-        role: "Startup Enthusiast",
-        avatarSeed: 23,
-        quote:
-            "Great experience. Clear feedback, fast iteration, and real impact on our fundraising process.",
-    },
-    {
-        name: "Marcus Reed",
-        role: "Tech Founder",
-        avatarSeed: 33,
-        quote:
-            "After two sessions we had a clear roadmap and could completely rethink our go-to-market materials.",
-    },
-    {
-        name: "Aria Chen",
-        role: "SaaS Founder",
-        avatarSeed: 45,
-        quote:
-            "The advice was sharp and practical. I shipped a much stronger pitch deck the same week.",
-    },
-];
-
-const BOTTOM_ROW: Testimonial[] = [
-    {
-        name: "Daniel Turner",
-        role: "Strategy Consultant",
-        avatarSeed: 8,
-        quote:
-            "Silicon Plan makes it easy to work with motivated founders. Sessions are well-structured, and having documents inside saves a lot of time.",
-    },
-    {
-        name: "James Walker",
-        role: "Financial Consultant",
-        avatarSeed: 15,
-        quote:
-            "The structured approach to sessions and document collaboration really improves the quality of consulting.",
-    },
-    {
-        name: "Emma Collins",
-        role: "Product Consultant",
-        avatarSeed: 47,
-        quote:
-            "I appreciate how structured the sessions are. It helps both me and the founder stay focused and get results faster.",
-    },
-    {
-        name: "Ava Thompson",
-        role: "Venture Consultant",
-        avatarSeed: 36,
-        quote:
-            "Great tool for collaborating on living documents. It removes a lot of friction between consultants and founders.",
-    },
-    {
-        name: "Hugo Laurent",
-        role: "Growth Consultant",
-        avatarSeed: 60,
-        quote:
-            "Easy onboarding, clear handoffs, and the founders show up prepared. Best workflow I've used.",
-    },
-];
+const TOP_ROW_SEEDS = [5, 12, 23, 33, 45];
+const BOTTOM_ROW_SEEDS = [8, 15, 47, 36, 60];
 
 const TestimonialCard = ({ t }: { t: Testimonial }) => (
     <Box
@@ -171,6 +99,13 @@ const Marquee = ({
 );
 
 const TestimonialsSection = () => {
+    const t = useTranslations("testimonials");
+    const topRow: Testimonial[] = (
+        t.raw("topRow") as Array<{ name: string; role: string; quote: string }>
+    ).map((item, i) => ({ ...item, avatarSeed: TOP_ROW_SEEDS[i]! }));
+    const bottomRow: Testimonial[] = (
+        t.raw("bottomRow") as Array<{ name: string; role: string; quote: string }>
+    ).map((item, i) => ({ ...item, avatarSeed: BOTTOM_ROW_SEEDS[i]! }));
     return (
         <Box
             component="section"
@@ -201,7 +136,7 @@ const TestimonialsSection = () => {
                             color: "transparent",
                         }}
                     >
-                        Trusted by founders and consultants worldwide
+                        {t("title")}
                     </Typography>
                     <Typography
                         sx={{
@@ -210,13 +145,13 @@ const TestimonialsSection = () => {
                             textAlign: "center",
                         }}
                     >
-                        Real results from real collaborations
+                        {t("subtitle")}
                     </Typography>
                 </Stack>
 
                 <Stack spacing={{ xs: 2, md: 3 }} sx={{ width: "100%" }}>
-                    <Marquee items={TOP_ROW} direction="left" />
-                    <Marquee items={BOTTOM_ROW} direction="right" />
+                    <Marquee items={topRow} direction="left" />
+                    <Marquee items={bottomRow} direction="right" />
                 </Stack>
             </Stack>
         </Box>
