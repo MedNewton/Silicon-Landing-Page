@@ -1,48 +1,23 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image, { type StaticImageData } from "next/image";
 import theme from "@/theme/theme";
+import { getTranslations } from "next-intl/server";
 
 import createIcon from "@/assets/howitworks/create.png";
 import infoIcon from "@/assets/howitworks/info.png";
 import generateIcon from "@/assets/howitworks/generate.png";
 import improveIcon from "@/assets/howitworks/improve.png";
 
-type Step = {
-    title: string;
-    description: string;
-    icon: StaticImageData;
-};
-
-const STEPS: Step[] = [
-    {
-        title: "Create your project",
-        description: "Start by giving your idea a name and defining the basic scope.",
-        icon: createIcon,
-    },
-    {
-        title: "Enter information",
-        description:
-            "Answer guided questions about your market, product, and goals.",
-        icon: infoIcon,
-    },
-    {
-        title: "Generate documents",
-        description:
-            "AI instantly creates structured documents based on your inputs.",
-        icon: generateIcon,
-    },
-    {
-        title: "Improve your project",
-        description:
-            "Refine, edit, and get professional support to perfect your plan.",
-        icon: improveIcon,
-    },
-];
+const ICONS: StaticImageData[] = [createIcon, infoIcon, generateIcon, improveIcon];
 
 const SECTION_BG =
     "linear-gradient(90deg, rgba(211, 219, 239, 0.5) 0%, rgba(215, 211, 239, 0.5) 100%)";
 
-const HowItWorksSection = () => {
+const HowItWorksSection = async () => {
+    const t = await getTranslations("howItWorks");
+    const steps = (t.raw("steps") as Array<{ title: string; description: string }>).map(
+        (s, i) => ({ ...s, icon: ICONS[i]! })
+    );
     return (
         <Box
             component="section"
@@ -73,7 +48,7 @@ const HowItWorksSection = () => {
                         color: "transparent",
                     }}
                 >
-                    How it works
+                    {t("title")}
                 </Typography>
 
                 <Typography
@@ -85,7 +60,7 @@ const HowItWorksSection = () => {
                         lineHeight: 1.6,
                     }}
                 >
-                    In just a few steps you have a complete structure of your project.
+                    {t("subtitle")}
                 </Typography>
 
                 <Box
@@ -100,7 +75,7 @@ const HowItWorksSection = () => {
                         gap: { xs: 2, md: 3 },
                     }}
                 >
-                    {STEPS.map((step) => (
+                    {steps.map((step) => (
                         <Box
                             key={step.title}
                             sx={{
