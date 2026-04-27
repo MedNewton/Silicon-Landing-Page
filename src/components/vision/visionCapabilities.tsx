@@ -56,7 +56,7 @@ const VisionCapabilities = async () => {
                     }}
                 >
                     {cards.map(({ title, description }, index) => {
-                        const Icon = ICONS[index];
+                        const Icon = ICONS[index]!;
                         return (
                             <Stack
                                 key={title}

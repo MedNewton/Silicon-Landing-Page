@@ -68,7 +68,7 @@ const WhoAreWeCapabilities = async () => {
                     }}
                 >
                     {cards.map(({ title }, index) => {
-                        const Icon = ICONS[index];
+                        const Icon = ICONS[index]!;
                         return (
                             <Stack
                                 key={title}
