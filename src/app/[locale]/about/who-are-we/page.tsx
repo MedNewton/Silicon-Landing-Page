@@ -1,12 +1,20 @@
+import { setRequestLocale } from "next-intl/server";
 import theme from "@/theme/theme";
 import { Stack } from "@mui/material";
 
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
-import ValuesHero from "@/components/values/valuesHero";
-import ValuesCards from "@/components/values/valuesCards";
+import WhoAreWeHero from "@/components/whoAreWe/whoAreWeHero";
+import WhoAreWeCapabilities from "@/components/whoAreWe/whoAreWeCapabilities";
 
-export default function ValuesPage() {
+export default async function WhoAreWePage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     return (
         <Stack
             component="main"
@@ -16,8 +24,8 @@ export default function ValuesPage() {
         >
             <Stack width="100%" alignItems="center" py={1.5} px={2}>
                 <Header />
-                <ValuesHero />
-                <ValuesCards />
+                <WhoAreWeHero />
+                <WhoAreWeCapabilities />
             </Stack>
             <Footer />
         </Stack>

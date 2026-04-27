@@ -1,34 +1,42 @@
+import { setRequestLocale } from "next-intl/server";
 import theme from "@/theme/theme";
 import { Stack } from "@mui/material";
 
-import Hero from "@/components/hero/hero";
-import CTA from "@/components/hero/cta";
-import BentoSection from "@/components/bento/bentoSection";
+import MobileHero from "@/components/hero/mobile/mobileHero";
+import MobileCTA from "@/components/hero/mobile/mobileCta";
+import MobileBusinessPlanSlider from "@/components/bento/mobileBusinessPlanSlider";
 import ComparisonSection from "@/components/comparison/comparisonSection";
 import RoadmapSection from "@/components/roadmap/roadmapSection";
 import HowItWorksSection from "@/components/howItWorks/howItWorksSection";
 import ConsultantsSection from "@/components/consultants/consultantsSection";
 import TestimonialsSection from "@/components/testimonials/testimonialsSection";
-import Pricing from "@/components/pricing/pricing";
+import MobilePricing from "@/components/pricing/mobile/mobilePricing";
 import AiDocumentGenerationSection from "@/components/aiDocumentGeneration/aiDocumentGenerationSection";
-import Footer from "@/components/layout/footer";
+import MobileFooter from "@/components/layout/mobile/mobileFooter";
 
-export default function Home() {
-  return (
+export default async function Home({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
+    return (
     <Stack component="main" width="100%" minHeight="100vh" sx={{ background: theme.palette.background.default }}>
-      <Stack width="100%" height="100%" alignItems="center" py={1.5} px={2}>
-        <Hero />
-        <CTA />
-        <BentoSection />
+      <Stack width="100%" height="100%" alignItems="center" py={0.75} px={1}>
+        <MobileHero />
+        <MobileCTA />
+        <MobileBusinessPlanSlider />
         <ComparisonSection />
         <RoadmapSection />
         <HowItWorksSection />
         <ConsultantsSection />
         <TestimonialsSection />
-        <Pricing />
+        <MobilePricing />
         <AiDocumentGenerationSection />
       </Stack>
-      <Footer />
+      <MobileFooter />
     </Stack>
   );
 }
