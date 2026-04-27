@@ -198,7 +198,7 @@ const MobileHeader = () => {
                     />
                     <Link
                         component={IntlLink}
-                        href="#"
+                        href="/consultants"
                         underline="none"
                         onClick={handleClose}
                         sx={flatLinkSx}

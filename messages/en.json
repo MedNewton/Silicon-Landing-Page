@@ -268,5 +268,25 @@
       { "title": "Collaborazione", "description": "We believe in the value of expertise. That's why we integrate technology and consulting, creating an ecosystem that connects businesses and professionals." },
       { "title": "Continuous growth", "description": "We're constantly evolving. We improve the platform based on user feedback and market developments. We want to contribute to a stronger entrepreneurial ecosystem, where more ideas can become concrete reality." }
     ]
+  },
+  "consultantsPage": {
+    "heroTitle": "Need support?",
+    "heroDescription": "Access expert consultants to improve your project whenever you need it.",
+    "heroFilterText": "<bold>Filter by</bold> skills, industry, and availability.",
+    "findConsultantCta": "Find a Consultant",
+    "categoriesHeading": "Work with top experts across industries",
+    "categoryChips": [
+      { "label": "Business & Services" },
+      { "label": "Industrial & Traditional" },
+      { "label": "Tech & Infrastructure" },
+      { "label": "+20 more" }
+    ],
+    "card": {
+      "role": "Engineer",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...",
+      "sessions": "{count} sessions",
+      "messageCta": "Message",
+      "bookCta": "Book Consultation"
+    }
   }
 }

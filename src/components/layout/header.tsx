@@ -107,7 +107,7 @@ const Header = () => {
 
             <Stack direction="row" alignItems="center" gap={3}>
                 <HeaderDropdown label={t("product")} items={productItems} />
-                <IntlLink href="#" style={{ textDecoration: "none" }}>
+                <IntlLink href="/consultants" style={{ textDecoration: "none" }}>
                     <Typography variant="body2" sx={plainLinkSx}>{t("consultants")}</Typography>
                 </IntlLink>
                 <IntlLink href="#" style={{ textDecoration: "none" }}>

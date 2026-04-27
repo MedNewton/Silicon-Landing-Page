@@ -268,5 +268,25 @@
       { "title": "Collaborazione", "description": "Crediamo nel valore dell'expertise. Per questo integriamo tecnologia e consulenza, creando un ecosistema che connette aziende e professionisti." },
       { "title": "Crescita continua", "description": "Siamo in costante evoluzione. Migloriamo la piattaforma in base ai feedback degli utenti e agli sviluppi del mercato. Vogliamo contribuire a un ecosistema imprenditoriale più forte, dove più idee possano diventare realtà concreta." }
     ]
+  },
+  "consultantsPage": {
+    "heroTitle": "Hai bisogno di supporto?",
+    "heroDescription": "Accedi a consulenti esperti per migliorare il tuo progetto ogni volta che ne hai bisogno.",
+    "heroFilterText": "<bold>Filtra per</bold> competenze, settore e disponibilità.",
+    "findConsultantCta": "Trova un consulente",
+    "categoriesHeading": "Collabora con i migliori esperti in ogni settore",
+    "categoryChips": [
+      { "label": "Servizi & Business" },
+      { "label": "Industriale & Tradizionale" },
+      { "label": "Tech & Infrastrutture" },
+      { "label": "+20 altri" }
+    ],
+    "card": {
+      "role": "Ingegnere",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...",
+      "sessions": "{count} sessioni",
+      "messageCta": "Messaggio",
+      "bookCta": "Prenota consulenza"
+    }
   }
 }
