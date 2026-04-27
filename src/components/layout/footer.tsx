@@ -6,8 +6,12 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import logo from "@/assets/logo/logo.png";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+  const t = useTranslations("footer");
+  const productLinks = t.raw("productLinks") as Array<{ label: string }>;
+  const companyLinks = t.raw("companyLinks") as Array<{ label: string }>;
   return (
     <Box
       component="footer"
@@ -75,11 +79,11 @@ const Footer = () => {
                 lineHeight: 1.6,
               }}
             >
-              Silicon Plan is a Smartool Srl product - Innovative Start-up
+              {t("companyInfo")}
               <br />
-              Via Eleuterio Ruggiero 123, Caserta (CE)
+              {t("address")}
               <br />
-              P.IVA 04738960618
+              {t("vat")}
             </Typography>
           </Stack>
           <Stack
@@ -95,17 +99,13 @@ const Footer = () => {
                   color: "#FFFFFF",
                 }}
               >
-                Products
+                {t("productsHeading")}
               </Typography>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                Product Demo Tour
-              </Typography>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                For consultant
-              </Typography>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                Help center
-              </Typography>
+              {productLinks.map((link) => (
+                <Typography key={link.label} sx={{ fontSize: 14, color: "#C3CCE5" }}>
+                  {link.label}
+                </Typography>
+              ))}
             </Stack>
 
             <Stack spacing={1.5} minWidth={160}>
@@ -116,19 +116,18 @@ const Footer = () => {
                   color: "#FFFFFF",
                 }}
               >
-                Company
+                {t("companyHeading")}
               </Typography>
               <Link href="mailto:info@siliconplan.com" underline="none">
                 <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                  Contact us
+                  {companyLinks[0]?.label}
                 </Typography>
               </Link>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                Privacy &amp; Terms of Service
-              </Typography>
-              <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
-                Help center
-              </Typography>
+              {companyLinks.slice(1).map((link) => (
+                <Typography key={link.label} sx={{ fontSize: 14, color: "#C3CCE5" }}>
+                  {link.label}
+                </Typography>
+              ))}
             </Stack>
           </Stack>
         </Box>
@@ -150,7 +149,7 @@ const Footer = () => {
               color: "#B6BED8",
             }}
           >
-            © {new Date().getFullYear()} SiliconPlan. All rights reserved.
+            {t("copyright", { year: new Date().getFullYear() })}
           </Typography>
 
           <Stack
@@ -165,7 +164,7 @@ const Footer = () => {
                 color: "#C3CCE5",
               }}
             >
-              +39 0823 21 04 74
+              {t("phone")}
             </Typography>
 
             <Stack direction="row" spacing={1}>
