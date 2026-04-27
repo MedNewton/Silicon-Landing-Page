@@ -1,30 +1,26 @@
 import { NextResponse, type NextRequest, userAgent } from "next/server";
+import createIntlMiddleware from "next-intl/middleware";
+import { routing } from "@/i18n/routing";
 
-export function middleware(req: NextRequest): NextResponse {
-  const { nextUrl } = req;
-  const pathname = nextUrl.pathname;
+const intlMiddleware = createIntlMiddleware(routing);
 
-  const ua = userAgent(req);
-  const deviceType = ua.device.type ?? "desktop";
-  const isMobile = deviceType === "mobile" || deviceType === "tablet";
+export function middleware(req: NextRequest) {
+    const { pathname } = req.nextUrl;
+    const ua = userAgent(req);
+    const deviceType = ua.device.type ?? "desktop";
+    const isMobile = deviceType === "mobile" || deviceType === "tablet";
 
-  const mobileRewrittenPaths = ["/", "/team"];
+    const mobileHomepagePaths = new Set(["/", "/en"]);
 
-  if (isMobile && mobileRewrittenPaths.includes(pathname)) {
-    const url = nextUrl.clone();
-
-    if (pathname === "/") {
-      url.pathname = "/mobile";
-    } else {
-      url.pathname = `${pathname}/mobile`;
+    if (isMobile && mobileHomepagePaths.has(pathname)) {
+        const url = req.nextUrl.clone();
+        url.pathname = pathname === "/" ? "/mobile" : `${pathname}/mobile`;
+        return NextResponse.rewrite(url);
     }
 
-    return NextResponse.rewrite(url);
-  }
-
-  return NextResponse.next();
+    return intlMiddleware(req);
 }
 
 export const config = {
-  matcher: ["/", "/team"],
+    matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };
