@@ -95,6 +95,7 @@ const MobileHero = async () => {
                         textAlign: "center",
                         fontWeight: 700,
                         lineHeight: 1.15,
+                        whiteSpace: "pre-line",
                     }}
                 >
                     {t("title")}

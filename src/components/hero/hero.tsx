@@ -94,6 +94,7 @@ const Hero = async () => {
                         textAlign: "center",
                         fontWeight: 700,
                         lineHeight: 1.1,
+                        whiteSpace: "pre-line",
                     }}
                 >
                     {t("title")}
