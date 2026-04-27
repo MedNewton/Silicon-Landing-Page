@@ -1,41 +1,12 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { CloseCircle, TickCircle } from "iconsax-reactjs";
 import theme from "@/theme/theme";
+import { getTranslations } from "next-intl/server";
 
 type Item = {
     title: string;
     description: string;
 };
-
-const NEGATIVE_ITEMS: Item[] = [
-    {
-        title: "Scattered tools",
-        description: "Jumping between docs, spreadsheets, and design tools.",
-    },
-    {
-        title: "Manual work",
-        description: "Spending hours formatting and writing from scratch.",
-    },
-    {
-        title: "Confusing process",
-        description: "No clear step-by-step guidance on what to do next.",
-    },
-];
-
-const POSITIVE_ITEMS: Item[] = [
-    {
-        title: "Guided tour",
-        description: "A clear path from idea to presentation.",
-    },
-    {
-        title: "Ready documents",
-        description: "AI-generated professional documents in minutes.",
-    },
-    {
-        title: "Clear structure",
-        description: "Everything organized in one centralized platform.",
-    },
-];
 
 const WITH_CARD_GRADIENT =
     "linear-gradient(273.13deg, #5D23DA -6.55%, #2E62DF 106.12%)";
@@ -43,7 +14,10 @@ const WITH_CARD_GRADIENT =
 const SECTION_BG =
     "linear-gradient(90deg, rgba(211, 219, 239, 0.21) 0%, rgba(215, 211, 239, 0.21) 100%)";
 
-const ComparisonSection = () => {
+const ComparisonSection = async () => {
+    const t = await getTranslations("comparison");
+    const withoutItems = t.raw("without") as Item[];
+    const withItems = t.raw("with") as Item[];
     return (
         <Box
             component="section"
@@ -67,30 +41,28 @@ const ComparisonSection = () => {
                         fontWeight: 700,
                         textAlign: "center",
                         lineHeight: 1.2,
+                        background: theme.palette.titleGradient,
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                        color: "transparent",
                     }}
                 >
-                    <Box
-                        component="span"
-                        sx={{
-                            background: theme.palette.titleGradient,
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
-                            color: "transparent",
-                        }}
-                    >
-                        Creating a project today is{" "}
-                    </Box>
-                    <Box
-                        component="span"
-                        sx={{
-                            color: "#9AA4C5",
-                            textDecoration: "line-through",
-                            textDecorationThickness: "3px",
-                        }}
-                    >
-                        complex
-                    </Box>
+                    {t.rich("title", {
+                        strike: (chunks) => (
+                            <Box
+                                component="span"
+                                sx={{
+                                    WebkitTextFillColor: "#9AA4C5",
+                                    color: "#9AA4C5",
+                                    textDecoration: "line-through",
+                                    textDecorationThickness: "3px",
+                                }}
+                            >
+                                {chunks}
+                            </Box>
+                        ),
+                    })}
                 </Typography>
 
                 <Typography
@@ -102,9 +74,7 @@ const ComparisonSection = () => {
                         lineHeight: 1.6,
                     }}
                 >
-                    Dispersed tools, difficult-to-create documents, and unclear
-                    processes make it hard to transform an idea into a concrete
-                    project. Silicon Plan simplifies everything into one path.
+                    {t("subtitle")}
                 </Typography>
 
                 <Stack
@@ -130,10 +100,10 @@ const ComparisonSection = () => {
                                 mb: { xs: 3, md: 4 },
                             }}
                         >
-                            Without Silicon Plan
+                            {t("withoutHeading")}
                         </Typography>
                         <Stack spacing={{ xs: 2.5, md: 3 }}>
-                            {NEGATIVE_ITEMS.map((item) => (
+                            {withoutItems.map((item) => (
                                 <Stack
                                     key={item.title}
                                     direction="row"
@@ -200,10 +170,10 @@ const ComparisonSection = () => {
                                 mb: { xs: 3, md: 4 },
                             }}
                         >
-                            With Silicon Plan
+                            {t("withHeading")}
                         </Typography>
                         <Stack spacing={{ xs: 2.5, md: 3 }}>
-                            {POSITIVE_ITEMS.map((item) => (
+                            {withItems.map((item) => (
                                 <Stack
                                     key={item.title}
                                     direction="row"
