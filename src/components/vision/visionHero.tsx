@@ -1,19 +1,16 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import theme from "@/theme/theme";
 
 import portrait from "@/assets/vision/img.png";
 
 const BULLET_COLOR = "#3F6DDD";
 
-const BULLETS = [
-    "Build and validate ideas with AI support",
-    "Connect with experts to accelerate growth",
-    "Accessible tools for every founder",
-    "One platform for building and scaling",
-];
+const VisionHero = async () => {
+    const t = await getTranslations("vision");
+    const bullets = t.raw("bullets") as string[];
 
-const VisionHero = () => {
     return (
         <Box
             component="section"
@@ -76,7 +73,7 @@ const VisionHero = () => {
                             color: "transparent",
                         }}
                     >
-                        Our Vision
+                        {t("title")}
                     </Typography>
 
                     <Typography
@@ -87,13 +84,11 @@ const VisionHero = () => {
                             maxWidth: 520,
                         }}
                     >
-                        We envision an ecosystem where every valid business
-                        idea can be developed, validated, and funded,
-                        regardless of initial resources.
+                        {t("description")}
                     </Typography>
 
                     <Stack spacing={{ xs: 1.5, md: 2 }} sx={{ pt: 1 }}>
-                        {BULLETS.map((text) => (
+                        {bullets.map((text) => (
                             <Stack
                                 key={text}
                                 direction="row"
