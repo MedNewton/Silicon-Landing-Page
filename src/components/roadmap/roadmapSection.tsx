@@ -1,28 +1,14 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image, { type StaticImageData } from "next/image";
 import theme from "@/theme/theme";
+import { getTranslations } from "next-intl/server";
 
 import ideaIcon from "@/assets/roadmap/idea.png";
 import canvasIcon from "@/assets/roadmap/canvas.png";
 import businessPlanIcon from "@/assets/roadmap/businessplan.png";
 import pitchIcon from "@/assets/roadmap/pitch.png";
 
-type Step = {
-    title: string;
-    description: string;
-    icon: StaticImageData;
-};
-
-const STEPS: Step[] = [
-    { title: "Idea", description: "Capture your vision", icon: ideaIcon },
-    { title: "Canvas", description: "Structure the model", icon: canvasIcon },
-    {
-        title: "Business Plan",
-        description: "Detail the strategy",
-        icon: businessPlanIcon,
-    },
-    { title: "Pitch", description: "Present to investors", icon: pitchIcon },
-];
+const ICONS: StaticImageData[] = [ideaIcon, canvasIcon, businessPlanIcon, pitchIcon];
 
 const LINE_GRADIENT =
     "linear-gradient(90deg, rgba(91, 58, 158, 0) 0%, #5B3A9E 12%, #3B7AF0 50%, #5B3A9E 88%, rgba(91, 58, 158, 0) 100%)";
@@ -48,7 +34,11 @@ const NumberCircle = ({ n }: { n: number }) => (
     </Box>
 );
 
-const RoadmapSection = () => {
+const RoadmapSection = async () => {
+    const t = await getTranslations("roadmap");
+    const steps = (t.raw("steps") as Array<{ title: string; description: string }>).map(
+        (s, i) => ({ ...s, icon: ICONS[i]! })
+    );
     return (
         <Box
             component="section"
@@ -78,7 +68,7 @@ const RoadmapSection = () => {
                         color: "transparent",
                     }}
                 >
-                    A clear path to build your project
+                    {t("title")}
                 </Typography>
 
                 <Typography
@@ -90,8 +80,7 @@ const RoadmapSection = () => {
                         lineHeight: 1.6,
                     }}
                 >
-                    You don&apos;t have to know where to start. The platform guides
-                    you through every step.
+                    {t("subtitle")}
                 </Typography>
 
                 {/* Desktop: horizontal row + line with numbered circles */}
@@ -109,7 +98,7 @@ const RoadmapSection = () => {
                             gap: 0,
                         }}
                     >
-                        {STEPS.map((step) => (
+                        {steps.map((step) => (
                             <Stack
                                 key={step.title}
                                 alignItems="center"
@@ -172,7 +161,7 @@ const RoadmapSection = () => {
                                 height: "100%",
                             }}
                         >
-                            {STEPS.map((_, idx) => (
+                            {steps.map((_, idx) => (
                                 <Stack
                                     key={idx}
                                     alignItems="center"
@@ -190,7 +179,7 @@ const RoadmapSection = () => {
                     sx={{ display: { xs: "flex", md: "none" }, width: "100%" }}
                     spacing={3}
                 >
-                    {STEPS.map((step, idx) => (
+                    {steps.map((step, idx) => (
                         <Stack
                             key={step.title}
                             direction="row"
