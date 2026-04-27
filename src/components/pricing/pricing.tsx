@@ -9,6 +9,7 @@ import {
     Typography,
     Link
 } from "@mui/material";
+import { useTranslations } from "next-intl";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
@@ -20,41 +21,11 @@ type BillingPeriod = "monthly" | "annual";
 
 type Feature = {
     label: string;
-    tag?: string;
+    tag: string | null;
     free: boolean;
     startup: boolean;
     unicorn: boolean;
 };
-
-const FEATURES: Feature[] = [
-    { label: "Business Model Canvas generation", free: true, startup: true, unicorn: true },
-    { label: "Consultant marketplace", free: true, startup: true, unicorn: true },
-    { label: "Technical guides", free: true, startup: true, unicorn: true },
-    { label: "Step-by-step instructions", free: true, startup: true, unicorn: true },
-    { label: "Business Plan generation", free: false, startup: true, unicorn: true },
-    { label: "Access for 3 team members", free: false, startup: true, unicorn: true },
-    { label: "1 project creation", free: false, startup: true, unicorn: true },
-    {
-        label: "Writing assistance",
-        tag: "AI Powered",
-        free: false,
-        startup: true,
-        unicorn: true,
-    },
-    { label: "Pre-money valuation (6 methods)", free: false, startup: false, unicorn: true },
-    { label: "Access for 5 team members", free: false, startup: false, unicorn: true },
-    { label: "7 project creations", free: false, startup: false, unicorn: true },
-    {
-        label: "Financial analysis",
-        tag: "AI Powered",
-        free: false,
-        startup: false,
-        unicorn: true,
-    },
-    { label: "Industry research", free: false, startup: false, unicorn: true },
-    { label: "Performance dashboards", free: false, startup: false, unicorn: true },
-    { label: "Export to Excel", free: false, startup: false, unicorn: true },
-];
 
 const STARTUP_MONTHLY = 27.90;
 const STARTUP_ANNUAL = 20.93;
@@ -62,6 +33,8 @@ const UNICORN_MONTHLY = 49.90;
 const UNICORN_ANNUAL = 37.43;
 
 const Pricing = () => {
+    const t = useTranslations("pricing");
+    const features = t.raw("features") as Feature[];
     const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("monthly");
 
     const startupPrice =
@@ -98,7 +71,7 @@ const Pricing = () => {
                         color: "transparent",
                     }}
                 >
-                    Start your plan by picking a package
+                    {t("title")}
                 </Typography>
                 <Box
                     sx={{
@@ -145,7 +118,7 @@ const Pricing = () => {
                             },
                         }}
                     >
-                        Monthly
+                        {t("monthlyToggle")}
                     </Button>
                     <Button
                         name="annual"
@@ -179,7 +152,7 @@ const Pricing = () => {
                         }}
                     >
                         <Box component="span" mr={1}>
-                            Annually
+                            {t("annualToggle")}
                         </Box>
                         <Box
                             component="span"
@@ -192,7 +165,7 @@ const Pricing = () => {
                                         : "#4D5AE5",
                             }}
                         >
-                            Save 25%
+                            {t("annualSave")}
                         </Box>
                     </Button>
                 </Box>
@@ -225,7 +198,7 @@ const Pricing = () => {
                                         color: theme.palette.text.secondary,
                                     }}
                                 >
-                                    Free
+                                    {t("tiers.0.name")}
                                 </Typography>
                             </Stack>
 
@@ -233,7 +206,7 @@ const Pricing = () => {
                                 variant="body2"
                                 sx={{ color: "#7A8098", maxWidth: 320 }}
                             >
-                                For anyone who needs a professional business plan.
+                                {t("tiers.0.description")}
                             </Typography>
                             <Stack direction="row" alignItems="center" gap={1.5}>
                                 <Typography
@@ -261,10 +234,10 @@ const Pricing = () => {
                                         variant="body2"
                                         sx={{ color: "#7A8098", fontWeight: 500 }}
                                     >
-                                        per month
+                                        {t("perMonth")}
                                     </Typography>
                                     <Typography variant="caption" sx={{ color: "#A3A8C0" }}>
-                                        paid monthly
+                                        {t("paidMonthly")}
                                     </Typography>
                                 </Stack>
                             </Stack>
@@ -293,11 +266,11 @@ const Pricing = () => {
                                         },
                                     }}
                                 >
-                                    Get Started
+                                    {t("getStarted")}
                                 </Button>
                             </Link>
                             <Stack gap={2} pt={3}>
-                                {FEATURES.map((feature) => {
+                                {features.map((feature) => {
                                     const included = feature.free;
                                     return (
                                         <Stack
@@ -373,7 +346,7 @@ const Pricing = () => {
                                         color: theme.palette.text.secondary,
                                     }}
                                 >
-                                    Start-up
+                                    {t("tiers.1.name")}
                                 </Typography>
                             </Stack>
 
@@ -381,7 +354,7 @@ const Pricing = () => {
                                 variant="body2"
                                 sx={{ color: "#7A8098", maxWidth: 320 }}
                             >
-                                For anyone who needs a professional business plan.
+                                {t("tiers.1.description")}
                             </Typography>
                             <Stack direction="row" alignItems="center" gap={1.5}>
                                 {billingPeriod === "annual" && (
@@ -428,11 +401,10 @@ const Pricing = () => {
                                         variant="body2"
                                         sx={{ color: "#7A8098", fontWeight: 500 }}
                                     >
-                                        per month
+                                        {t("perMonth")}
                                     </Typography>
                                     <Typography variant="caption" sx={{ color: "#A3A8C0" }}>
-                                        paid{" "}
-                                        {billingPeriod === "monthly" ? "monthly" : "annually"}
+                                        {billingPeriod === "monthly" ? t("paidMonthlyShort") : t("paidAnnuallyShort")}
                                     </Typography>
                                 </Stack>
                             </Stack>
@@ -461,11 +433,11 @@ const Pricing = () => {
                                         },
                                     }}
                                 >
-                                    Get Started
+                                    {t("getStarted")}
                                 </Button>
                             </Link>
                             <Stack gap={2} pt={3}>
-                                {FEATURES.map((feature) => {
+                                {features.map((feature) => {
                                     const included = feature.startup;
                                     return (
                                         <Stack
@@ -541,7 +513,7 @@ const Pricing = () => {
                                         color: "#5C63FF",
                                     }}
                                 >
-                                    Unicorn
+                                    {t("tiers.2.name")}
                                 </Typography>
                             </Stack>
 
@@ -549,8 +521,7 @@ const Pricing = () => {
                                 variant="body2"
                                 sx={{ color: "#7A8098", maxWidth: 320 }}
                             >
-                                For businesses that need financial tools to help them operate &
-                                grow.
+                                {t("tiers.2.description")}
                             </Typography>
                             <Stack direction="row" alignItems="center" gap={1.5}>
                                 {billingPeriod === "annual" && (
@@ -597,11 +568,10 @@ const Pricing = () => {
                                         variant="body2"
                                         sx={{ color: "#7A8098", fontWeight: 500 }}
                                     >
-                                        per month
+                                        {t("perMonth")}
                                     </Typography>
                                     <Typography variant="caption" sx={{ color: "#A3A8C0" }}>
-                                        paid{" "}
-                                        {billingPeriod === "monthly" ? "monthly" : "annually"}
+                                        {billingPeriod === "monthly" ? t("paidMonthlyShort") : t("paidAnnuallyShort")}
                                     </Typography>
                                 </Stack>
                             </Stack>
@@ -630,11 +600,11 @@ const Pricing = () => {
                                         },
                                     }}
                                 >
-                                    Get Started
+                                    {t("getStarted")}
                                 </Button>
                             </Link>
                             <Stack gap={2} pt={3}>
-                                {FEATURES.map((feature) => {
+                                {features.map((feature) => {
                                     const included = feature.unicorn;
                                     return (
                                         <Stack
