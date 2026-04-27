@@ -3,6 +3,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
+import { useTranslations } from "next-intl";
 
 import asset1 from "@/assets/bento/asset1.png";
 import asset2 from "@/assets/bento/asset2.png";
@@ -10,6 +11,8 @@ import asset3 from "@/assets/bento/asset3.png";
 import asset4 from "@/assets/bento/asset4.png";
 
 const BentoSection = () => {
+    const t = useTranslations("bento");
+    const chips = t.raw("instantAi.chips") as string[];
     return (
         <Box
             id="features"
@@ -34,8 +37,7 @@ const BentoSection = () => {
                         color: "transparent",
                     }}
                 >
-                    Everything You Need to Build
-                    <br />a Winning Business Plan
+                    {t("title")}
                 </Typography>
                 <Box
                     sx={{
@@ -75,7 +77,7 @@ const BentoSection = () => {
                             <Typography
                                 sx={{ fontSize: 24, fontWeight: 400, color: "#1D2340", textAlign: "center" }}
                             >
-                                Instant AI-powered
+                                {t("instantAi.title")}
                             </Typography>
                             <Typography
                                 sx={{
@@ -85,7 +87,7 @@ const BentoSection = () => {
                                     textAlign: "center",
                                 }}
                             >
-                                document creation
+                                {t("instantAi.description")}
                             </Typography>
 
                             <Stack
@@ -95,12 +97,7 @@ const BentoSection = () => {
                                 pt={1}
                                 pb={2}
                             >
-                                {[
-                                    "Business Plan",
-                                    "Pitch Deck",
-                                    "Financial Forecasts",
-                                    "Canvas Models",
-                                ].map((label) => (
+                                {chips.map((label) => (
                                     <Box
                                         key={label}
                                         sx={{
@@ -157,7 +154,7 @@ const BentoSection = () => {
                             <Typography
                                 sx={{ fontSize: 24, fontWeight: 400, color: "#1D2340", textAlign: "center" }}
                             >
-                                Expert support
+                                {t("expertSupport.title")}
                             </Typography>
                             <Typography
                                 sx={{
@@ -167,9 +164,7 @@ const BentoSection = () => {
                                     textAlign: "center",
                                 }}
                             >
-                                Choose consultants
-                                <br />
-                                from our marketplace.
+                                {t("expertSupport.description")}
                             </Typography>
                         </Stack>
 
@@ -210,7 +205,7 @@ const BentoSection = () => {
                             <Typography
                                 sx={{ fontSize: 24, fontWeight: 400, color: "#1D2340", textAlign: "center" }}
                             >
-                                Collaborate
+                                {t("collaborate.title")}
                             </Typography>
                             <Typography
                                 sx={{
@@ -220,9 +215,7 @@ const BentoSection = () => {
                                     textAlign: "center",
                                 }}
                             >
-                                seamlessly on documents
-                                <br />
-                                with your team.
+                                {t("collaborate.description")}
                             </Typography>
                         </Stack>
 
@@ -264,7 +257,7 @@ const BentoSection = () => {
                                 <Typography
                                     sx={{ fontSize: 24, fontWeight: 400, color: "#1D2340" }}
                                 >
-                                    Financial Forecasts
+                                    {t("financialForecasts.title")}
                                 </Typography>
                                 <Typography
                                     sx={{
@@ -274,8 +267,7 @@ const BentoSection = () => {
                                         maxWidth: 420,
                                     }}
                                 >
-                                    Analyze financial performance using AI to deliver more accurate
-                                    predictions of profits and expenses.
+                                    {t("financialForecasts.description")}
                                 </Typography>
                             </Stack>
                             <Stack
@@ -291,7 +283,7 @@ const BentoSection = () => {
                                     py: 0.3,
                                 }}
                             >
-                                {["Monthly", "Quarterly", "Yearly"].map((label, idx) => (
+                                {[t("financialForecasts.toggleMonthly"), t("financialForecasts.toggleQuarterly"), t("financialForecasts.toggleYearly")].map((label, idx) => (
                                     <Box
                                         key={label}
                                         sx={{

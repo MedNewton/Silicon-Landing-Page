@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
+import { useTranslations } from "next-intl";
 
 import slide from "@/assets/bento/mobile/slide.png";
 
@@ -11,16 +12,11 @@ type Slide = {
   title: string;
 };
 
-const SLIDES: Slide[] = [
-  { title: "Business plan creation" },
-  { title: "Financial forecasts" },
-  { title: "Collaborate with your team" },
-  { title: "Investor-ready insights" },
-];
-
 const AUTOPLAY_INTERVAL = 4000;
 
 const MobileBusinessPlanSlider = () => {
+  const t = useTranslations("bento");
+  const SLIDES = t.raw("slider.slides") as Slide[];
   const [activeIndex, setActiveIndex] = useState(0);
 
   const touchStartX = useRef<number | null>(null);
@@ -91,8 +87,7 @@ const MobileBusinessPlanSlider = () => {
             color: "transparent",
           }}
         >
-          Everything You Need to Build
-          <br />a Winning Business Plan
+          {t("title")}
         </Typography>
         <Box
           sx={{
