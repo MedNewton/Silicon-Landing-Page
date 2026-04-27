@@ -1,11 +1,13 @@
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
+import { getTranslations } from "next-intl/server";
 
 import bg from "@/assets/consultants/bg.webp";
 import womanImg from "@/assets/consultants/img.png";
 
-const ConsultantsSection = () => {
+const ConsultantsSection = async () => {
+    const t = await getTranslations("consultants");
     return (
         <Box
             component="section"
@@ -111,8 +113,11 @@ const ConsultantsSection = () => {
                                 WebkitTextFillColor: "transparent",
                             }}
                         >
-                            Join consultants supporting{" "}
-                            <span style={{ fontWeight: 700 }}>800+</span> SMEs every day
+                            {t.rich("badge", {
+                                bold: (chunks) => (
+                                    <span style={{ fontWeight: 700 }}>{chunks}</span>
+                                ),
+                            })}
                         </Typography>
                     </Stack>
 
@@ -128,9 +133,7 @@ const ConsultantsSection = () => {
                             color: "transparent",
                         }}
                     >
-                        Work with startups
-                        <br />
-                        that are ready to build
+                        {t("title")}
                     </Typography>
 
                     <Typography
@@ -141,8 +144,7 @@ const ConsultantsSection = () => {
                             maxWidth: 520,
                         }}
                     >
-                        Join Silicon Plan as a consultant and collaborate with founders
-                        who are actively developing their business ideas
+                        {t("subtitle")}
                     </Typography>
 
                     <Link href="#" target="_blank" sx={{ width: "fit-content" }}>
@@ -169,7 +171,7 @@ const ConsultantsSection = () => {
                                 },
                             }}
                         >
-                            Become a Consultant
+                            {t("button")}
                         </Button>
                     </Link>
                 </Stack>
