@@ -1,15 +1,14 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import theme from "@/theme/theme";
 
 import portrait from "@/assets/mission/img.png";
 
-const PARAGRAPHS = [
-    "Our mission is to make business creation and development more accessible, faster, and more effective.",
-    "We want to break down the barriers that currently prevent many ideas from becoming solid businesses.",
-];
+const MissionHero = async () => {
+    const t = await getTranslations("mission");
+    const paragraphs = t.raw("paragraphs") as string[];
 
-const MissionHero = () => {
     return (
         <Box
             component="section"
@@ -72,10 +71,10 @@ const MissionHero = () => {
                             color: "transparent",
                         }}
                     >
-                        Our Mission
+                        {t("title")}
                     </Typography>
 
-                    {PARAGRAPHS.map((text) => (
+                    {paragraphs.map((text) => (
                         <Typography
                             key={text}
                             sx={{
