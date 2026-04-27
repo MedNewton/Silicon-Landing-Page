@@ -4,6 +4,7 @@ import { Box, Collapse, Link, Stack, Typography } from "@mui/material";
 import { ArrowDown2 } from "iconsax-reactjs";
 import theme from "@/theme/theme";
 import type { NavItem } from "@/components/layout/navItems";
+import { Link as IntlLink } from "@/i18n/navigation";
 
 type MobileNavAccordionProps = {
     id: string;
@@ -62,6 +63,7 @@ const MobileNavAccordion = ({
                     {items.map(({ Icon, label: itemLabel, href }) => (
                         <Link
                             key={itemLabel}
+                            component={IntlLink}
                             href={href}
                             underline="none"
                             onClick={onItemClick}

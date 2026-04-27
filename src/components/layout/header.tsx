@@ -1,17 +1,15 @@
 "use client";
 
 import { Button, Stack, Typography, Link } from "@mui/material";
+import { useTranslations } from "next-intl";
 import theme from "@/theme/theme";
 import Image from "next/image";
 
 import logo from "@/assets/logo/logo.png";
 import HeaderDropdown from "@/components/layout/headerDropdown";
 import LanguageSwitcher from "@/components/layout/languageSwitcher";
-import {
-    PRODUCT_ITEMS,
-    RESOURCES_ITEMS,
-    ABOUT_ITEMS,
-} from "@/components/layout/navItems";
+import { useNavItems } from "@/components/layout/navItems";
+import { Link as IntlLink } from "@/i18n/navigation";
 
 const gradientButtonSx = {
     height: "fit-content",
@@ -73,6 +71,9 @@ const plainLinkSx = {
 };
 
 const Header = () => {
+    const t = useTranslations("header");
+    const { productItems, resourcesItems, aboutItems } = useNavItems();
+
     return (
         <Stack
             component="header"
@@ -92,43 +93,43 @@ const Header = () => {
                 backdropFilter: "blur(10px)",
             }}
         >
-            <Link
+            <IntlLink
                 href="/"
                 aria-label="Go to homepage"
-                sx={{
+                style={{
                     height: "fit-content",
                     display: "flex",
                     alignItems: "center",
                 }}
             >
                 <Image src={logo} alt="Silicon Plan logo" width={40} height={40} />
-            </Link>
+            </IntlLink>
 
             <Stack direction="row" alignItems="center" gap={3}>
-                <HeaderDropdown label="Product" items={PRODUCT_ITEMS} />
-                <Link href="#" underline="none" variant="body2" sx={plainLinkSx}>
-                    Consultants
-                </Link>
-                <Link href="#" underline="none" variant="body2" sx={plainLinkSx}>
-                    Pricing
-                </Link>
-                <HeaderDropdown label="Resources" items={RESOURCES_ITEMS} />
-                <HeaderDropdown label="About us" items={ABOUT_ITEMS} />
-                <Link href="#" underline="none" variant="body2" sx={plainLinkSx}>
-                    Become a consultant
-                </Link>
+                <HeaderDropdown label={t("product")} items={productItems} />
+                <IntlLink href="#" style={{ textDecoration: "none" }}>
+                    <Typography variant="body2" sx={plainLinkSx}>{t("consultants")}</Typography>
+                </IntlLink>
+                <IntlLink href="#" style={{ textDecoration: "none" }}>
+                    <Typography variant="body2" sx={plainLinkSx}>{t("pricing")}</Typography>
+                </IntlLink>
+                <HeaderDropdown label={t("resources")} items={resourcesItems} />
+                <HeaderDropdown label={t("aboutUs")} items={aboutItems} />
+                <IntlLink href="#" style={{ textDecoration: "none" }}>
+                    <Typography variant="body2" sx={plainLinkSx}>{t("becomeConsultant")}</Typography>
+                </IntlLink>
             </Stack>
 
             <Stack direction="row" alignItems="center" gap={1.5}>
                 <LanguageSwitcher />
                 <Link href="https://app.silicon-plan.live/?nav=consultants" target="_blank">
                     <Button name="our-experts" sx={whitePillSx} disableRipple>
-                        <Typography sx={buttonTextDarkSx}>Our Experts</Typography>
+                        <Typography sx={buttonTextDarkSx}>{t("ourExperts")}</Typography>
                     </Button>
                 </Link>
                 <Link href="https://app.silicon-plan.live" target="_blank">
                     <Button name="login-signup" sx={gradientButtonSx} disableRipple>
-                        <Typography sx={buttonTextWhiteSx}>Log In / Sign Up</Typography>
+                        <Typography sx={buttonTextWhiteSx}>{t("loginSignup")}</Typography>
                     </Button>
                 </Link>
             </Stack>

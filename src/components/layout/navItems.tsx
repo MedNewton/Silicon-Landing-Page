@@ -13,6 +13,7 @@ import {
     TickSquare,
     Star1,
 } from "iconsax-reactjs";
+import { useTranslations } from "next-intl";
 import type { ComponentType } from "react";
 
 export type IconProps = {
@@ -27,24 +28,41 @@ export type NavItem = {
     href: string;
 };
 
-export const PRODUCT_ITEMS: NavItem[] = [
-    { Icon: Book1, label: "Overview", href: "#" },
-    { Icon: Hierarchy, label: "How it works", href: "#" },
-    { Icon: Note1, label: "Business Plan", href: "#" },
-    { Icon: PresentionChart, label: "Pitch Deck", href: "#" },
-    { Icon: Element4, label: "Business Model Canvas", href: "#" },
-    { Icon: Chart, label: "Pre-Money Valuation", href: "#" },
+const PRODUCT_ICONS: ComponentType<IconProps>[] = [Book1, Hierarchy, Note1, PresentionChart, Element4, Chart];
+const PRODUCT_HREFS = ["#", "#", "#", "#", "#", "#"];
+
+const RESOURCES_ICONS: ComponentType<IconProps>[] = [Magicpen, Edit2, MessageQuestion];
+const RESOURCES_HREFS = ["#", "#", "#"];
+
+const ABOUT_ICONS: ComponentType<IconProps>[] = [Profile, Sun1, TickSquare, Star1];
+const ABOUT_HREFS = [
+    "/about/who-are-we",
+    "/about/mission",
+    "/about/vision",
+    "/about/values",
 ];
 
-export const RESOURCES_ITEMS: NavItem[] = [
-    { Icon: Magicpen, label: "Contact Us", href: "#" },
-    { Icon: Edit2, label: "Blog", href: "#" },
-    { Icon: MessageQuestion, label: "FAQ", href: "#" },
-];
+export const useNavItems = () => {
+    const t = useTranslations("header");
+    const productLabels = t.raw("productItems") as Array<{ label: string }>;
+    const resourcesLabels = t.raw("resourcesItems") as Array<{ label: string }>;
+    const aboutLabels = t.raw("aboutItems") as Array<{ label: string }>;
 
-export const ABOUT_ITEMS: NavItem[] = [
-    { Icon: Profile, label: "Who we are", href: "/about/who-are-we" },
-    { Icon: Sun1, label: "Mission", href: "/about/mission" },
-    { Icon: TickSquare, label: "Vision", href: "/about/vision" },
-    { Icon: Star1, label: "Values", href: "/about/values" },
-];
+    return {
+        productItems: productLabels.map((entry, i): NavItem => ({
+            Icon: PRODUCT_ICONS[i]!,
+            label: entry.label,
+            href: PRODUCT_HREFS[i]!,
+        })),
+        resourcesItems: resourcesLabels.map((entry, i): NavItem => ({
+            Icon: RESOURCES_ICONS[i]!,
+            label: entry.label,
+            href: RESOURCES_HREFS[i]!,
+        })),
+        aboutItems: aboutLabels.map((entry, i): NavItem => ({
+            Icon: ABOUT_ICONS[i]!,
+            label: entry.label,
+            href: ABOUT_HREFS[i]!,
+        })),
+    };
+};

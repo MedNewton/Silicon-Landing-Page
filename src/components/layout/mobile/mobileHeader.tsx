@@ -13,16 +13,14 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import theme from "@/theme/theme";
 
 import logo from "@/assets/logo/logo.png";
 import MobileNavAccordion from "@/components/layout/mobile/mobileNavAccordion";
 import USFlag from "@/components/icons/USFlag";
-import {
-    PRODUCT_ITEMS,
-    RESOURCES_ITEMS,
-    ABOUT_ITEMS,
-} from "@/components/layout/navItems";
+import { useNavItems } from "@/components/layout/navItems";
+import { Link as IntlLink } from "@/i18n/navigation";
 
 const gradientPillSx = {
     width: "100%",
@@ -73,6 +71,8 @@ const flatLinkSx = {
 const MobileHeader = () => {
     const [open, setOpen] = useState(false);
     const [openSection, setOpenSection] = useState<string | null>(null);
+    const t = useTranslations("header");
+    const { productItems, resourcesItems, aboutItems } = useNavItems();
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => {
@@ -103,13 +103,13 @@ const MobileHeader = () => {
                     display: { xs: "flex", md: "none" },
                 }}
             >
-                <Link
+                <IntlLink
                     href="/"
                     aria-label="Go to homepage"
-                    sx={{
+                    style={{
                         display: "flex",
                         alignItems: "center",
-                        gap: 1,
+                        gap: 8,
                         textDecoration: "none",
                     }}
                 >
@@ -117,7 +117,7 @@ const MobileHeader = () => {
                     <Typography variant="h6" fontWeight={400} color="#1E2B42">
                         Silicon Plan
                     </Typography>
-                </Link>
+                </IntlLink>
                 <Button
                     name="open-menu"
                     size="small"
@@ -190,51 +190,54 @@ const MobileHeader = () => {
                 <Stack spacing={2} sx={{ mt: 5, width: "100%" }}>
                     <MobileNavAccordion
                         id="product"
-                        label="Product"
-                        items={PRODUCT_ITEMS}
+                        label={t("product")}
+                        items={productItems}
                         openId={openSection}
                         onToggle={handleToggleSection}
                         onItemClick={handleClose}
                     />
                     <Link
+                        component={IntlLink}
                         href="#"
                         underline="none"
                         onClick={handleClose}
                         sx={flatLinkSx}
                     >
-                        Consultants
+                        {t("consultants")}
                     </Link>
                     <Link
+                        component={IntlLink}
                         href="#"
                         underline="none"
                         onClick={handleClose}
                         sx={flatLinkSx}
                     >
-                        Pricing
+                        {t("pricing")}
                     </Link>
                     <MobileNavAccordion
                         id="resources"
-                        label="Resources"
-                        items={RESOURCES_ITEMS}
+                        label={t("resources")}
+                        items={resourcesItems}
                         openId={openSection}
                         onToggle={handleToggleSection}
                         onItemClick={handleClose}
                     />
                     <MobileNavAccordion
                         id="about"
-                        label="About us"
-                        items={ABOUT_ITEMS}
+                        label={t("aboutUs")}
+                        items={aboutItems}
                         openId={openSection}
                         onToggle={handleToggleSection}
                         onItemClick={handleClose}
                     />
                     <Link
+                        component={IntlLink}
                         href="#"
                         underline="none"
                         onClick={handleClose}
                         sx={flatLinkSx}
                     >
-                        Become a consultant
+                        {t("becomeConsultant")}
                     </Link>
                 </Stack>
 
@@ -269,7 +272,7 @@ const MobileHeader = () => {
                                 <Typography
                                     sx={{ fontSize: 15, fontWeight: 500, color: "#1E2B42" }}
                                 >
-                                    Our Experts
+                                    {t("ourExperts")}
                                 </Typography>
                             </Button>
                         </Link>
@@ -283,7 +286,7 @@ const MobileHeader = () => {
                                 <Typography
                                     sx={{ fontSize: 15, fontWeight: 500, color: "#FFFFFF" }}
                                 >
-                                    Log In / Sign Up
+                                    {t("loginSignup")}
                                 </Typography>
                             </Button>
                         </Link>

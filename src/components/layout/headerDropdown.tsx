@@ -5,6 +5,7 @@ import { Box, Link, Stack, Typography } from "@mui/material";
 import { ArrowDown2 } from "iconsax-reactjs";
 import theme from "@/theme/theme";
 import type { NavItem } from "./navItems";
+import { Link as IntlLink } from "@/i18n/navigation";
 
 const OPEN_DELAY_MS = 150;
 const CLOSE_DELAY_MS = 200;
@@ -99,6 +100,7 @@ const HeaderDropdown = ({ label, items }: HeaderDropdownProps) => {
                             {items.map(({ Icon, label: itemLabel, href }) => (
                                 <Link
                                     key={itemLabel}
+                                    component={IntlLink}
                                     href={href}
                                     underline="none"
                                     sx={{
