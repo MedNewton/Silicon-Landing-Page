@@ -1,8 +1,10 @@
 import theme from "@/theme/theme";
 import { Stack, Typography } from "@mui/material";
 import Header from "@/components/layout/header";
+import { getTranslations } from "next-intl/server";
 
-const Hero = () => {
+const Hero = async () => {
+    const t = await getTranslations("hero");
     return (
         <Stack
             component="section"
@@ -76,8 +78,11 @@ const Hero = () => {
                             WebkitTextFillColor: "transparent",
                         }}
                     >
-                        <span style={{ fontWeight: 700 }}>800</span> SMEs creates
-                        documents daily
+                        {t.rich("badge", {
+                            bold: (chunks) => (
+                                <span style={{ fontWeight: 700 }}>{chunks}</span>
+                            ),
+                        })}
                     </Typography>
                 </Stack>
 
@@ -91,9 +96,7 @@ const Hero = () => {
                         lineHeight: 1.1,
                     }}
                 >
-                    Turn your idea into
-                    <br />
-                    a strategic plan
+                    {t("title")}
                 </Typography>
 
                 <Typography
@@ -104,8 +107,7 @@ const Hero = () => {
                         textAlign: "center",
                     }}
                 >
-                    Silicon Plan guides you through creating business plans, pitches,
-                    and business models with AI tools and professional support.
+                    {t("subtitle")}
                 </Typography>
             </Stack>
         </Stack>

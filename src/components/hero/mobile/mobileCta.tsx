@@ -1,8 +1,10 @@
 import { Button, Link, Stack } from "@mui/material";
 import { PlayCircle } from "iconsax-reactjs";
 import theme from "@/theme/theme";
+import { getTranslations } from "next-intl/server";
 
-const MobileCTA = () => {
+const MobileCTA = async () => {
+    const t = await getTranslations("cta");
     return (
         <Stack
             width="85%"
@@ -45,7 +47,7 @@ const MobileCTA = () => {
                         },
                     }}
                 >
-                    Create your project
+                    {t("createProject")}
                 </Button>
             </Link>
             <Link href="#" target="_blank" sx={{ display: "block", width: "100%" }}>
@@ -73,7 +75,7 @@ const MobileCTA = () => {
                         },
                     }}
                 >
-                    Watch demo
+                    {t("watchDemo")}
                 </Button>
             </Link>
         </Stack>
