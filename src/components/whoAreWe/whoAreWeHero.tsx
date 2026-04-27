@@ -1,17 +1,16 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import theme from "@/theme/theme";
 
 import portrait from "@/assets/whoarewe/img.png";
 
 const BULLET_COLOR = "#3F6DDD";
 
-const BULLETS = [
-    "Today, doing business requires multidisciplinary skills, diverse tools, and often high costs.",
-    "SiliconPlan combines all of this in a single, accessible, and guided platform.",
-];
+const WhoAreWeHero = async () => {
+    const t = await getTranslations("whoAreWe");
+    const bullets = t.raw("bullets") as string[];
 
-const WhoAreWeHero = () => {
     return (
         <Box
             component="section"
@@ -74,7 +73,7 @@ const WhoAreWeHero = () => {
                             color: "transparent",
                         }}
                     >
-                        Who we are
+                        {t("title")}
                     </Typography>
 
                     <Typography
@@ -85,14 +84,11 @@ const WhoAreWeHero = () => {
                             maxWidth: 520,
                         }}
                     >
-                        SiliconPlan is a digital platform that helps aspiring
-                        entrepreneurs, professionals, and organizations
-                        transform an idea into a structured, presentable, and
-                        financeable project.
+                        {t("description")}
                     </Typography>
 
                     <Stack spacing={{ xs: 1.5, md: 2 }} sx={{ pt: 1 }}>
-                        {BULLETS.map((text) => (
+                        {bullets.map((text) => (
                             <Stack
                                 key={text}
                                 direction="row"
