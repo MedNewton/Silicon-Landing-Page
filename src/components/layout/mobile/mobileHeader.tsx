@@ -35,6 +35,9 @@ const gradientPillSx = {
         background: "linear-gradient(273deg, #5B3A9E 0%, #3B7AF0 50%, #5B3A9E 100%)",
         filter: "brightness(1.05)",
     },
+    "@media (prefers-reduced-motion: reduce)": {
+        animation: "none",
+    },
     "@keyframes bgShimmer": {
         "0%": { backgroundPosition: "0% 50%" },
         "50%": { backgroundPosition: "100% 50%" },
