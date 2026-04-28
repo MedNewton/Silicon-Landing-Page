@@ -88,6 +88,7 @@ const Header = () => {
             marginX="auto"
             gap={3}
             marginTop={1.5}
+            display={{ xs: "none", md: "flex" }}
             sx={{
                 background: theme.palette.headerGradient,
                 backdropFilter: "blur(10px)",

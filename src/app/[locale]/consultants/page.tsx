@@ -2,6 +2,7 @@ import { Stack } from "@mui/material";
 import { setRequestLocale } from "next-intl/server";
 import theme from "@/theme/theme";
 
+import MobileHeader from "@/components/layout/mobile/mobileHeader";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import ConsultantsHero from "@/components/consultantsPage/consultantsHero";
@@ -24,6 +25,7 @@ export default async function ConsultantsPage({
             sx={{ background: theme.palette.background.default }}
         >
             <Stack width="100%" alignItems="center" py={1.5} px={2}>
+                <MobileHeader />
                 <Header />
                 <ConsultantsHero />
                 <ConsultantsCategories />
