@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Box, Link, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography, useMediaQuery } from "@mui/material";
 import { ArrowDown2 } from "iconsax-reactjs";
 import theme from "@/theme/theme";
 import type { NavItem } from "./navItems";
@@ -19,6 +19,7 @@ const HeaderDropdown = ({ label, items }: HeaderDropdownProps) => {
     const [open, setOpen] = useState(false);
     const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
     const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const canHover = useMediaQuery("(hover: hover) and (pointer: fine)");
 
     const clearTimers = () => {
         if (openTimer.current) {
@@ -48,8 +49,8 @@ const HeaderDropdown = ({ label, items }: HeaderDropdownProps) => {
 
     return (
         <Box
-            onMouseEnter={handleEnter}
-            onMouseLeave={handleLeave}
+            onMouseEnter={canHover ? handleEnter : undefined}
+            onMouseLeave={canHover ? handleLeave : undefined}
             sx={{ position: "relative" }}
         >
             <Stack
