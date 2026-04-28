@@ -316,6 +316,9 @@ const MobileHeader = () => {
                                             sx={{
                                                 fontSize: 15,
                                                 fontWeight: 500,
+                                                color: active
+                                                    ? "#FFFFFF"
+                                                    : "#1E2B42",
                                             }}
                                         >
                                             {label}
