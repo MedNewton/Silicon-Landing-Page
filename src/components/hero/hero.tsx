@@ -93,7 +93,9 @@ const Hero = async () => {
                     variant="h2"
                     sx={{
                         color: "#3F4DCC",
-                        width: "60%",
+                        width: "100%",
+                        maxWidth: 720,
+                        px: { md: 2 },
                         textAlign: "center",
                         fontWeight: 700,
                         lineHeight: 1.1,
@@ -107,7 +109,9 @@ const Hero = async () => {
                     variant="subtitle1"
                     sx={{
                         color: theme.palette.secondary.main,
-                        width: "40%",
+                        width: "100%",
+                        maxWidth: 480,
+                        px: { md: 2 },
                         textAlign: "center",
                     }}
                 >
