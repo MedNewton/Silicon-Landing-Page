@@ -1,29 +1,15 @@
 "use client";
 
-import { useRef, useState, useTransition, type ComponentType } from "react";
+import { useRef, useState, useTransition } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { ArrowDown2 } from "iconsax-reactjs";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import theme from "@/theme/theme";
-import USFlag from "@/components/icons/USFlag";
-import ITFlag from "@/components/icons/ITFlag";
+import { LANGUAGES, type LocaleCode } from "@/components/layout/locales";
 
 const OPEN_DELAY_MS = 150;
 const CLOSE_DELAY_MS = 200;
-
-type LocaleCode = "en" | "it";
-
-type Language = {
-    code: LocaleCode;
-    label: string;
-    Flag: ComponentType<{ size?: number }>;
-};
-
-const LANGUAGES: Language[] = [
-    { code: "en", label: "EN", Flag: USFlag },
-    { code: "it", label: "IT", Flag: ITFlag },
-];
 
 const LanguageSwitcher = () => {
     const locale = useLocale() as LocaleCode;
