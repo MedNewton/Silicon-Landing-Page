@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import theme from "@/theme/theme";
 import { useTranslations } from "next-intl";
@@ -17,6 +17,7 @@ const AUTOPLAY_INTERVAL = 4000;
 const MobileBusinessPlanSlider = () => {
   const t = useTranslations("bento");
   const SLIDES = t.raw("slider.slides") as Slide[];
+  const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const [activeIndex, setActiveIndex] = useState(0);
 
   const touchStartX = useRef<number | null>(null);
@@ -31,14 +32,14 @@ const MobileBusinessPlanSlider = () => {
   const goPrev = () => goToSlide(activeIndex - 1);
 
   useEffect(() => {
-    if (SLIDES.length <= 1) return;
+    if (SLIDES.length <= 1 || prefersReducedMotion) return;
 
     const id = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % SLIDES.length);
     }, AUTOPLAY_INTERVAL);
 
     return () => clearInterval(id);
-  }, []);
+  }, [SLIDES.length, prefersReducedMotion]);
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     touchStartX.current = e.touches[0]?.clientX ?? 0;

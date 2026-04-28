@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import theme from "@/theme/theme";
@@ -17,13 +17,15 @@ const SLIDE_MS = 3500;
 const ConsultantsHero = () => {
     const t = useTranslations("consultantsPage");
     const [active, setActive] = useState(0);
+    const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
 
     useEffect(() => {
+        if (prefersReducedMotion) return;
         const id = setInterval(() => {
             setActive((prev) => (prev + 1) % SCREENSHOTS.length);
         }, SLIDE_MS);
         return () => clearInterval(id);
-    }, []);
+    }, [prefersReducedMotion]);
 
     return (
         <Box
@@ -116,6 +118,9 @@ const ConsultantsHero = () => {
                                     filter: "brightness(1.1)",
                                     background:
                                         "linear-gradient(273deg, #5B3A9E 0%, #3B7AF0 50%, #5B3A9E 100%)",
+                                },
+                                "@media (prefers-reduced-motion: reduce)": {
+                                    animation: "none",
                                 },
                                 "@keyframes bgShimmer": {
                                     "0%": { backgroundPosition: "0% 50%" },

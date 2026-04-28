@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import {
     Box,
     Button,
@@ -13,14 +13,14 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import theme from "@/theme/theme";
 
 import logo from "@/assets/logo/logo.png";
 import MobileNavAccordion from "@/components/layout/mobile/mobileNavAccordion";
-import USFlag from "@/components/icons/USFlag";
+import { LANGUAGES, type LocaleCode } from "@/components/layout/locales";
 import { useNavItems } from "@/components/layout/navItems";
-import { Link as IntlLink } from "@/i18n/navigation";
+import { Link as IntlLink, useRouter, usePathname } from "@/i18n/navigation";
 
 const gradientPillSx = {
     width: "100%",
@@ -34,6 +34,9 @@ const gradientPillSx = {
     "&:hover": {
         background: "linear-gradient(273deg, #5B3A9E 0%, #3B7AF0 50%, #5B3A9E 100%)",
         filter: "brightness(1.05)",
+    },
+    "@media (prefers-reduced-motion: reduce)": {
+        animation: "none",
     },
     "@keyframes bgShimmer": {
         "0%": { backgroundPosition: "0% 50%" },
@@ -73,11 +76,23 @@ const MobileHeader = () => {
     const [openSection, setOpenSection] = useState<string | null>(null);
     const t = useTranslations("header");
     const { productItems, resourcesItems, aboutItems } = useNavItems();
+    const locale = useLocale() as LocaleCode;
+    const router = useRouter();
+    const pathname = usePathname();
+    const [isPending, startTransition] = useTransition();
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => {
         setOpen(false);
         setOpenSection(null);
+    };
+
+    const handleSelectLocale = (code: LocaleCode) => {
+        if (code === locale) return;
+        startTransition(() => {
+            router.replace(pathname, { locale: code });
+        });
+        handleClose();
     };
 
     const handleToggleSection = (id: string) => {
@@ -250,16 +265,68 @@ const MobileHeader = () => {
                 >
                     <Stack
                         direction="row"
-                        alignItems="center"
-                        gap={0.75}
-                        sx={{ mb: 2.5 }}
+                        gap={1}
+                        sx={{
+                            mb: 2.5,
+                            opacity: isPending ? 0.6 : 1,
+                            pointerEvents: isPending ? "none" : "auto",
+                            transition: "opacity 0.2s ease",
+                        }}
                     >
-                        <USFlag size={24} />
-                        <Typography
-                            sx={{ fontSize: 16, color: "text.secondary", fontWeight: 500 }}
-                        >
-                            EN
-                        </Typography>
+                        {LANGUAGES.map(({ code, label, Flag }) => {
+                            const active = code === locale;
+                            return (
+                                <Button
+                                    key={code}
+                                    name={`locale-${code}`}
+                                    aria-pressed={active}
+                                    onClick={() => handleSelectLocale(code)}
+                                    disableRipple
+                                    sx={{
+                                        flex: 1,
+                                        py: 1.25,
+                                        px: 2,
+                                        borderRadius: 20,
+                                        textTransform: "none",
+                                        background: active
+                                            ? theme.palette.titleGradient
+                                            : "#FFFFFF",
+                                        border: active
+                                            ? "none"
+                                            : "1px solid rgba(30, 43, 66, 0.12)",
+                                        color: active ? "#FFFFFF" : "#1E2B42",
+                                        boxShadow: active
+                                            ? "0px 4px 12px rgba(88, 124, 255, 0.30)"
+                                            : "0px 4px 12px rgba(15, 27, 60, 0.04)",
+                                        "&:hover": {
+                                            background: active
+                                                ? theme.palette.titleGradient
+                                                : "#FFFFFF",
+                                            filter: "brightness(1.02)",
+                                        },
+                                    }}
+                                >
+                                    <Stack
+                                        direction="row"
+                                        alignItems="center"
+                                        gap={1}
+                                    >
+                                        <Flag size={20} />
+                                        <Typography
+                                            sx={{
+                                                fontSize: 15,
+                                                fontWeight: 500,
+                                                color: active
+                                                    ? "#FFFFFF"
+                                                    : "#1E2B42",
+                                            }}
+                                        >
+                                            {label}
+                                        </Typography>
+                                    </Stack>
+                                </Button>
+                            );
+                        })}
                     </Stack>
                     <Stack spacing={1.5}>
                         <Link

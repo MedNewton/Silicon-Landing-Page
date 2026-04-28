@@ -25,6 +25,9 @@ const gradientButtonSx = {
         transform: "scale(1.05)",
         filter: "brightness(1.2)",
     },
+    "@media (prefers-reduced-motion: reduce)": {
+        animation: "none",
+    },
     "@keyframes bgShimmer": {
         "0%": { backgroundPosition: "0% 50%" },
         "50%": { backgroundPosition: "100% 50%" },
@@ -88,6 +91,7 @@ const Header = () => {
             marginX="auto"
             gap={3}
             marginTop={1.5}
+            display={{ xs: "none", md: "flex" }}
             sx={{
                 background: theme.palette.headerGradient,
                 backdropFilter: "blur(10px)",
