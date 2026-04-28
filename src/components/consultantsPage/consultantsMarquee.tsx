@@ -190,6 +190,9 @@ const Marquee = ({ items }: { items: Consultant[] }) => (
                 display: "flex",
                 width: "fit-content",
                 animation: "consultantsMarquee 90s linear infinite",
+                "@media (prefers-reduced-motion: reduce)": {
+                    animation: "none",
+                },
                 "@keyframes consultantsMarquee": {
                     "0%": { transform: "translateX(0)" },
                     "100%": { transform: "translateX(-33.3333%)" },

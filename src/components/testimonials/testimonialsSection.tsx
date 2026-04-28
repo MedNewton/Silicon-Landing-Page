@@ -81,6 +81,9 @@ const Marquee = ({
                     direction === "left"
                         ? "marqueeLeft 90s linear infinite"
                         : "marqueeRight 90s linear infinite",
+                "@media (prefers-reduced-motion: reduce)": {
+                    animation: "none",
+                },
                 "@keyframes marqueeLeft": {
                     "0%": { transform: "translateX(0)" },
                     "100%": { transform: "translateX(-33.3333%)" },
