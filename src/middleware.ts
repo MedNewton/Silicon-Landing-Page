@@ -14,7 +14,10 @@ export function middleware(req: NextRequest) {
 
     if (isMobile && mobileHomepagePaths.has(pathname)) {
         const url = req.nextUrl.clone();
-        url.pathname = pathname === "/" ? "/mobile" : `${pathname}/mobile`;
+        url.pathname =
+            pathname === "/"
+                ? `/${routing.defaultLocale}/mobile`
+                : `${pathname}/mobile`;
         return NextResponse.rewrite(url);
     }
 
