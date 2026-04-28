@@ -76,7 +76,7 @@ const MobileHeader = () => {
     const locale = useLocale() as LocaleCode;
     const router = useRouter();
     const pathname = usePathname();
-    const [, startTransition] = useTransition();
+    const [isPending, startTransition] = useTransition();
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => {
@@ -260,13 +260,23 @@ const MobileHeader = () => {
                         borderTop: "1px solid rgba(30, 43, 66, 0.1)",
                     }}
                 >
-                    <Stack direction="row" gap={1} sx={{ mb: 2.5 }}>
+                    <Stack
+                        direction="row"
+                        gap={1}
+                        sx={{
+                            mb: 2.5,
+                            opacity: isPending ? 0.6 : 1,
+                            pointerEvents: isPending ? "none" : "auto",
+                            transition: "opacity 0.2s ease",
+                        }}
+                    >
                         {LANGUAGES.map(({ code, label, Flag }) => {
                             const active = code === locale;
                             return (
                                 <Button
                                     key={code}
                                     name={`locale-${code}`}
+                                    aria-pressed={active}
                                     onClick={() => handleSelectLocale(code)}
                                     disableRipple
                                     sx={{
@@ -303,9 +313,6 @@ const MobileHeader = () => {
                                             sx={{
                                                 fontSize: 15,
                                                 fontWeight: 500,
-                                                color: active
-                                                    ? "#FFFFFF"
-                                                    : "#1E2B42",
                                             }}
                                         >
                                             {label}
