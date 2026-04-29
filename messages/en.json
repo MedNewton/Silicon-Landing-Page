@@ -269,6 +269,54 @@
       { "title": "Continuous growth", "description": "We're constantly evolving. We improve the platform based on user feedback and market developments. We want to contribute to a stronger entrepreneurial ecosystem, where more ideas can become concrete reality." }
     ]
   },
+  "contact": {
+    "title": "Get in touch",
+    "description": "Have a question or want to learn more about Silicon Plan? Send us a message and we'll get back to you as soon as possible.",
+    "nameField": "Your name",
+    "emailField": "Email address",
+    "subjectField": "Subject",
+    "messageField": "Message",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "successMessage": "Thanks! Your message has been sent. We'll be in touch soon.",
+    "errorMessage": "Something went wrong. Please try again or email us directly."
+  },
+  "comingSoon": {
+    "eyebrow": "Coming soon",
+    "title": "We're cooking something great",
+    "description": "This page isn't ready just yet. We're putting the finishing touches together and will launch it soon. Thanks for your patience.",
+    "backHome": "Back to homepage"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know about Silicon Plan. Can't find the answer you're looking for? Get in touch with our team.",
+    "items": [
+      {
+        "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      },
+      {
+        "question": "Duis aute irure dolor in reprehenderit in voluptate?",
+        "answer": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+      },
+      {
+        "question": "Sed ut perspiciatis unde omnis iste natus error sit?",
+        "answer": "Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
+      },
+      {
+        "question": "At vero eos et accusamus et iusto odio dignissimos?",
+        "answer": "Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi."
+      },
+      {
+        "question": "Et harum quidem rerum facilis est et expedita distinctio?",
+        "answer": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
+      },
+      {
+        "question": "Temporibus autem quibusdam et aut officiis debitis?",
+        "answer": "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Et harum quidem rerum facilis est et expedita distinctio."
+      }
+    ]
+  },
   "consultantsPage": {
     "heroTitle": "Need support?",
     "heroDescription": "Access expert consultants to improve your project whenever you need it.",

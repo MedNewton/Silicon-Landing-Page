@@ -31,7 +31,7 @@ const PRODUCT_ICONS: ComponentType<IconProps>[] = [Book1, FormatSquare, Note1, P
 const PRODUCT_HREFS = ["#", "#", "#", "#", "#", "#"];
 
 const RESOURCES_ICONS: ComponentType<IconProps>[] = [Magicpen, Book1, MessageQuestion];
-const RESOURCES_HREFS = ["#", "#", "#"];
+const RESOURCES_HREFS = ["/contact", "/coming-soon", "/faq"];
 
 const ABOUT_ICONS: ComponentType<IconProps>[] = [Profile, Sun1, TickSquare, Star1];
 const ABOUT_HREFS = [

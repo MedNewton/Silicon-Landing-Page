@@ -7,6 +7,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import logo from "@/assets/logo/logo.png";
 import { useTranslations } from "next-intl";
+import { Link as IntlLink } from "@/i18n/navigation";
 
 const Footer = () => {
   const t = useTranslations("footer");
@@ -118,7 +119,7 @@ const Footer = () => {
               >
                 {t("companyHeading")}
               </Typography>
-              <Link href="mailto:info@siliconplan.com" underline="none">
+              <Link component={IntlLink} href="/contact" underline="none">
                 <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
                   {companyLinks[0]?.label}
                 </Typography>
