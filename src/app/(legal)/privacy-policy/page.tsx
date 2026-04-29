@@ -1,4 +1,3 @@
-import { setRequestLocale } from "next-intl/server";
 import theme from "@/theme/theme";
 import { Stack } from "@mui/material";
 
@@ -7,14 +6,7 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import ComingSoonSection from "@/components/comingSoon/comingSoonSection";
 
-export default async function PrivacyPolicyPage({
-    params,
-}: {
-    params: Promise<{ locale: string }>;
-}) {
-    const { locale } = await params;
-    setRequestLocale(locale);
-
+export default function PrivacyPolicyPage() {
     return (
         <Stack
             component="main"
