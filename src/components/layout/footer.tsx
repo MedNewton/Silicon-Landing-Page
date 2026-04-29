@@ -8,6 +8,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import logo from "@/assets/logo/logo.png";
 import { useTranslations } from "next-intl";
 import { Link as IntlLink } from "@/i18n/navigation";
+import NextLink from "next/link";
 
 const Footer = () => {
   const t = useTranslations("footer");
@@ -124,7 +125,17 @@ const Footer = () => {
                   {companyLinks[0]?.label}
                 </Typography>
               </Link>
-              {companyLinks.slice(1).map((link) => (
+              <Link component={NextLink} href="/privacy-policy" underline="none">
+                <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
+                  {companyLinks[1]?.label}
+                </Typography>
+              </Link>
+              <Link component={NextLink} href="/terms-and-conditions" underline="none">
+                <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
+                  {companyLinks[2]?.label}
+                </Typography>
+              </Link>
+              {companyLinks.slice(3).map((link) => (
                 <Typography key={link.label} sx={{ fontSize: 14, color: "#C3CCE5" }}>
                   {link.label}
                 </Typography>

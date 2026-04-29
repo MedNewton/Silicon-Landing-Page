@@ -7,6 +7,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import logo from "@/assets/logo/logo.png";
 import { useTranslations } from "next-intl";
+import NextLink from "next/link";
 
 const MobileFooter = () => {
   const t = useTranslations("footer");
@@ -123,7 +124,17 @@ const MobileFooter = () => {
                   {companyLinks[0]?.label}
                 </Typography>
               </Link>
-              {companyLinks.slice(1).map((link) => (
+              <Link component={NextLink} href="/privacy-policy" underline="none">
+                <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
+                  {companyLinks[1]?.label}
+                </Typography>
+              </Link>
+              <Link component={NextLink} href="/terms-and-conditions" underline="none">
+                <Typography sx={{ fontSize: 14, color: "#C3CCE5" }}>
+                  {companyLinks[2]?.label}
+                </Typography>
+              </Link>
+              {companyLinks.slice(3).map((link) => (
                 <Typography key={link.label} sx={{ fontSize: 14, color: "#C3CCE5" }}>
                   {link.label}
                 </Typography>

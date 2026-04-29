@@ -199,7 +199,8 @@
     ],
     "companyLinks": [
       { "label": "Contattaci" },
-      { "label": "Privacy e Termini di Servizio" },
+      { "label": "Privacy Policy" },
+      { "label": "Termini e Condizioni" },
       { "label": "Centro assistenza" }
     ],
     "phone": "+39 0823 21 04 74",

@@ -199,7 +199,8 @@
     ],
     "companyLinks": [
       { "label": "Contact us" },
-      { "label": "Privacy & Terms of Service" },
+      { "label": "Privacy Policy" },
+      { "label": "Terms and Conditions" },
       { "label": "Help center" }
     ],
     "phone": "+39 0823 21 04 74",
