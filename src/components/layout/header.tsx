@@ -114,7 +114,7 @@ const Header = () => {
                 <IntlLink href="/consultants" style={{ textDecoration: "none" }}>
                     <Typography variant="body2" sx={plainLinkSx}>{t("consultants")}</Typography>
                 </IntlLink>
-                <IntlLink href="#" style={{ textDecoration: "none" }}>
+                <IntlLink href="/#pricing" style={{ textDecoration: "none" }}>
                     <Typography variant="body2" sx={plainLinkSx}>{t("pricing")}</Typography>
                 </IntlLink>
                 <HeaderDropdown label={t("resources")} items={resourcesItems} />
@@ -124,7 +124,7 @@ const Header = () => {
                 </IntlLink>
             </Stack>
 
-            <Stack direction="row" alignItems="center" gap={1.5}>
+            <Stack direction="row" alignItems="center" gap={2.5}>
                 <LanguageSwitcher />
                 <Link href="https://app.silicon-plan.live/?nav=consultants" target="_blank">
                     <Button name="our-experts" sx={whitePillSx} disableRipple>

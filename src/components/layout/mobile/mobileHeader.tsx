@@ -222,7 +222,7 @@ const MobileHeader = () => {
                     </Link>
                     <Link
                         component={IntlLink}
-                        href="#"
+                        href="/#pricing"
                         underline="none"
                         onClick={handleClose}
                         sx={flatLinkSx}
