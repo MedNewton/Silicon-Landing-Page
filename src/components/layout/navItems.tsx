@@ -28,7 +28,14 @@ export type NavItem = {
 };
 
 const PRODUCT_ICONS: ComponentType<IconProps>[] = [Book1, FormatSquare, Note1, PresentionChart, Element3, Diagram];
-const PRODUCT_HREFS = ["#", "#", "#", "#", "#", "#"];
+const PRODUCT_HREFS = [
+    "#",
+    "#",
+    "/#business-plan",
+    "/#pitch-deck",
+    "/#business-model-canvas",
+    "/#pre-money-valuation",
+];
 
 const RESOURCES_ICONS: ComponentType<IconProps>[] = [Magicpen, Book1, MessageQuestion];
 const RESOURCES_HREFS = ["/contact", "/coming-soon", "/faq"];

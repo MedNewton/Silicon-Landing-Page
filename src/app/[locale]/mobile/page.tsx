@@ -8,6 +8,7 @@ import MobileBusinessPlanSlider from "@/components/bento/mobileBusinessPlanSlide
 import ComparisonSection from "@/components/comparison/comparisonSection";
 import RoadmapSection from "@/components/roadmap/roadmapSection";
 import HowItWorksSection from "@/components/howItWorks/howItWorksSection";
+import ProductFeaturesSection from "@/components/productFeatures/productFeaturesSection";
 import ConsultantsSection from "@/components/consultants/consultantsSection";
 import TestimonialsSection from "@/components/testimonials/testimonialsSection";
 import MobilePricing from "@/components/pricing/mobile/mobilePricing";
@@ -31,6 +32,7 @@ export default async function Home({
         <ComparisonSection />
         <RoadmapSection />
         <HowItWorksSection />
+        <ProductFeaturesSection />
         <ConsultantsSection />
         <TestimonialsSection />
         <MobilePricing />

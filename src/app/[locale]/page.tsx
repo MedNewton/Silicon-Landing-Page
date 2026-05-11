@@ -8,6 +8,7 @@ import BentoSection from "@/components/bento/bentoSection";
 import ComparisonSection from "@/components/comparison/comparisonSection";
 import RoadmapSection from "@/components/roadmap/roadmapSection";
 import HowItWorksSection from "@/components/howItWorks/howItWorksSection";
+import ProductFeaturesSection from "@/components/productFeatures/productFeaturesSection";
 import ConsultantsSection from "@/components/consultants/consultantsSection";
 import TestimonialsSection from "@/components/testimonials/testimonialsSection";
 import Pricing from "@/components/pricing/pricing";
@@ -31,6 +32,7 @@ export default async function Home({
         <ComparisonSection />
         <RoadmapSection />
         <HowItWorksSection />
+        <ProductFeaturesSection />
         <ConsultantsSection />
         <TestimonialsSection />
         <Pricing />

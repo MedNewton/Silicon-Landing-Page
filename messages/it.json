@@ -107,6 +107,33 @@
       { "title": "Migliora il tuo progetto", "description": "Affina, modifica e ottieni supporto professionale per perfezionare il piano." }
     ]
   },
+  "productFeatures": {
+    "title": "Pensato attorno ai documenti che ti aiutano a raccogliere fondi",
+    "subtitle": "Ogni funzionalità è progettata per trasformare le tue informazioni in materiali pronti per gli investitori.",
+    "videoPlaceholder": "Video in arrivo",
+    "items": [
+      {
+        "id": "business-plan",
+        "title": "Genera un Business Plan professionale in pochi minuti",
+        "description": "Trasforma la tua idea in un Business Plan strutturato con l'IA. La piattaforma organizza le tue informazioni nei capitoli che gli investitori si aspettano, così puoi dedicare più tempo alla strategia e meno alla formattazione."
+      },
+      {
+        "id": "pitch-deck",
+        "title": "Racconta la tua storia con un Pitch Deck chiaro e strutturato",
+        "description": "Costruisci un Pitch Deck che gli investitori leggono davvero. L'IA assembla ogni slide attorno al tuo progetto, lasciandoti libero di concentrarti sulla narrazione invece che sul layout."
+      },
+      {
+        "id": "business-model-canvas",
+        "title": "Visualizza il tuo business in una sola pagina",
+        "description": "Un Business Model Canvas pulito creato a partire dal tuo progetto. Capisci a colpo d'occhio come si collegano valore, clienti, costi e flussi di ricavo."
+      },
+      {
+        "id": "pre-money-valuation",
+        "title": "Stima la tua Valutazione Pre-Money con sicurezza",
+        "description": "Ottieni una Valutazione Pre-Money difendibile e basata sui tuoi numeri. Usala come punto di partenza per le tue conversazioni di raccolta fondi."
+      }
+    ]
+  },
   "consultants": {
     "badge": "Unisciti ai consulenti che supportano <bold>800+</bold> PMI ogni giorno",
     "title": "Lavora con startup pronte a costruire",

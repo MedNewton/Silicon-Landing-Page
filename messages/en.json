@@ -107,6 +107,33 @@
       { "title": "Improve your project", "description": "Refine, edit, and get professional support to perfect your plan." }
     ]
   },
+  "productFeatures": {
+    "title": "Built around the documents that get you funded",
+    "subtitle": "Every feature is designed to help you turn your information into investor-ready output.",
+    "videoPlaceholder": "Video coming soon",
+    "items": [
+      {
+        "id": "business-plan",
+        "title": "Generate a professional Business Plan in minutes",
+        "description": "Turn your idea into a structured Business Plan with AI. The platform organizes your information into the chapters investors expect, so you can spend more time refining the strategy and less on formatting."
+      },
+      {
+        "id": "pitch-deck",
+        "title": "Tell your story with a clear, structured Pitch Deck",
+        "description": "Build a Pitch Deck investors actually read. AI assembles each slide around your project, leaving you free to focus on the narrative instead of the layout."
+      },
+      {
+        "id": "business-model-canvas",
+        "title": "Map your business on a single page",
+        "description": "A clean Business Model Canvas built from your project. See at a glance how value, customers, costs, and revenue streams connect."
+      },
+      {
+        "id": "pre-money-valuation",
+        "title": "Estimate your Pre-Money Valuation with confidence",
+        "description": "Get a defensible Pre-Money Valuation grounded in your numbers. Use it as a starting point for your fundraising conversations."
+      }
+    ]
+  },
   "consultants": {
     "badge": "Join consultants supporting <bold>800+</bold> SMEs every day",
     "title": "Work with startups that are ready to build",
