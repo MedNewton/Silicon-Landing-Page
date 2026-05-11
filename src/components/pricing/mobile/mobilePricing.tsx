@@ -405,10 +405,14 @@ const MobilePricing = () => {
                       fontSize: 34,
                       fontWeight: 700,
                       color: "#C8CBD8",
-                      textDecoration: "line-through",
                     }}
                   >
-                    {formatPrice(STARTUP_MONTHLY)}
+                    <Box
+                      component="span"
+                      sx={{ textDecoration: "line-through" }}
+                    >
+                      {formatPrice(STARTUP_MONTHLY)}
+                    </Box>
                     <Box
                       component="span"
                       sx={{ fontSize: 22, fontWeight: 700, ml: 0.2 }}
@@ -608,10 +612,14 @@ const MobilePricing = () => {
                       fontSize: 34,
                       fontWeight: 700,
                       color: "#C8CBD8",
-                      textDecoration: "line-through",
                     }}
                   >
-                    {formatPrice(UNICORN_MONTHLY)}
+                    <Box
+                      component="span"
+                      sx={{ textDecoration: "line-through" }}
+                    >
+                      {formatPrice(UNICORN_MONTHLY)}
+                    </Box>
                     <Box
                       component="span"
                       sx={{ fontSize: 22, fontWeight: 700, ml: 0.2 }}
