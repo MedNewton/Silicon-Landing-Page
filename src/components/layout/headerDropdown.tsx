@@ -66,7 +66,9 @@ const HeaderDropdown = ({ label, items }: HeaderDropdownProps) => {
                     userSelect: "none",
                 }}
             >
-                <Typography variant="body2">{label}</Typography>
+                <Typography variant="body2" sx={{ whiteSpace: "nowrap" }}>
+                    {label}
+                </Typography>
                 <ArrowDown2
                     size={14}
                     color={theme.palette.text.secondary}

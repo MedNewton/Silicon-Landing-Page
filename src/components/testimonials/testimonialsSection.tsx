@@ -19,7 +19,7 @@ const TestimonialCard = ({ t }: { t: Testimonial }) => (
     <Box
         sx={{
             flexShrink: 0,
-            width: { xs: 300, md: 460 },
+            width: { xs: 300, md: 360, lg: 460 },
             bgcolor: "#FFFFFF",
             borderRadius: 4,
             p: { xs: 2.5, md: 3 },

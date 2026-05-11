@@ -1,6 +1,7 @@
 import theme from "@/theme/theme";
 import { Stack, Typography } from "@mui/material";
 import Header from "@/components/layout/header";
+import MobileHeader from "@/components/layout/mobile/mobileHeader";
 import { getTranslations } from "next-intl/server";
 
 const Hero = async () => {
@@ -21,6 +22,7 @@ const Hero = async () => {
             }}
         >
             <Stack position="absolute" top={0} left={0} right={0}>
+                <MobileHeader />
                 <Header />
             </Stack>
             <Stack

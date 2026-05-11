@@ -115,7 +115,7 @@ const MobileHeader = () => {
                 sx={{
                     background: theme.palette.headerGradient,
                     backdropFilter: "blur(10px)",
-                    display: { xs: "flex", md: "none" },
+                    display: { xs: "flex", lg: "none" },
                 }}
             >
                 <IntlLink

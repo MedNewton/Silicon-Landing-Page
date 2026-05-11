@@ -36,7 +36,7 @@ const ConsultantCard = ({ consultant }: CardProps) => {
         <Box
             sx={{
                 flexShrink: 0,
-                width: { xs: 280, md: 320 },
+                width: { xs: 280, md: 280, lg: 320 },
                 bgcolor: "#FFFFFF",
                 borderRadius: 4,
                 p: 0,
